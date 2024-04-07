@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.View.Menu" 
+             Title="Menu">
+
+    <VerticalStackLayout
+     BackgroundColor="Azure">
+        <Frame 
+            CornerRadius="20"
+            Padding="20"
+            BackgroundColor="Aqua"/>
+        <Label 
+            Text="Bienvenu dans One Way Work !"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontSize="Header"
+            TextColor="Black"/>
+
+
+
+        <Label 
+         Text="Les meilleurs stages pour vous"
+         VerticalOptions="Center" 
+         HorizontalOptions="Center"
+         FontSize="Title"
+         TextColor="Black"/>
+
+        <Image
+         Source="menuphoto.jpg"
+         HeightRequest="1000"
+         Aspect="AspectFit"
+         WidthRequest="1011"
+         />
+    </VerticalStackLayout>
+</ContentPage>
