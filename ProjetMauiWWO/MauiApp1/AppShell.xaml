@@ -18,9 +18,9 @@
        Route="Menu" />
     
     <ShellContent
-       Title="Page vierge"
-       ContentTemplate="{DataTemplate view:NewPage1}"
-       Route="NewPage1" />
+       Title="Connexion"
+       ContentTemplate="{DataTemplate view:ConnexionView}"
+       Route="ConnexionView" />
     
 
     <ShellContent
