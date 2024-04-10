@@ -8,12 +8,13 @@ public partial class ConnexionView : ContentPage
 	{
         InitializeComponent();
 
-        private async void OnInscriptionTapped(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new InscriptionView());
-        }
-
     }
 
-    
+    private async void OnInscriptionTapped(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new InscriptionView());
+    }
+
+
+
 }
