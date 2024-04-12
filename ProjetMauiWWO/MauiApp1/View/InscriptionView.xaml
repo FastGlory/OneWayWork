@@ -82,7 +82,7 @@
                    />
 
                 <Label 
-                   Text="Vous n'avez pas de compte ?  Incrivez-vous !"
+                   Text="Vous avez déjà un compte ?  Connectez-vous !"
                   TextColor="White"
                    HorizontalOptions="Center"
                   Margin="0, 5, 0, 0">
