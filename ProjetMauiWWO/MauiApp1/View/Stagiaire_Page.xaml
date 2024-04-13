@@ -1,0 +1,53 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.View.Stagiaire_Page"
+             Title="Stagiaire_Page">
+    <StackLayout>
+        <Button Text="Supprimer tous les stagiaires"
+                Clicked="OnDeleteAllStagiairesButtonClicked"/>
+
+        <SearchBar x:Name="filterText"
+                   Placeholder="Search"
+                   SearchButtonPressed="OnSearchButtonPressed"/>
+        <ListView x:Name="listView" ItemsSource="{Binding Stagiaires}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Frame Margin="25"
+                                   HeightRequest="100"
+                                   WidthRequest="100"
+                                   CornerRadius="50"
+                                   HasShadow="False"
+                                   Padding="0">
+                                <Image Source="{Binding image_Stagiaire}"
+                                   Aspect="AspectFill"
+                                   HeightRequest="100"
+                                   WidthRequest="100" />
+                            </Frame>
+
+                            <Label Grid.Column="1"
+                                   Text="{Binding nom_Stagiaire}"
+                                   FontAttributes="Bold" />
+                            <Label Grid.Row="1"
+                                   Grid.Column="1"
+                                   Text="{Binding prenom_Stagiaire}"
+                                   FontAttributes="Italic"
+                                   VerticalOptions="End" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
+
+
