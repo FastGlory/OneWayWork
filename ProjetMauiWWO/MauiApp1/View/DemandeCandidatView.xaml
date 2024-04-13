@@ -18,11 +18,20 @@
          VerticalOptions="FillAndExpand"/>
 
 
-        <BoxView Color="White" VerticalOptions="Center" WidthRequest="1000" HeightRequest="600" Opacity="0.8">
+        <StackLayout BackgroundColor="White" VerticalOptions="Center" WidthRequest="1500" HeightRequest="1000" Opacity="0.8" Padding="20">
+
+
+
+            <Label Text="Veuillez soumettre vos infromations"
+                   TextColor="Black"
+                   FontSize="Header"
+                   HorizontalOptions="Center"/> 
             
             
-            
-        </BoxView>
+          
+
+
+        </StackLayout>
 
     </Grid>
     
