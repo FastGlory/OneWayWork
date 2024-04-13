@@ -3,7 +3,10 @@
              x:Class="MauiApp1.View.Stagiaire_Page"
              Title="Stagiaire_Page">
     <StackLayout>
-        <ListView x:Name="listView">
+        <SearchBar x:Name="filterText"
+                   Placeholder="Search"
+                   SearchButtonPressed="OnSearchButtonPressed"/>
+        <ListView x:Name="listView" ItemsSource="{Binding Stagiaires}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -36,3 +39,7 @@
         </ListView>
     </StackLayout>
 </ContentPage>
+
+
+<!--<Button Text="Supprimer tous les stagiaires"
+                Clicked="OnDeleteAllStagiairesButtonClicked" UTILISER CE BOUTON SEULEMENT S'IL Y A UN ENGRONGEMENT DES DONNÉES />-->
