@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MauiApp1.Model;
 using MauiApp1.Service;
+using System.Diagnostics;
 
 namespace MauiApp1.View
 {
@@ -54,15 +55,26 @@ namespace MauiApp1.View
             }
         }
 
-
+        private async void OnDeleteAllStagiairesButtonClicked(object sender, EventArgs e)
+        {
+            try
+            {
+                Debug.WriteLine("Deleting all stagiaires...");
+                await _localDbService.DeleteAllStagiaires();
+                Debug.WriteLine("Stagiaires deleted successfully.");
+                await LoadStagiairesAsync();
+                Debug.WriteLine("Stagiaires reloaded successfully.");
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error deleting stagiaires: {ex.Message}");
+                await DisplayAlert("Error", $"Error deleting stagiaires: {ex.Message}", "OK");
+            }
+        }
 
         // Code pour le filtre
 
-        private async void OnDeleteAllStagiairesButtonClicked(object sender, EventArgs e)
-        {
-            await _localDbService.DeleteAllStagiaires();
-            await LoadStagiairesAsync();
-        }
+
 
         private void OnSearchButtonPressed(object sender, EventArgs e)
         {

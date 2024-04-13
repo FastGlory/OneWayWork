@@ -112,20 +112,26 @@ namespace MauiApp1.Service
                 var stagiairesToAdd = new List<Stagiaire>
                 {
                     new Stagiaire { nom_Stagiaire = "Alice", prenom_Stagiaire = "Dupont", email_Stagiaire = "alice.dupont@example.com", MotDePasse_Stagiaire = "alice_password",image_Stagiaire="dotnet_bot.png" },
-                    new Stagiaire { nom_Stagiaire = "Bob", prenom_Stagiaire = "Martin", email_Stagiaire = "bob.martin@example.com", MotDePasse_Stagiaire = "bob_password",image_Stagiaire="dotnet_bot.png" },
-                    new Stagiaire { nom_Stagiaire = "Claire", prenom_Stagiaire = "Dubois", email_Stagiaire = "claire.dubois@example.com", MotDePasse_Stagiaire = "claire_password",image_Stagiaire="dotnet_bot.png" },
-                    new Stagiaire { nom_Stagiaire = "David", prenom_Stagiaire = "Garcia", email_Stagiaire = "david.garcia@example.com", MotDePasse_Stagiaire = "david_password",image_Stagiaire="dotnet_bot.png" },
-                    new Stagiaire { nom_Stagiaire = "Emma", prenom_Stagiaire = "Lefevre", email_Stagiaire = "emma.lefevre@example.com", MotDePasse_Stagiaire = "emma_password",image_Stagiaire="dotnet_bot.png" },
-                    new Stagiaire { nom_Stagiaire = "Fabien", prenom_Stagiaire = "Leroy", email_Stagiaire = "fabien.leroy@example.com", MotDePasse_Stagiaire = "fabien_password",image_Stagiaire="dotnet_bot.png" },
-                    new Stagiaire { nom_Stagiaire = "Gabrielle", prenom_Stagiaire = "Moreau", email_Stagiaire = "gabrielle.moreau@example.com", MotDePasse_Stagiaire = "gabrielle_password",image_Stagiaire="dotnet_bot.png" },
-                    new Stagiaire { nom_Stagiaire = "Hugo", prenom_Stagiaire = "Thomas", email_Stagiaire = "hugo.thomas@example.com", MotDePasse_Stagiaire = "hugo_password",image_Stagiaire="dotnet_bot.png" },
-                    new Stagiaire { nom_Stagiaire = "Ines", prenom_Stagiaire = "Dufour", email_Stagiaire = "ines.dufour@example.com", MotDePasse_Stagiaire = "ines_password",image_Stagiaire="dotnet_bot.png" },
-                    new Stagiaire { nom_Stagiaire = "Julie", prenom_Stagiaire = "Roux", email_Stagiaire = "julie.roux@example.com", MotDePasse_Stagiaire = "julie_password",image_Stagiaire="dotnet_bot.png" }
+                    new Stagiaire { nom_Stagiaire = "Bob", prenom_Stagiaire = "Martin", email_Stagiaire = "bob.martin@example.com", MotDePasse_Stagiaire = "bob_password",image_Stagiaire="imagea.png" },
+                    new Stagiaire { nom_Stagiaire = "Claire", prenom_Stagiaire = "Dubois", email_Stagiaire = "claire.dubois@example.com", MotDePasse_Stagiaire = "claire_password",image_Stagiaire="imageb.png" },
+                    new Stagiaire { nom_Stagiaire = "David", prenom_Stagiaire = "Garcia", email_Stagiaire = "david.garcia@example.com", MotDePasse_Stagiaire = "david_password",image_Stagiaire="imagec.png" },
+                    new Stagiaire { nom_Stagiaire = "Emma", prenom_Stagiaire = "Lefevre", email_Stagiaire = "emma.lefevre@example.com", MotDePasse_Stagiaire = "emma_password",image_Stagiaire="imaged.png" },
+                    new Stagiaire { nom_Stagiaire = "Fabien", prenom_Stagiaire = "Leroy", email_Stagiaire = "fabien.leroy@example.com", MotDePasse_Stagiaire = "fabien_password",image_Stagiaire="imagee.png" },
+                    new Stagiaire { nom_Stagiaire = "Gabrielle", prenom_Stagiaire = "Moreau", email_Stagiaire = "gabrielle.moreau@example.com", MotDePasse_Stagiaire = "gabrielle_password",image_Stagiaire="imagef.png" },
+                    new Stagiaire { nom_Stagiaire = "Hugo", prenom_Stagiaire = "Thomas", email_Stagiaire = "hugo.thomas@example.com", MotDePasse_Stagiaire = "hugo_password",image_Stagiaire="imageg.png" },
+                    new Stagiaire { nom_Stagiaire = "Ines", prenom_Stagiaire = "Dufour", email_Stagiaire = "ines.dufour@example.com", MotDePasse_Stagiaire = "ines_password",image_Stagiaire="imageh.png" },
+                    new Stagiaire { nom_Stagiaire = "Julie", prenom_Stagiaire = "Roux", email_Stagiaire = "julie.roux@example.com", MotDePasse_Stagiaire = "julie_password",image_Stagiaire="imagei.png" },
+                    new Stagiaire { nom_Stagiaire = "Gorge", prenom_Stagiaire = "Stevensen", email_Stagiaire = "Gorge.Stevensen@example.com", MotDePasse_Stagiaire = "Gorge_password",image_Stagiaire="imageaj.png" }
                 };
 
                 foreach (var stagiaire in stagiairesToAdd)
                 {
-                    await _connection.InsertAsync(stagiaire);
+                    // Vérifcication doublonss
+                    var existingStagiaire = await _connection.Table<Stagiaire>().FirstOrDefaultAsync(s => s.nom_Stagiaire == stagiaire.nom_Stagiaire && s.prenom_Stagiaire == stagiaire.prenom_Stagiaire);
+                    if (existingStagiaire == null)
+                    {
+                        await _connection.InsertAsync(stagiaire);
+                    }
                 }
             }
 
@@ -138,7 +144,8 @@ namespace MauiApp1.Service
         }
 
 
-        
+
+
 
     }
 }
