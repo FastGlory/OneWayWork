@@ -43,7 +43,7 @@
                    FontSize="Medium"
                    VerticalTextAlignment="Start"
                    HorizontalTextAlignment="Start"
-                   Margin="90, 0, 0, 40"/> 
+                   Margin="90, 0, 0, 40"/>
 
             <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="Start" >
 
@@ -72,6 +72,22 @@
                     
                     
                   />
+
+
+              <Button
+                  TextColor="White"
+                  Text="Confirmer"
+                  FontSize="Small"
+               WidthRequest="200" 
+             HeightRequest="70"
+             HorizontalOptions="Start"
+              Margin="630, 0, 0, 0"
+              BackgroundColor="#1a2d59"
+              Padding="15"
+              CornerRadius="30"
+              TextTransform="Uppercase"
+                 
+               />
 
             </StackLayout>
 

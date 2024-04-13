@@ -6,4 +6,9 @@ public partial class DemandeCandidatView : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void Button_Pressed(object sender, EventArgs e)
+    {
+
+    }
 }
