@@ -18,23 +18,72 @@
          VerticalOptions="FillAndExpand"/>
 
 
-        <StackLayout BackgroundColor="White" VerticalOptions="Center" WidthRequest="1500" HeightRequest="1000" Opacity="0.8" Padding="20">
+        <StackLayout BackgroundColor="White" VerticalOptions="Center" WidthRequest="1500" HeightRequest="600" Opacity="0.8" Padding="20">
 
 
 
-            <Label Text="Veuillez soumettre vos infromations"
+            <Label Text="Veuillez soumettre vos informations"
                    TextColor="Black"
                    FontSize="Header"
-                   HorizontalOptions="Center"/> 
-            
-            
-          
+                   HorizontalOptions="Center"/>
+
+            <Entry Placeholder="Veuillez entrer des infromations sur vous..."
+                   VerticalOptions="StartAndExpand"
+                   HeightRequest="300"
+                   Margin="90, 40, 90, 0"
+                   BackgroundColor="White"
+                   HorizontalTextAlignment="Start"
+                   VerticalTextAlignment="Start"
+                   TextColor="Black"/>
+
+
+
+            <Label Text="Vous pouvez relier vos documents et vos liens de profils professionels :"
+                   TextColor="Black"
+                   FontSize="Medium"
+                   VerticalTextAlignment="Start"
+                   HorizontalTextAlignment="Start"
+                   Margin="90, 0, 0, 40"/> 
+
+            <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="Start" >
+
+                <ImageButton
+                  WidthRequest="200" 
+                  HeightRequest="70"
+                  HorizontalOptions="Start"
+                  Source="upload.png" 
+                   Margin="90, 0, 0, 0"
+                    BackgroundColor="#5e9cff"
+                    Padding="15"
+                    CornerRadius="30"
+                    
+                  />
+
+
+                <ImageButton
+                  WidthRequest="200" 
+                  HeightRequest="70"
+                  HorizontalOptions="Start"
+                  Source="link.png" 
+                   Margin="50, 0, 0, 0"
+                    BackgroundColor="#5e9cff"
+                     Padding="15"
+                    CornerRadius="30"
+                    
+                    
+                  />
+
+            </StackLayout>
+
+
+
+
 
 
         </StackLayout>
 
     </Grid>
-    
-    
-    
+
+
+
 </ContentPage>
