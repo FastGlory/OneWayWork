@@ -24,7 +24,9 @@ namespace MauiApp1.Model
         public string? image_Stagiaire { get; set; }
         [Column("MotDePasse_Stagiaire")]
         public string? MotDePasse_Stagiaire { get; set; }
-        
+        [Column("IsAdmin")]
+        public bool IsAdmin { get; set; } = false;
+
     }
  
 }

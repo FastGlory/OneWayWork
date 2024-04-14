@@ -8,7 +8,8 @@
 
         <SearchBar x:Name="filterText"
                    Placeholder="Search"
-                   SearchButtonPressed="OnSearchButtonPressed"/>
+                   SearchButtonPressed="OnSearchButtonPressed"
+                   Margin="15"/>
         <ListView x:Name="listView" ItemsSource="{Binding Stagiaires}">
             <ListView.ItemTemplate>
                 <DataTemplate>

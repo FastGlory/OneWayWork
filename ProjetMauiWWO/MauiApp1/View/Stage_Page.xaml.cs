@@ -1,11 +1,11 @@
-using MauiApp1.Model;
-using MauiApp1.Service;
 using Microsoft.Maui.Controls;
 using System;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using MauiApp1.Model;
+using MauiApp1.Service;
+using System.Diagnostics;
 
 namespace MauiApp1.View
 {
@@ -23,7 +23,13 @@ namespace MauiApp1.View
             Stages = new ObservableCollection<Stage>();
             filteredStages = new ObservableCollection<Stage>();
             BindingContext = this;
-            LoadStagesAsync();
+            listView.ItemsSource = filteredStages; // Spécifiez la source des éléments
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            LoadStagesAsync(); // Chargez les données lors de l'apparition de la page
         }
 
         private async Task LoadStagesAsync()
@@ -45,18 +51,27 @@ namespace MauiApp1.View
             }
         }
 
-        private void UpdateFilteredStages(ObservableCollection<Stage> filteredList)
+        // Résolution temporaire du bug d'over
+        private async void OnDeleteAllStageButtonClicked(object sender, EventArgs e)
         {
-            filteredStages.Clear();
-            foreach (var stage in filteredList)
+            try
             {
-                filteredStages.Add(stage);
+                Debug.WriteLine("Deleting all stages...");
+                await _localDbService.DeleteAllStages();
+                Debug.WriteLine("Stages deleted successfully.");
+                await LoadStagesAsync();
+                Debug.WriteLine("Stages reloaded successfully.");
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error deleting stages: {ex.Message}");
+                await DisplayAlert("Error", $"Error deleting stages: {ex.Message}", "OK");
             }
         }
 
         private void OnSearchButtonPressed(object sender, EventArgs e)
         {
-            FilterStages(filterText.Text);
+            FilterStages(filterText.Text); // Assurez-vous que la méthode de filtrage est correctement appelée
         }
 
         private void FilterStages(string searchText)
@@ -74,27 +89,13 @@ namespace MauiApp1.View
             UpdateFilteredStages(new ObservableCollection<Stage>(filtered));
         }
 
-        private async void OnDeleteAllStageButtonClicked(object sender, EventArgs e)
+        private void UpdateFilteredStages(ObservableCollection<Stage> filteredList)
         {
-            try
+            filteredStages.Clear();
+            foreach (var stage in filteredList)
             {
-          
-                Debug.WriteLine("Deleting all stages...");
-                await _localDbService.DeleteAllStages(); 
-                Debug.WriteLine("Stages deleted successfully.");
-
-                await LoadStagesAsync();
-                Debug.WriteLine("Stagiaires reloaded successfully.");
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Error deleting stagiaires: {ex.Message}");
-                await DisplayAlert("Error", $"Error deleting stagiaires: {ex.Message}", "OK");
+                filteredStages.Add(stage);
             }
         }
-
     }
 }
-
-
-// Le processus de suppression delete est bon pour le début de conception du programme mais sera TRÈS dangeureux lorsque les utilisateurs devronts mettre des données qui eux seront personnalisable. ISSUE OPEN !
