@@ -13,20 +13,15 @@
 
 
     <ShellContent
-       Title="Menu"
-       ContentTemplate="{DataTemplate view:Menu}"
-       Route="Menu" />
+       Title="Demande Entreprise"
+       ContentTemplate="{DataTemplate view:DemandeEntrepriseView}"
+       Route="DemandeEntrepriseView" />
     
     <ShellContent
        Title="Page vierge"
        ContentTemplate="{DataTemplate view:NewPage1}"
        Route="NewPage1" />
     
-
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
 
 </Shell>
     

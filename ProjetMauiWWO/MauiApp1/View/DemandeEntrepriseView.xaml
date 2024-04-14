@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.View.DemandeEntrepriseView"
+             Title="Demande Entreprise">
+
+
+
+
+    <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+        <Image Source="entreprise.jpg"
+         Aspect="AspectFill"
+         HorizontalOptions="FillAndExpand"   
+         VerticalOptions="FillAndExpand"/>
+
+
+        <StackLayout BackgroundColor="White"  WidthRequest="500" HeightRequest="950" HorizontalOptions="StartAndExpand" Opacity="0.9" >
+            <Label Text="Compagnies"
+           TextColor="Black"
+           FontSize="Header"
+           HorizontalOptions="Center"/>
+        </StackLayout>
+
+
+            <StackLayout BackgroundColor="White"  WidthRequest="1200" HeightRequest="600" Opacity="0.8" Padding="20" HorizontalOptions="EndAndExpand" Margin="0, 0, 60, 0">
+
+
+
+            <Label Text="Informations de la compagnie"
+                   TextColor="Black"
+                   FontSize="Header"
+                   HorizontalOptions="Center"/>
+
+
+
+
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Spacing="200" Margin="0, 400, 0, 0">
+                <Button
+             TextColor="White"
+             Text="Accepter"
+             FontSize="Small"
+             WidthRequest="200" 
+             HeightRequest="70"
+             HorizontalOptions="Start"
+             Margin="0, 0, 0, 0"
+             BackgroundColor="Green"
+             Padding="15"
+             CornerRadius="30"
+             TextTransform="Uppercase"
+    
+                />
+
+
+                <Button
+             TextColor="White"
+             Text="Refuser"
+             FontSize="Small"
+             WidthRequest="200" 
+             HeightRequest="70"
+             HorizontalOptions="Start"
+             Margin="0, 0, 30, 0"
+             BackgroundColor="Red"
+             Padding="15"
+             CornerRadius="30"
+             TextTransform="Uppercase"
+    
+                />
+
+
+
+            </StackLayout>
+
+
+        </StackLayout>
+        
+      
+
+
+
+    </Grid>
+
+
+</ContentPage>
