@@ -6,17 +6,17 @@
     xmlns:local="clr-namespace:MauiApp1"
     xmlns:view="clr-namespace:MauiApp1.View"
     Shell.FlyoutBehavior="Flyout"
-    Title="MauiApp1">
+    Title="MauiApp1"
+    BackgroundColor="White">
 
-
-
-
+    <Shell.TitleView>
+        <Label Text="MauiApp1" TextColor="White" />
+    </Shell.TitleView>
 
     <ShellContent
        Title="Accueil"
        ContentTemplate="{DataTemplate view:PageAccueil}"
        Route="PageAccueil" />
-   
 
     <ShellContent
         Title="Home"
@@ -24,5 +24,3 @@
         Route="MainPage" />
 
 </Shell>
-    
-    
