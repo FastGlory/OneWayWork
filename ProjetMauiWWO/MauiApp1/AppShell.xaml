@@ -18,10 +18,13 @@
        Route="Menu" />
     
     <ShellContent
-       Title="Stagiaire_Page"
+       Title="Stagiaire"
        ContentTemplate="{DataTemplate view:Stagiaire_Page}"
        Route="Stagiaire_Page" />
-    
+    <ShellContent
+       Title="Stage"
+       ContentTemplate="{DataTemplate view:Stage_Page}"
+       Route="Stage_Page" />
 
     <ShellContent
         Title="Home"

@@ -57,6 +57,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\alkegen.png" />
+	  <None Remove="Resources\Images\Amazon.png" />
+	  <None Remove="Resources\Images\Bell.png" />
+	  <None Remove="Resources\Images\Google.png" />
 	  <None Remove="Resources\Images\imagea.png" />
 	  <None Remove="Resources\Images\imageaj.png" />
 	  <None Remove="Resources\Images\imageb.png" />
@@ -67,6 +71,7 @@
 	  <None Remove="Resources\Images\imageg.png" />
 	  <None Remove="Resources\Images\imageh.png" />
 	  <None Remove="Resources\Images\imagei.png" />
+	  <None Remove="Resources\Images\Ubisoft.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -81,6 +86,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\NewPage1.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Stage_Page.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

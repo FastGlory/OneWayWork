@@ -39,7 +39,7 @@ namespace MauiApp1.View
         {
             try
             {
-                var stagiaires = await _localDbService.GetStagiaire();
+                var stagiaires = await _localDbService.GetStagiaires();
               
                 foreach (var stagiaire in stagiaires)
                 {

@@ -20,6 +20,7 @@ namespace MauiApp1
                 });
             builder.Services.AddSingleton<LocalDbService>();
             builder.Services.AddTransient<Stagiaire_Page>();
+            builder.Services.AddTransient<Stage_Page>();
 #if DEBUG
             builder.Logging.AddDebug();
 #endif
