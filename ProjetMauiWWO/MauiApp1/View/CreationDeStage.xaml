@@ -1,0 +1,31 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.View.CreationDeStage"
+             Title="CreationDeStage"
+             BackgroundColor="White">
+
+    <FlexLayout Direction="Column">
+        <VerticalStackLayout Padding="10" FlexLayout.Basis="400" BackgroundColor="White" Margin="10"  >
+            <Entry x:Name="nomStage" Placeholder="Nom du stage" TextColor="Black" Margin="0, 0, 0, 10"/>
+            <Entry x:Name="AddressStage" Placeholder="Adresse" TextColor="Black" Margin="0, 0, 0, 10"/>
+            <Entry x:Name="email" Placeholder="Email" TextColor="Black" Margin="0, 0, 0, 10"/>
+            <Entry x:Name="Phone" Placeholder="Numéro de téléphone" TextColor="Black" Margin="0, 0, 0, 10"/>
+            <Button x:Name="saveButton" Text="Ajouter" BackgroundColor="DodgerBlue" TextColor="White"/>
+        </VerticalStackLayout>
+
+        <ListView x:Name="listView" FlexLayout.Grow="1" HasUnevenRows="True" Margin="10">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <VerticalStackLayout Padding="10" BackgroundColor="White" Margin="0, 0, 0, 10">
+                            <Label Text="{Binding nomStage}" FontSize="17" FontAttributes="Bold" TextColor="Black" Margin="0, 0, 0, 5"/>
+                            <Label Text="{Binding AddressStage}" TextColor="Black" Margin="0, 0, 0, 5"/>
+                            <Label Text="{Binding email}" TextColor="Black" Margin="0, 0, 0, 5"/>
+                            <Label Text="{Binding Phone}" TextColor="Black" Margin="0, 0, 0, 5"/>
+                        </VerticalStackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </FlexLayout>
+</ContentPage>

@@ -13,9 +13,9 @@
 
 
     <ShellContent
-       Title="Menu"
-       ContentTemplate="{DataTemplate view:Menu}"
-       Route="Menu" />
+       Title="Creation de Stage"
+       ContentTemplate="{DataTemplate view:CreationPageStage}"
+       Route="CreationPageStage" />
     
     <ShellContent
        Title="Page vierge"
