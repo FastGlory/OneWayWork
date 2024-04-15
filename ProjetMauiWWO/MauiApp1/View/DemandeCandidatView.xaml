@@ -48,6 +48,7 @@
             <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="Start" >
 
                 <ImageButton
+                    x:Name="DocBtn"
                   WidthRequest="200" 
                   HeightRequest="70"
                   HorizontalOptions="Start"
@@ -56,6 +57,7 @@
                     BackgroundColor="#5e9cff"
                     Padding="15"
                     CornerRadius="30"
+                    Clicked="UploadDocBtn"
                     
                   />
 
@@ -69,23 +71,25 @@
                     BackgroundColor="#5e9cff"
                      Padding="15"
                     CornerRadius="30"
+                   
                     
                     
                   />
 
 
-              <Button
+
+                <Button
                   TextColor="White"
                   Text="Confirmer"
                   FontSize="Small"
-               WidthRequest="200" 
-             HeightRequest="70"
-             HorizontalOptions="Start"
-              Margin="630, 0, 0, 0"
-              BackgroundColor="#1a2d59"
-              Padding="15"
-              CornerRadius="30"
-              TextTransform="Uppercase"
+                   WidthRequest="200" 
+                 HeightRequest="70"
+                 HorizontalOptions="Start"
+                  Margin="630, 0, 0, 0"
+                  BackgroundColor="#1a2d59"
+                  Padding="15"
+                  CornerRadius="30"
+                  TextTransform="Uppercase"
                  
                />
 
