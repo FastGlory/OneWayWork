@@ -2,45 +2,52 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.View.PageAccueil"
-             BackgroundColor="White">
+             BackgroundColor="Transparent" >
 
+    <!--<Grid>
+        <Border Background="Black" />
+    </Grid>
 
     <Grid VerticalOptions="Center" HorizontalOptions="Center">
         <Image
              Source="image1.png"
              Aspect="AspectFill"
-             HorizontalOptions="FillAndExpand"   
-             VerticalOptions="FillAndExpand"   />
-
+             HorizontalOptions="FillAndExpand"
+             VerticalOptions="FillAndExpand" />
 
         <StackLayout ClassId="section-Accueil" HorizontalOptions="Center" VerticalOptions="Center" Margin="0, 0, 60, 0">
             <Label 
-            Text="Bienvenue dans One Way Work !"
-            FontSize="Header"
-            HorizontalTextAlignment="Center"
-            TextColor="White"
-            FontAttributes="Bold"/>
-
+                Text="Bienvenue dans One Way Work !"
+                FontSize="Header"
+                HorizontalTextAlignment="Center"
+                TextColor="White"
+                FontAttributes="Bold"/>
 
             <Label 
-             Text="Les meilleurs stages pour vous"
-             HorizontalOptions="Center"
-             FontSize="Title"
-             TextColor="White"
-             FontAttributes="Bold"/>
+                Text="Les meilleurs stages pour vous"
+                HorizontalOptions="Center"
+                FontSize="Title"
+                TextColor="White"
+                FontAttributes="Bold"/>
 
             <Button
-            x:Name="btnEnSavoirPlus"
-             Text="En savoir plus"
-             HorizontalOptions="Center"
-             VerticalOptions="StartAndExpand"
-             TextColor="White"
-             Margin="0,40,0,0"
-             BackgroundColor="CadetBlue"
-             Clicked="OnButtonClicked" />
-
+                x:Name="btnEnSavoirPlus"
+                Text="En savoir plus"
+                HorizontalOptions="Center"
+                VerticalOptions="StartAndExpand"
+                TextColor="White"
+                Margin="0,40,0,0"
+                BackgroundColor="CadetBlue"
+                Clicked="OnButtonClicked" />
         </StackLayout>
+    </Grid>-->
+    <StackLayout BackgroundColor="White" WidthRequest="250" HeightRequest="680" HorizontalOptions="StartAndExpand" Opacity="0.9">
+        <Label Text="Your Label Text"
+           TextColor="Black"
+           FontSize="Header"
+           HorizontalTextAlignment="Center" />
+    </StackLayout>
 
+ 
 
-    </Grid>
 </ContentPage>
