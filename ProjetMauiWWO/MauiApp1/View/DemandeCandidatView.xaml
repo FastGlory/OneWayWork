@@ -64,13 +64,13 @@
 
                 <ImageButton
                   WidthRequest="200" 
-                  HeightRequest="70"
-                  HorizontalOptions="Start"
-                  Source="link.png" 
-                   Margin="50, 0, 0, 0"
-                    BackgroundColor="#5e9cff"
-                     Padding="15"
-                    CornerRadius="30"
+                 HeightRequest="70"
+                 HorizontalOptions="Start"
+                 Source="link.png" 
+                 Margin="50, 0, 0, 0"
+                 BackgroundColor="#5e9cff"
+                 Padding="15"
+                 CornerRadius="30"
                    
                     
                     
