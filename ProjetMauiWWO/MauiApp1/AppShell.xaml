@@ -10,13 +10,10 @@
 
 
 
-
-
     <ShellContent
-       Title="Menu"
-       ContentTemplate="{DataTemplate view:Menu}"
-       Route="Menu" />
-    
+     Title="Menu"
+     ContentTemplate="{DataTemplate view:Menu}"
+     Route="Menu" />
     <ShellContent
        Title="Stagiaire"
        ContentTemplate="{DataTemplate view:Stagiaire_Page}"
@@ -25,7 +22,10 @@
        Title="Stage"
        ContentTemplate="{DataTemplate view:Stage_Page}"
        Route="Stage_Page" />
-
+    <ShellContent
+       Title="Connexion"
+       ContentTemplate="{DataTemplate view:ConnexionView}"
+       Route="ConnexionView" />
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
