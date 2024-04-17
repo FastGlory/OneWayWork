@@ -6,12 +6,9 @@
     xmlns:local="clr-namespace:MauiApp1"
     xmlns:view="clr-namespace:MauiApp1.View"
     Shell.FlyoutBehavior="Flyout"
-    Title="MauiApp1"
-    BackgroundColor="White">
+    BackgroundColor="Black">
 
-    <Shell.TitleView>
-        <Label Text="MauiApp1" TextColor="White" />
-    </Shell.TitleView>
+   
 
     <ShellContent
        Title="Accueil"

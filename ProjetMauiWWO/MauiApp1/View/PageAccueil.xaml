@@ -2,11 +2,11 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.View.PageAccueil"
-             BackgroundColor="Transparent" >
+             BackgroundColor="black" >
 
     <!--<Grid>
         <Border Background="Black" />
-    </Grid>
+    </Grid>-->
 
     <Grid VerticalOptions="Center" HorizontalOptions="Center">
         <Image
@@ -15,7 +15,7 @@
              HorizontalOptions="FillAndExpand"
              VerticalOptions="FillAndExpand" />
 
-        <StackLayout ClassId="section-Accueil" HorizontalOptions="Center" VerticalOptions="Center" Margin="0, 0, 60, 0">
+        <!--<StackLayout ClassId="section-Accueil" HorizontalOptions="Center" VerticalOptions="Center" Margin="0, 0, 60, 0">
             <Label 
                 Text="Bienvenue dans One Way Work !"
                 FontSize="Header"
@@ -41,13 +41,46 @@
                 Clicked="OnButtonClicked" />
         </StackLayout>
     </Grid>-->
-    <StackLayout BackgroundColor="White" WidthRequest="250" HeightRequest="680" HorizontalOptions="StartAndExpand" Opacity="0.9">
-        <Label Text="Your Label Text"
-           TextColor="Black"
-           FontSize="Header"
-           HorizontalTextAlignment="Center" />
-    </StackLayout>
 
- 
+        <Grid RowDefinitions="Auto, *" ColumnDefinitions="*, Auto, Auto">
+            <StackLayout Grid.Row="0" Grid.Column="0" BackgroundColor="White" WidthRequest="300" HeightRequest="1000" HorizontalOptions="StartAndExpand" Opacity="0.6">
+                <Label Text="Accueil"
+               TextColor="White"
+               FontSize="Header"
+               HorizontalTextAlignment="Center" />
+            </StackLayout>
+            <Grid HorizontalOptions="Center" VerticalOptions="Center">
+                <Grid RowDefinitions="Auto" ColumnDefinitions="*, Auto, Auto">
+                    <StackLayout Grid.Row="0" Grid.Column="1" VerticalOptions="StartAndExpand" HorizontalOptions="EndAndExpand"  Margin="0, 0, 50, 0" Spacing="50">
+                        <StackLayout BackgroundColor="White" WidthRequest="200" HeightRequest="200" Opacity="0.9">
+                            <Label Text="Your Label Text"
+                        TextColor="White"
+                        FontSize="Header" />
+                        </StackLayout>
+
+                        <StackLayout BackgroundColor="White" WidthRequest="200" HeightRequest="200" Opacity="0.9">
+                            <Label Text="Your Label Text"
+                        TextColor="White"
+                        FontSize="Header" />
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="0" Grid.Column="2" VerticalOptions="StartAndExpand" HorizontalOptions="EndAndExpand" Margin="0, 0, 50, 0" Spacing="50">
+                        <StackLayout BackgroundColor="White" WidthRequest="200" HeightRequest="200" Opacity="0.9">
+                            <Label Text="Your Label Text"
+                         TextColor="White"
+                        FontSize="Header" />
+                        </StackLayout>
+
+                        <StackLayout BackgroundColor="White" WidthRequest="200" HeightRequest="200" Opacity="0.9">
+                            <Label Text="Your Label Text"
+                         TextColor="White"
+                        FontSize="Header" />
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
 
 </ContentPage>
