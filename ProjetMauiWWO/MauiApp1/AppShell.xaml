@@ -8,10 +8,6 @@
     Shell.FlyoutBehavior="Flyout"
     Title="MauiApp1">
 
-
-
-
-
     <ShellContent
        Title="Menu"
        ContentTemplate="{DataTemplate view:Menu}"
@@ -25,6 +21,11 @@
        Title="Stage"
        ContentTemplate="{DataTemplate view:Stage_Page}"
        Route="Stage_Page" />
+
+    <ShellContent
+       Title="Connexion"
+       ContentTemplate="{DataTemplate view:ConnexionView}"
+       Route="ConnexionView" />
 
     <ShellContent
         Title="Home"
