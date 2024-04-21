@@ -40,7 +40,7 @@ namespace MauiApp1.Service
             return await _connection.Table<Stagiaire>().Where(x => x.Id_Stagiaire == id).FirstOrDefaultAsync();
         }
 
-        public async Task CreateStagiaire(Stagiaire stagiaire)
+        public async Task AddStagiaire(Stagiaire stagiaire)
         {
             await _connection.InsertAsync(stagiaire);
         }
@@ -54,6 +54,7 @@ namespace MauiApp1.Service
         {
             await _connection.DeleteAsync(stagiaire);
         }
+
 
         // Méthodes CRUD pour la table Stage
         public async Task<List<Stage>> GetStages()

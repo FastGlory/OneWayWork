@@ -21,6 +21,8 @@ namespace MauiApp1
             builder.Services.AddSingleton<LocalDbService>();
             builder.Services.AddTransient<Stagiaire_Page>();
             builder.Services.AddTransient<Stage_Page>();
+            builder.Services.AddTransient<ConnexionView>();
+            builder.Services.AddTransient<InscriptionView>();
 #if DEBUG
             builder.Logging.AddDebug();
 #endif

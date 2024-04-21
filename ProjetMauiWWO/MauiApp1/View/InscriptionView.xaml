@@ -33,6 +33,7 @@
 
                     <Entry
                          Placeholder="Prénom"
+                         x:Name="AddPrenom"
                          BackgroundColor="White"
                          PlaceholderColor="White"
                          Opacity="0.5"
@@ -43,7 +44,7 @@
                     <Entry
                          Placeholder="Nom"
                          BackgroundColor="White"
-                         IsPassword="True"
+                         x:Name="AddNom"
                          Opacity="0.5"
                         HorizontalOptions="FillAndExpand"
                         Margin="10, 0, 0, 0"
@@ -55,6 +56,7 @@
 
                 <Entry
                     Placeholder="Email"
+                    x:Name="AddEmail"
                     BackgroundColor="White"
                     PlaceholderColor="White"
                     Opacity="0.5"
@@ -62,22 +64,25 @@
                    />
                 <Entry
                     Placeholder="Mot de passe"
+                    x:Name="AddPassword"
                     BackgroundColor="White"
                     IsPassword="True"
                     Opacity="0.5"
                     Margin="0, 10, 0, 0"
                />
 
-                <StackLayout Orientation="Horizontal" Margin="0, 10, 0, 0" HorizontalOptions="Center" >
-                    <Label Text="Compte Administrateur" VerticalOptions="Center"/>
-                    <Switch x:Name="isAdminSwitch" VerticalOptions="Center" Margin="10, 0, 0, 0"/>
-                </StackLayout>
-
                 <Button 
                     Text="S'inscrire"
+                    Clicked="CreactionClick"
                     BackgroundColor="#5a8cdb"
                     Margin="90, 20, 90, 0"
                    />
+                <Label 
+                 x:Name="MessageLabel"
+                 Text=""
+                 TextColor="Red"
+                 HorizontalOptions="Center"
+                 Margin="0, 5, 0, 0"/>
 
                 <Label 
                    Text="Vous avez déjà un compte ?  Connectez-vous !"

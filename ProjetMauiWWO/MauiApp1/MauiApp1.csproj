@@ -71,6 +71,7 @@
 	  <None Remove="Resources\Images\imageg.png" />
 	  <None Remove="Resources\Images\imageh.png" />
 	  <None Remove="Resources\Images\imagei.png" />
+	  <None Remove="Resources\Images\Neutral.png" />
 	  <None Remove="Resources\Images\Ubisoft.png" />
 	</ItemGroup>
 
@@ -97,6 +98,10 @@
 	  <MauiXaml Update="View\Stage_Page.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="ViewModel\" />
 	</ItemGroup>
 
 </Project>

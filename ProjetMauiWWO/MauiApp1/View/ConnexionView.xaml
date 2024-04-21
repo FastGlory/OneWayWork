@@ -4,11 +4,7 @@
              x:Class="MauiApp1.View.ConnexionView"
              Title="Connexion">
 
-
-
-
     <Grid>
-
         <Image
          Source="inscriptionmenu.jpg"
          Aspect="AspectFill"
@@ -32,12 +28,14 @@
             <StackLayout Margin="50, 30, 50, 0">
                 <Entry
                     Placeholder="Nom d'utilisateur"
+                    x:Name="NomUtilisateur"
                     BackgroundColor="White"
                     PlaceholderColor="White"
                     Opacity="0.5"
                    />
                 <Entry
                     Placeholder="Mot de passe"
+                    x:Name="MotDePasseUtilisateur"
                     BackgroundColor="White"
                     IsPassword="True"
                     Opacity="0.5"
@@ -46,12 +44,20 @@
 
                 <Button 
                     Text="Connexion"
+                    Clicked="AuthentificationClick"
                     BackgroundColor="#5a8cdb"
                     Margin="90, 20, 90, 0"
                    />
 
                 <Label 
-                     Text="Vous n'avez pas de compte ?  Incrivez-vous !"
+                     x:Name="MessageLabel"
+                     Text=""
+                     TextColor="Red"
+                     HorizontalOptions="Center"
+                     Margin="0, 5, 0, 0"/>
+
+                <Label 
+                     Text="Vous n'avez pas de compte ?  Inscrivez-vous !"
                     TextColor="White"
                      HorizontalOptions="Center"
                     Margin="0, 5, 0, 0">
@@ -72,5 +78,5 @@
 
 
     </Grid>
-    
+
 </ContentPage>

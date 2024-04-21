@@ -19,6 +19,7 @@ namespace MauiApp1.View
         public Stagiaire_Page(LocalDbService dbService)
         {
             InitializeComponent();
+
             _localDbService = dbService;
             Stagiaires = new ObservableCollection<Stagiaire>();
             filteredStagiaires = new ObservableCollection<Stagiaire>();
