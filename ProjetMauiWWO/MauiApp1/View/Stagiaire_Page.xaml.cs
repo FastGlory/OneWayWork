@@ -113,3 +113,4 @@ namespace MauiApp1.View
 
 
 // Filtre : https://support.syncfusion.com/kb/article/11354/how-to-filter-the-items-in-net-maui-listview-sflistview-using-mvvm?isInternalRefresh=False 
+// La majorité des try catch erreur on été trouvé dans le net pour accélérer le processus de vérification

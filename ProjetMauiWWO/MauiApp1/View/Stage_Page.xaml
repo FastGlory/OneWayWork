@@ -10,7 +10,7 @@
            Placeholder="Search"
            SearchButtonPressed="OnSearchButtonPressed"
            Margin="15"/>
-      
+
         <ListView x:Name="listView" ItemsSource="{Binding Stages}">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -25,29 +25,30 @@
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
                             <Frame Margin="25"
-                                   HeightRequest="100"
-                                   WidthRequest="100"
-                                   CornerRadius="50"
-                                   HasShadow="False"
-                                   Padding="0">
-                                <Image Source="{Binding image_Stage}"
-                                       Aspect="AspectFill"
-                                       HeightRequest="100"
-                                       WidthRequest="100" />
+                           HeightRequest="100"
+                           WidthRequest="100"
+                           CornerRadius="50"
+                           HasShadow="False"
+                           Padding="0">
+                                <Image Source="{Binding Image_Stage}"
+                               Aspect="AspectFill"
+                               HeightRequest="100"
+                               WidthRequest="100" />
                             </Frame>
 
                             <Label Grid.Column="1"
-                                   Text="{Binding nom_stage}"
-                                   FontAttributes="Bold" />
+                           Text="{Binding Nom_Stage}"
+                           FontAttributes="Bold" />
                             <Label Grid.Row="1"
-                                   Grid.Column="1"
-                                   Text="{Binding Compagnie_Stage}"
-                                   FontAttributes="Italic"
-                                   VerticalOptions="End" />
+                           Grid.Column="1"
+                           Text="{Binding Entreprise.Nom_Entreprise}"
+                           FontAttributes="Italic"
+                           VerticalOptions="End" />
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
     </StackLayout>
 </ContentPage>

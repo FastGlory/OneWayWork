@@ -23,44 +23,52 @@ namespace MauiApp1.View
             Stages = new ObservableCollection<Stage>();
             filteredStages = new ObservableCollection<Stage>();
             BindingContext = this;
-            listView.ItemsSource = filteredStages; // Spécifiez la source des éléments
+            listView.ItemsSource = filteredStages;
         }
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
+        // Appel de la méthode OnAppearing() de la classe parente (ContentPage)
             base.OnAppearing();
-            LoadStagesAsync(); // Chargez les données lors de l'apparition de la page
-        }
+            await LoadStagesAsync(); // La on va simplement charger
+        } // Permet de montrer les informations des stages à l'utilisateur et le base. c'est une manière de faire référence directement
 
         private async Task LoadStagesAsync()
         {
             try
             {
+                Debug.WriteLine("Chargement des stage..."); // Inutile mais stylé
                 var stages = await _localDbService.GetStages();
+                Debug.WriteLine($"Nombre de stage AVANT insération: {stages.Count}");
+
+                Stages.Clear();
 
                 foreach (var stage in stages)
                 {
+                    stage.Entreprise = await _localDbService.GetEntrepriseById(stage.Id_Entreprise);
                     Stages.Add(stage);
                 }
 
-                UpdateFilteredStages(Stages);
+                Debug.WriteLine($"Nombre de stage APRÈS insération: {Stages.Count}");
+
+                FilterStages(filterText.Text);
+
+                Debug.WriteLine("Stages loaded successfully.");
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Error", $"Impossible de récupérer les stages: {ex.Message}", "OK");
+                Debug.WriteLine($"Error loading stages: {ex.Message}");
+                await DisplayAlert("Error", $"Unable to retrieve stages: {ex.Message}", "OK"); // On affiche directement le message 
             }
         }
 
-        // Résolution temporaire du bug d'over
+
         private async void OnDeleteAllStageButtonClicked(object sender, EventArgs e)
         {
             try
             {
-                Debug.WriteLine("Deleting all stages...");
                 await _localDbService.DeleteAllStages();
-                Debug.WriteLine("Stages deleted successfully.");
                 await LoadStagesAsync();
-                Debug.WriteLine("Stages reloaded successfully.");
             }
             catch (Exception ex)
             {
@@ -71,7 +79,7 @@ namespace MauiApp1.View
 
         private void OnSearchButtonPressed(object sender, EventArgs e)
         {
-            FilterStages(filterText.Text); // Assurez-vous que la méthode de filtrage est correctement appelée
+            FilterStages(filterText.Text);
         }
 
         private void FilterStages(string searchText)
@@ -83,8 +91,9 @@ namespace MauiApp1.View
             }
 
             var filtered = Stages.Where(s =>
-                s.nom_stage.ToLower().Contains(searchText.ToLower()) ||
-                s.Compagnie_Stage.ToLower().Contains(searchText.ToLower())).ToList();
+                s.Nom_Stage.ToLower().Contains(searchText.ToLower()) ||
+                (s.Entreprise != null && s.Entreprise.Nom_Entreprise.ToLower().Contains(searchText.ToLower())))
+                .ToList(); // Il fuat passer par entreprise pour aller voir ces informations
 
             UpdateFilteredStages(new ObservableCollection<Stage>(filtered));
         }
@@ -99,3 +108,5 @@ namespace MauiApp1.View
         }
     }
 }
+
+// La majorité des try catch erreur on été trouvé dans le net pour accélérer le processus de vérification
