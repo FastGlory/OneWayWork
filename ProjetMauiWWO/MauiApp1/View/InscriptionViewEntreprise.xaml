@@ -34,7 +34,7 @@
                      Placeholder="Nom de l'entreprise"
                      x:Name="AddNomEntreprise"
                      BackgroundColor="White"
-                     PlaceholderColor="White"
+                     PlaceholderColor="Black"
                      Opacity="0.5"
                     HorizontalOptions="FillAndExpand"
                     
@@ -43,6 +43,7 @@
                     <Entry
                      Placeholder="Email Entreprise"
                      BackgroundColor="White"
+                        PlaceholderColor="Black"
                      x:Name="AddEmailEntreprise"
                      Opacity="0.5"
                     HorizontalOptions="FillAndExpand"
@@ -57,7 +58,7 @@
                 Placeholder="Mot de passe"
                 x:Name="AddPasswordEntreprise"
                 BackgroundColor="White"
-                PlaceholderColor="White"
+                PlaceholderColor="Black"
                 IsPassword="True"
                 Opacity="0.5"
                 Margin="0, 10, 0, 0"
@@ -66,6 +67,7 @@
                 Placeholder="Insérez le code secret"
                 x:Name="CodeSecret"
                 BackgroundColor="White"
+                PlaceholderColor="Black"
                 IsPassword="True"
                 Opacity="0.5"
                 Margin="0, 10, 0, 0"

@@ -26,10 +26,10 @@ namespace MauiApp1.Model
 
         [Column("Id_Entreprise")] // Clé étrangère
         public int Id_Entreprise { get; set; }
-
-
+ 
+            
         // Propriété de navigation
-        [Ignore]
+        [Ignore] // Ignore les autres attributs de entreprise (overload initule)
         public Entreprise Entreprise { get; set; }
     }
 }
