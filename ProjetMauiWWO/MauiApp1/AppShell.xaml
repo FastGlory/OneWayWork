@@ -1,29 +1,23 @@
-<Shell
-    x:Class="MauiApp1.AppShell"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:MauiApp1"
-    xmlns:view="clr-namespace:MauiApp1.View"
-    Shell.FlyoutBehavior="Flyout"
-    Title="MauiApp1">
-
+<Shell x:Class="MauiApp1.AppShell"
+       xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:MauiApp1"
+       xmlns:view="clr-namespace:MauiApp1.View"
+       Shell.FlyoutBehavior="Flyout"
+       Title="MauiApp1">
     <Shell.TitleView>
         <Label Text="" TextColor="White" />
     </Shell.TitleView>
 
-    <ShellContent
-       Title="Creation de Stage"
-       ContentTemplate="{DataTemplate view:CreationPageStage}"
-       Route="CreationPageStage" />
+    <ShellContent Title="Creation de Stage"
+                  ContentTemplate="{DataTemplate view:CreationDeStage}"
+                  Route="CreationDeStage" />
 
-    <ShellContent
-       Title="Page vierge"
-       ContentTemplate="{DataTemplate view:NewPage1}"
-       Route="NewPage1" />
+    <ShellContent Title="Page vierge"
+                  ContentTemplate="{DataTemplate view:NewPage1}"
+                  Route="NewPage1" />
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-
+    <ShellContent Title="Home"
+                  ContentTemplate="{DataTemplate local:MainPage}"
+                  Route="MainPage" />
 </Shell>

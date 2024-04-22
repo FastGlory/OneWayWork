@@ -3,8 +3,18 @@
              x:Class="MauiApp1.View.CreationDeStage"
              BackgroundColor="White">
 
-    <FlexLayout Direction="Column">
-        <VerticalStackLayout Padding="10" FlexLayout.Basis="400" BackgroundColor="White" Margin="10"  >
+
+
+    
+    
+    <FlexLayout Direction="Column" >
+        <Label Text="Création des offres de stage"
+               FontSize="Header"
+               HorizontalTextAlignment="Center"
+               TextColor="Black"
+               FontAttributes="Bold"/>
+        
+        <VerticalStackLayout Padding="10" FlexLayout.Basis="400" BackgroundColor="White" Margin="10">
             <Entry x:Name="nomStage" Placeholder="Nom du stage" TextColor="Black" Margin="0, 0, 0, 10"/>
             <Entry x:Name="AddressStage" Placeholder="Adresse" TextColor="Black" Margin="0, 0, 0, 10"/>
             <Entry x:Name="email" Placeholder="Email" TextColor="Black" Margin="0, 0, 0, 10"/>
@@ -27,4 +37,5 @@
             </ListView.ItemTemplate>
         </ListView>
     </FlexLayout>
+
 </ContentPage>
