@@ -22,6 +22,11 @@ public partial class InscriptionView : ContentPage
         await Navigation.PushAsync(new ConnexionView(_localDbService));
     }
 
+    private async void OnConnexionEntreprise(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new InscriptionViewEntreprise(_localDbService));
+    }
+
     private async void CreactionClick(object sender, EventArgs e)
     {
         string username = AddNom.Text;

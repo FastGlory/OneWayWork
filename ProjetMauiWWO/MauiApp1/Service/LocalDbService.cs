@@ -206,6 +206,11 @@ namespace MauiApp1.Service
         {
             await _connection.DeleteAllAsync<Stage>();
         }
+        public async Task DeleteAllEntreprises()
+        {
+            await _connection.DeleteAllAsync<Entreprise>();
+        }
+
 
     }
 }

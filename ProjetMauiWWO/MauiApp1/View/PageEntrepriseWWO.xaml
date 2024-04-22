@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.View.PageEntrepriseWWO"
+             Title="PageEntrepriseWWO">
+    <StackLayout>
+        <Button Text="Supprimer toutes les entreprises"
+            Clicked="OnDeleteAllEntreprisesButtonClicked"/>
+        <SearchBar x:Name="filterText"
+               Placeholder="Search"
+               SearchButtonPressed="OnSearchButtonPressed"
+               Margin="15"/>
+        <ListView x:Name="listView" ItemsSource="{Binding FilteredEntreprises}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Frame Margin="5" HeightRequest="80" WidthRequest="80" CornerRadius="40">
+                                <Image Source="{Binding Image_Entreprise}" Aspect="AspectFill"/>
+                            </Frame>
+                            <StackLayout Grid.Column="1" Orientation="Vertical">
+                                <Label Text="{Binding Nom_Entreprise}" FontAttributes="Bold"/>
+                                <Label Text="{Binding Email_Entreprise}" FontAttributes="Italic"/>
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

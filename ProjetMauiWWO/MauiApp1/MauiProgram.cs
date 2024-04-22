@@ -23,6 +23,7 @@ namespace MauiApp1
             builder.Services.AddTransient<Stage_Page>();
             builder.Services.AddTransient<ConnexionView>();
             builder.Services.AddTransient<InscriptionView>();
+            builder.Services.AddTransient<PageEntrepriseWWO>();
 #if DEBUG
             builder.Logging.AddDebug();
 #endif

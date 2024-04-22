@@ -27,6 +27,11 @@
        ContentTemplate="{DataTemplate view:Stage_Page}"
        Route="Stage_Page" />
 
+    <ShellContent
+       Title="Entreprise"
+       ContentTemplate="{DataTemplate view:PageEntrepriseWWO}"
+       Route="PageEntrepriseWWO" />
+
 
 </Shell>
     

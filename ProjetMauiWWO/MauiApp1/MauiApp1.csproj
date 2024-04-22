@@ -92,7 +92,10 @@
 	  <MauiXaml Update="View\Menu.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="View\NewPage1.xaml">
+	  <MauiXaml Update="View\InscriptionViewEntreprise.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\PageEntrepriseWWO.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\Stage_Page.xaml">
@@ -102,6 +105,12 @@
 
 	<ItemGroup>
 	  <Folder Include="ViewModel\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="View\InscriptionViewEntreprise.xaml.cs">
+	    <DependentUpon>InscriptionViewEntreprise.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 </Project>
