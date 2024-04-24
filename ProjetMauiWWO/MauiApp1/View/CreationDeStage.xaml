@@ -5,32 +5,46 @@
 
 
 
-    
-    
+
+
     <FlexLayout Direction="Column" >
-        <Label Text="Création des offres de stage"
+        <VerticalStackLayout Padding="10" FlexLayout.Basis="200" BackgroundColor="CadetBlue" Margin="10">
+
+            <Label Text="Bienvenue sur la page de création de stage"
                FontSize="Header"
                HorizontalTextAlignment="Center"
                TextColor="Black"
                FontAttributes="Bold"/>
-        
-        <VerticalStackLayout Padding="10" FlexLayout.Basis="400" BackgroundColor="White" Margin="10">
-            <Entry x:Name="nomStage" Placeholder="Nom du stage" TextColor="Black" Margin="0, 0, 0, 10"/>
-            <Entry x:Name="AddressStage" Placeholder="Adresse" TextColor="Black" Margin="0, 0, 0, 10"/>
-            <Entry x:Name="email" Placeholder="Email" TextColor="Black" Margin="0, 0, 0, 10"/>
-            <Entry x:Name="Phone" Placeholder="Numéro de téléphone" TextColor="Black" Margin="0, 0, 0, 10"/>
-            <Button x:Name="saveButton" Text="Ajouter" BackgroundColor="DodgerBlue" TextColor="White"/>
+    
+        <Label  
+            Text="Notre système de gestion de stage ci-dessous vous permettra de créer des stages pour que les étudiants puissent choisir les stages qui les intéressent." 
+            HorizontalTextAlignment="Center"
+            FontAttributes="Italic"/>
+
         </VerticalStackLayout>
 
+
+        <VerticalStackLayout Padding="10" FlexLayout.Basis="400" BackgroundColor="White" Margin="10">
+            <Entry x:Name="nomStage" Placeholder="Nom du stage" TextColor="Black" Margin="0, 0, 0, 10"/>
+            <Entry x:Name="Dispo" Placeholder="Disponibilité" TextColor="Black" Margin="0, 0, 0, 10"/>
+            <Entry x:Name="Salaire" Placeholder="Salaire du stage" TextColor="Black" Margin="0, 0, 0, 10"/>
+            <Entry x:Name="Description" Placeholder="Brève description" TextColor="Black" Margin="0, 0, 0, 10"/>
+            <Button x:Name="saveButton" Text="Ajouter" BackgroundColor="DodgerBlue" TextColor="White"  Margin="0, 0, 0, 20"/>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Padding="-100" Margin="10">
+            <Button x:Name="ModifierButton" Text="Modification" BackgroundColor="DodgerBlue" TextColor="White"/>
+        </VerticalStackLayout>
+        
         <ListView x:Name="listView" FlexLayout.Grow="1" HasUnevenRows="True" Margin="10">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <VerticalStackLayout Padding="10" BackgroundColor="White" Margin="0, 0, 0, 10">
                             <Label Text="{Binding nomStage}" FontSize="17" FontAttributes="Bold" TextColor="Black" Margin="0, 0, 0, 5"/>
-                            <Label Text="{Binding AddressStage}" TextColor="Black" Margin="0, 0, 0, 5"/>
-                            <Label Text="{Binding email}" TextColor="Black" Margin="0, 0, 0, 5"/>
-                            <Label Text="{Binding Phone}" TextColor="Black" Margin="0, 0, 0, 5"/>
+                            <Label Text="{Binding Dispo}" TextColor="Black" Margin="0, 0, 0, 5"/>
+                            <Label Text="{Binding Salaire}" TextColor="Black" Margin="0, 0, 0, 5"/>
+                            <Label Text="{Binding Description}" TextColor="Black" Margin="0, 0, 0, 5" />
                         </VerticalStackLayout>
                     </ViewCell>
                 </DataTemplate>
