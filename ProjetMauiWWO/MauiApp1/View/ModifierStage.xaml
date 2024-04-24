@@ -1,23 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiApp1.View.CreationDeStage"
-             BackgroundColor="White">
-
-
-
-
+             x:Class="MauiApp1.View.ModifierStage"
+             Title="ModifierStage">
 
     <FlexLayout Direction="Column" >
         <VerticalStackLayout Padding="10" FlexLayout.Basis="200" BackgroundColor="LightPink" Margin="10">
 
-            <Label Text="Bienvenue sur la page de création de stage"
+            <Label Text="Bienvenue sur la page de modification "
                FontSize="Header"
                HorizontalTextAlignment="Center"
                TextColor="Black"
                FontAttributes="Bold"/>
-    
-        <Label  
-            Text="Notre système de gestion de stage ci-dessous vous permettra de créer des stages pour que les étudiants puissent choisir les stages qui les intéressent." 
+
+            <Label  
+            Text="Notre système de gestion de stage ci-dessous vous permettra de modifier des stages." 
             HorizontalTextAlignment="Center"
             FontAttributes="Italic"/>
 
@@ -30,10 +27,9 @@
             <Entry x:Name="Salaire" Placeholder="Salaire du stage" TextColor="Black" Margin="0, 0, 0, 10"/>
             <Entry x:Name="Description" Placeholder="Brève description" TextColor="Black" Margin="0, 0, 0, 10"/>
             <Button x:Name="saveButton" Text="Ajouter" BackgroundColor="LightGray" TextColor="White"  Margin="0, 0, 0, 20" FontAttributes="Bold"/>
-            <Button x:Name="ModifierButton" Text="Modification" BackgroundColor="LightGray" TextColor="White" FontAttributes="Bold" Clicked="OnButtonClicked"/>
         </VerticalStackLayout>
 
- 
+
         <ListView x:Name="listView" FlexLayout.Grow="1" HasUnevenRows="True" Margin="10">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -49,5 +45,4 @@
             </ListView.ItemTemplate>
         </ListView>
     </FlexLayout>
-
 </ContentPage>
