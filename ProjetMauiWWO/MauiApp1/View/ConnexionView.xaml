@@ -30,13 +30,14 @@
                     Placeholder="Nom d'utilisateur"
                     x:Name="NomUtilisateur"
                     BackgroundColor="White"
-                    PlaceholderColor="White"
+                    PlaceholderColor="Black"
                     Opacity="0.5"
                    />
                 <Entry
                     Placeholder="Mot de passe"
                     x:Name="MotDePasseUtilisateur"
                     BackgroundColor="White"
+                    PlaceholderColor="Black"
                     IsPassword="True"
                     Opacity="0.5"
                     Margin="0, 10, 0, 0"
