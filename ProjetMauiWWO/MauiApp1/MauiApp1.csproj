@@ -104,10 +104,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="ViewModel\" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <Compile Update="View\InscriptionViewEntreprise.xaml.cs">
 	    <DependentUpon>InscriptionViewEntreprise.xaml</DependentUpon>
 	  </Compile>

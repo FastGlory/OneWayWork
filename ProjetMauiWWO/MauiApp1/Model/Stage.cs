@@ -28,7 +28,7 @@ namespace MauiApp1.Model
         public int Id_Entreprise { get; set; }
  
             
-        // Propriété de navigation
+        // Navigation sur la table Entreprise
         [Ignore] // Ignore les autres attributs de entreprise (overload initule)
         public Entreprise Entreprise { get; set; }
     }

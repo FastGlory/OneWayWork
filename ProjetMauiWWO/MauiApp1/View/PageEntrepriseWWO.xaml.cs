@@ -1,5 +1,6 @@
 using MauiApp1.Model;
 using MauiApp1.Service;
+using MauiApp1.ViewModel;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 
@@ -15,13 +16,15 @@ public partial class PageEntrepriseWWO : ContentPage
     public PageEntrepriseWWO(LocalDbService dbService)
     {
         InitializeComponent();
-
+        string IdSession = IdSessionServiceApp.Instance.GetSessionId();
+        IdSessionLabel.Text = $"IdSession: {IdSession}";
         _localDbService = dbService;
         Entreprises = new ObservableCollection<Entreprise>();
         filteredEntreprises = new ObservableCollection<Entreprise>();
         BindingContext = this;
         listView.ItemsSource = filteredEntreprises;
         LoadEntreprisesAsync();
+       
     }
 
     // Code d'affichage des entreprises

@@ -69,13 +69,20 @@
                     <Label.TextDecorations>Underline</Label.TextDecorations>
 
                 </Label>
-
+                
 
             </StackLayout>
 
 
+
         </StackLayout>
 
+        <Frame BackgroundColor="LightGray" Padding="10" CornerRadius="5" HorizontalOptions="Start" VerticalOptions="End" Margin="0, 0, 0, 0">
+            <Label x:Name="IdSessionLabel"
+                Text="{Binding IdSession}"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+        </Frame>
 
     </Grid>
 

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MauiApp1.Model;
 using MauiApp1.Service;
 using System.Diagnostics;
+using MauiApp1.ViewModel;
 
 namespace MauiApp1.View
 {
@@ -19,13 +20,15 @@ namespace MauiApp1.View
         public Stagiaire_Page(LocalDbService dbService)
         {
             InitializeComponent();
-
+            string IdSession = IdSessionServiceApp.Instance.GetSessionId();
+            IdSessionLabel.Text = $"IdSession: {IdSession}";
             _localDbService = dbService;
             Stagiaires = new ObservableCollection<Stagiaire>();
             filteredStagiaires = new ObservableCollection<Stagiaire>();
             BindingContext = this;
             listView.ItemsSource = filteredStagiaires;
             LoadStagiairesAsync();
+           
         }
 
 

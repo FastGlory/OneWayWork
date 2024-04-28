@@ -1,6 +1,8 @@
 using MauiApp1.Service;
+using MauiApp1.ViewModel;
 using Microsoft.Maui.Controls;
 using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -42,20 +44,29 @@ namespace MauiApp1.View
 
                 if (authenticatedStagiaire != null)
                 {
-                    // Si l'authentification réussit, affichez un message de succès
-                    MessageLabel.Text = "Connexion réussie.";
 
-                    // Vous pouvez également naviguer vers une autre page ici si nécessaire
+                    // manière de récupérer et d'utilisé le set. qui va mettre le id dans l'instance 
+                    IdSessionServiceApp.Instance.SetSessionId(authenticatedStagiaire.IdSession);
+
+                    // manière qu'on peut récupèrer l'idSession
+                    string IdSession = IdSessionServiceApp.Instance.GetSessionId();
+                    
+
+                    // Message réussite
+                    MessageLabel.Text = $"Connexion réussie. ID de session : {IdSession}";
+                    IdSessionLabel.Text = $"IdSession: {IdSession}";
+
+                    // On va mettre un déplacement de navigation ici 
                 }
                 else
                 {
-                    // Si l'authentification échoue, affichez un message d'erreur
+                    // Message erreur coté 
                     MessageLabel.Text = "Nom d'utilisateur ou mot de passe incorrect.";
                 }
             }
             catch (Exception ex)
             {
-                // En cas d'erreur, affichez un message d'erreur
+                // log erreur (trouver sur le net)
                 MessageLabel.Text = $"Erreur d'authentification : {ex.Message}";
             }
         }

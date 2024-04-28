@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MauiApp1.Model;
 using MauiApp1.Service;
 using System.Diagnostics;
+using MauiApp1.ViewModel;
 
 namespace MauiApp1.View
 {
@@ -18,17 +19,22 @@ namespace MauiApp1.View
 
         public Stage_Page(LocalDbService dbService)
         {
+            
             InitializeComponent();
+            string IdSession = IdSessionServiceApp.Instance.GetSessionId();
+            IdSessionLabel.Text = $"IdSession: {IdSession}";
             _localDbService = dbService;
             Stages = new ObservableCollection<Stage>();
             filteredStages = new ObservableCollection<Stage>();
             BindingContext = this;
             listView.ItemsSource = filteredStages;
+           
         }
 
         protected override async void OnAppearing()
         {
-        // Appel de la méthode OnAppearing() de la classe parente (ContentPage)
+            
+            // Appel de la méthode OnAppearing() de la classe parente (ContentPage)
             base.OnAppearing();
             await LoadStagesAsync(); // La on va simplement charger
         } // Permet de montrer les informations des stages à l'utilisateur et le base. c'est une manière de faire référence directement
