@@ -3,33 +3,41 @@
              x:Class="MauiApp1.View.PageAccueil"
              BackgroundColor="Black">
 
-    
 
-    <Grid VerticalOptions="Center" HorizontalOptions="Center">
-        <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
-               Source="image4.png"
-               Aspect="AspectFill"
-               HorizontalOptions="FillAndExpand"
-               VerticalOptions="Start"
-               Margin="0,-100,0,0" />
+    <ScrollView>
+        <VerticalStackLayout Padding="30">
+            <Image Source="image1.png" SemanticProperties.Description="Home Page Header" />
 
-        <StackLayout ClassId="section-Accueil"
-                     HorizontalOptions="Center"
-                     VerticalOptions="Center"
-                     Margin="0,-300,0,0">
+            <Label Text="Welcome to MyApp!"
+                   FontSize="24"
+                   Margin="0,30,0,0"
+                   SemanticProperties.HeadingLevel="Level1" />
 
-            <Label Text="Bienvenue sur One Way Work !"
-                   FontSize="Header"
-                   HorizontalTextAlignment="Center"
-                   TextColor="White"
-                   FontAttributes="Bold"/>
+            <Label Text="Here's what you can do with MyApp:"
+                   FontSize="18"
+                   SemanticProperties.HeadingLevel="Level2" />
 
-            <Label Text="Un endroit sécurisé et adapté aux étudiants !"
-                   HorizontalOptions="Center"
-                   FontSize="Title"
-                   TextColor="White"
-                   FontAttributes="Bold"/>
-            
-        </StackLayout>
-    </Grid>
+            <HorizontalStackLayout Spacing="20" Margin="0,30,0,0">
+                <VerticalStackLayout Spacing="10">
+                    <Image Source="image2.png" SemanticProperties.Description="Feature 1" />
+                    <Label Text="Feature 1" FontSize="16" SemanticProperties.HeadingLevel="Level3" />
+                    <Label Text="Description of Feature 1" FontSize="14" />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Spacing="10">
+                    <Image Source="image3.png" SemanticProperties.Description="Feature 2" />
+                    <Label Text="Feature 2" FontSize="16" SemanticProperties.HeadingLevel="Level3" />
+                    <Label Text="Description of Feature 2" FontSize="14" />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Spacing="10">
+                    <Image Source="image5.png" SemanticProperties.Description="Feature 3" />
+                    <Label Text="Feature 3" FontSize="16" SemanticProperties.HeadingLevel="Level3" />
+                    <Label Text="Description of Feature 3" FontSize="14" />
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+
+            <Button Text="Get Started" Margin="0,30,0,0" Padding="20,10" CornerRadius="10" FontSize="18" BackgroundColor="Blue" TextColor="White" SemanticProperties.Hint="Tap to start using MyApp" />
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
