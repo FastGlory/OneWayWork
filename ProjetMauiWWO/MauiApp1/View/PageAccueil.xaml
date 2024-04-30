@@ -16,8 +16,8 @@
                         <GradientStop Color="CornflowerBlue" Offset="1" />
                     </LinearGradientBrush>
                 </Label.Background>
-            </Label>
-
+            </Label>                                             
+            
             <Label Text="En savoir plus sur les articles collaboratifs"
                    FontSize="Large"
                    Margin="0,30,0,0"
@@ -35,19 +35,13 @@
                 </VerticalStackLayout>
 
                 <VerticalStackLayout Spacing="10">
-                    <Image Source="image3.png" SemanticProperties.Description="Feature 2" />
-                    <Label Text="Feature 2" FontSize="16" SemanticProperties.HeadingLevel="Level3" />
-                    <Label Text="Description of Feature 2" FontSize="14" />
-                </VerticalStackLayout>
-
-                <VerticalStackLayout Spacing="10">
                     <Image Source="image5.png" SemanticProperties.Description="Feature 3" />
-                    <Label Text="Feature 3" FontSize="16" SemanticProperties.HeadingLevel="Level3" />
+                    <Label Text="Nos valeurs" FontSize="16" SemanticProperties.HeadingLevel="Level3" />
                     <Label Text="Aujourd’hui, OneWayWork dirige une entreprise diversifiée dont les revenus proviennent des abonnements aux membres, de la vente de publicité et des solutions de recrutement sous la direction de Nadine, Juba et Aya. En décembre 2024, Microsoft a finalisé l’acquisition de OneWayWork, réunissant ainsi le premier cloud professionnel mondial et le premier réseau professionnel mondial." FontSize="14" />
                 </VerticalStackLayout>
             </HorizontalStackLayout>
-
-            <Button Text="Get Started"
+                                                                                                                          
+            <Button Text="Connecte toi!"
                     Margin="0,30,0,0"
                     Padding="20,10"
                     CornerRadius="10"
