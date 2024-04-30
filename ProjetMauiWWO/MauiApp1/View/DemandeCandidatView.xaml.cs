@@ -46,14 +46,9 @@ public partial class DemandeCandidatView : ContentPage
         using var stream = await pickedDoc.OpenReadAsync(); // lire le doc choisis 
 
 
-        byte[] docData;
-
-        using (MemoryStream ms = new MemoryStream())
-        {
-            await stream.CopyToAsync(ms);
-            docData = ms.ToArray();
         }
-
+        
+        
 
 
        

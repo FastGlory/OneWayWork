@@ -66,11 +66,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Model\" />
-	  <Folder Include="ViewModel\" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <MauiXaml Update="View\DemandeCandidatView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
