@@ -7,4 +7,5 @@ public partial class PageAccueil : ContentPage
 		InitializeComponent();
 	}
 
+
 }
