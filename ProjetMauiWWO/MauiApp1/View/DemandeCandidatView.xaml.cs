@@ -16,20 +16,20 @@ namespace MauiApp1.View;
     public partial class DemandeCandidatView : ContentPage
 {
 
-    private readonly LocalDbService _localDbService;
-    private ObservableCollection<Stage> filteredStages;
+    //private readonly LocalDbService _localDbService;
+    //private ObservableCollection<DemandeCandidatView> filteredStages;
 
-    public ObservableCollection<Stage> Stages { get; set; }
+    //public ObservableCollection<Stage> Stages { get; set; }
 
 
 
-    public DemandeCandidatView(LocalDbService dbService)
+    public DemandeCandidatView()
     {
 
-        InitializeComponent();
-        string IdSession = IdSessionServiceApp.Instance.GetSessionId();
-        IdSessionLabel.Text = $"IdSession: {IdSession}";
-        _localDbService = dbService;
+       InitializeComponent();
+        //string IdSession = IdSessionServiceApp.Instance.GetSessionId();
+        //IdSessionLabel.Text = $"IdSession: {IdSession}";
+        //_localDbService = dbService;
 
 
       
