@@ -131,7 +131,7 @@
                     </ImageButton>
                     <Label
                         Margin="20,0,0,0"
-                        Text="Ajouter votre document"
+                        Text=">"
                         VerticalOptions="Center" />
                 </StackLayout>
 

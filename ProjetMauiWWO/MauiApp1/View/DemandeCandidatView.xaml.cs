@@ -58,7 +58,7 @@ public partial class DemandeCandidatView : ContentPage
 
 
 
-    }
+    
 
 
 }
