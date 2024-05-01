@@ -12,7 +12,10 @@ namespace MauiApp1.Model
     [Table("Candidature")]
     public class Candidature
     {
-        [SQLite.Column, AutoIncrement, Column("idCandidature")]
+
+        [PrimaryKey]
+        [AutoIncrement]
+        [Column("idCandidature")]
         public int Id_Candidature { get; set; }
 
         [Column("DescriptionCandidature")]
@@ -26,6 +29,12 @@ namespace MauiApp1.Model
         [Column("DocumentCandidature")]
         public string Document_Candidature { get; set; }
 
+
+        [Column("IsDraft")]
+        public bool Is_Draft { get; set; } = false;
+
+        [Column("IsAccepted")]
+        public bool IsAccepted { get; set; } = false;
 
 
     }
