@@ -68,6 +68,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="View\AfficherCandidatureView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\DemandeCandidatView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -77,6 +80,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Folder Include="Services\" />
 	  <Folder Include="ViewModel\" />
 	</ItemGroup>
 
