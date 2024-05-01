@@ -6,7 +6,7 @@
     <ScrollView>
         <VerticalStackLayout Padding="50">
             <Label Text="Bienvenue sur One Way Work !" 
-                   FontSize="Header"
+                   FontSize="Large"
                    HorizontalTextAlignment="Center"
                    TextColor="White"
                    FontAttributes="Bold">
@@ -16,8 +16,8 @@
                         <GradientStop Color="CornflowerBlue" Offset="1" />
                     </LinearGradientBrush>
                 </Label.Background>
-            </Label>                                             
-            
+            </Label>
+
             <Label Text="En savoir plus sur les articles collaboratifs"
                    FontSize="Large"
                    Margin="0,30,0,0"
@@ -27,20 +27,21 @@
                    FontSize="18"
                    SemanticProperties.HeadingLevel="Level2" />
 
-            <HorizontalStackLayout Spacing="20" Margin="0,30,0,0">
+            <HorizontalStackLayout Spacing="20" Margin="0,40,0,0">
                 <VerticalStackLayout Spacing="10">
                     <Image Source="image2.png" SemanticProperties.Description="Feature 1" />
-                    <Label Text="Connecter les professionnels du monde entier:" FontSize="16" SemanticProperties.HeadingLevel="Level3" />
-                    <Label Text="Pour les rendre plus productifs et plus performants" FontSize="14" />
+                    <Label Text="Connecter les professionnels du monde entier" FontSize="16" SemanticProperties.HeadingLevel="Level3" HorizontalOptions="Center" />
+                    <Label Text="Bien que de plus en plus d'entreprises utilisent des plateformes en ligne pour recevoir les candidatures..." FontSize="14" HorizontalTextAlignment="Start" />
+                    <Label Text="OneWayWork vous offre la possibilité d'envoyer le formulaire de candidature pour le stage que vous désirez !" FontSize="14" HorizontalTextAlignment="Center" />
                 </VerticalStackLayout>
 
                 <VerticalStackLayout Spacing="10">
                     <Image Source="image5.png" SemanticProperties.Description="Feature 3" />
                     <Label Text="Nos valeurs" FontSize="16" SemanticProperties.HeadingLevel="Level3" />
-                    <Label Text="Aujourd’hui, OneWayWork dirige une entreprise diversifiée dont les revenus proviennent des abonnements aux membres, de la vente de publicité et des solutions de recrutement sous la direction de Nadine, Juba et Aya. En décembre 2024, Microsoft a finalisé l’acquisition de OneWayWork, réunissant ainsi le premier cloud professionnel mondial et le premier réseau professionnel mondial." FontSize="14" />
+                    <Label Text="Pour les rendre plus productifs et plus performants" FontSize="14" />
                 </VerticalStackLayout>
             </HorizontalStackLayout>
-                                                                                                                          
+
             <Button Text="Connecte toi!"
                     Margin="0,30,0,0"
                     Padding="20,10"
