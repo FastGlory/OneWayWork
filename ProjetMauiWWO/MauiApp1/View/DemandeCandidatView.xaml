@@ -10,14 +10,28 @@
 
 
 
-
     <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+
+
 
         <Image
             Aspect="AspectFill"
             HorizontalOptions="FillAndExpand"
             Source="demandecandidat.jpg"
             VerticalOptions="FillAndExpand" />
+
+        <StackLayout>
+            <Label
+                x:Name="MessageLabelCandidature"
+                Margin="0,5,0,0"
+                FontSize="Large"
+                HorizontalOptions="Center"
+                Text=""
+                TextColor="Red" />
+        </StackLayout>
+
+
 
 
         <StackLayout
@@ -45,6 +59,7 @@
                     Margin="300,0,0,0"
                     Padding="15"
                     BackgroundColor="#1a2d59"
+                    Clicked="SeeMyDraft"
                     CornerRadius="30"
                     FontSize="Small"
                     HeightRequest="70"
@@ -65,6 +80,7 @@
 
 
             <Editor
+                x:Name="AddCandidatureDescription"
                 Margin="90,10,90,0"
                 AutoSize="TextChanges"
                 BackgroundColor="White"
@@ -72,6 +88,7 @@
                 HorizontalTextAlignment="Start"
                 IsTextPredictionEnabled="False"
                 Placeholder="Veuillez entrer des infromations sur vous..."
+                Text="{Binding Des}"
                 TextColor="Black"
                 VerticalOptions="StartAndExpand"
                 VerticalTextAlignment="Start" />
@@ -86,6 +103,7 @@
 
 
             <Editor
+                x:Name="AddLinkCandidature"
                 Margin="90,0,90,0"
                 AutoSize="TextChanges"
                 BackgroundColor="White"
@@ -131,7 +149,7 @@
                     </ImageButton>
                     <Label
                         Margin="20,0,0,0"
-                        Text=">"
+                        Text="&gt;"
                         VerticalOptions="Center" />
                 </StackLayout>
 
@@ -142,8 +160,10 @@
                     Margin="80,0,0,0"
                     Padding="15"
                     BackgroundColor="#1a2d59"
+                    Clicked="AddToDraft"
+                    CommandParameter="{Binding Stagiaire}"
                     CornerRadius="30"
-                    FontSize="Small"
+                    FontSize="11"
                     HeightRequest="70"
                     HorizontalOptions="Start"
                     Text="Enregistrer dans brouillon"
@@ -158,6 +178,7 @@
                     Margin="40,0,0,0"
                     Padding="15"
                     BackgroundColor="#088F8F"
+                    Clicked="SubmitCandidat"
                     CornerRadius="30"
                     FontSize="Small"
                     HeightRequest="70"
@@ -177,11 +198,20 @@
 
         </StackLayout>
 
-        <Frame BackgroundColor="LightGray" Padding="10" CornerRadius="5" HorizontalOptions="Start" VerticalOptions="End" Margin="0, 0, 0, 0">
-            <Label x:Name="IdSessionLabel"
-                     Text="{Binding IdSession}"
-                     HorizontalOptions="Center"
-                     VerticalOptions="Center"/>
+        <Frame
+            Margin="0,0,0,0"
+            Padding="10"
+            BackgroundColor="LightGray"
+            CornerRadius="5"
+            HorizontalOptions="Start"
+            VerticalOptions="End">
+
+
+            <Label
+                x:Name="IdSessionLabel"
+                HorizontalOptions="Center"
+                Text="{Binding IdSession}"
+                VerticalOptions="Center" />
         </Frame>
 
     </Grid>

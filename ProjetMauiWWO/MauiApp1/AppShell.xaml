@@ -5,39 +5,45 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MauiApp1"
     xmlns:view="clr-namespace:MauiApp1.View"
-    Shell.FlyoutBehavior="Flyout"
-    Title="MauiApp1">
+    Title="MauiApp1"
+    Shell.FlyoutBehavior="Flyout">
 
 
 
     <ShellContent
-     Title="Menu"
-     ContentTemplate="{DataTemplate view:Menu}"
-     Route="Menu" />
+        Title="Menu"
+        ContentTemplate="{DataTemplate view:Menu}"
+        Route="Menu" />
     <ShellContent
-       Title="Connexion"
-       ContentTemplate="{DataTemplate view:ConnexionView}"
-       Route="ConnexionView" />
+        Title="Connexion"
+        ContentTemplate="{DataTemplate view:ConnexionView}"
+        Route="ConnexionView" />
     <ShellContent
-       Title="Stagiaire"
-       ContentTemplate="{DataTemplate view:Stagiaire_Page}"
-       Route="Stagiaire_Page" />
+        Title="Stagiaire"
+        ContentTemplate="{DataTemplate view:Stagiaire_Page}"
+        Route="Stagiaire_Page" />
     <ShellContent
-       Title="Stage"
-       ContentTemplate="{DataTemplate view:Stage_Page}"
-       Route="Stage_Page" />
+        Title="Stage"
+        ContentTemplate="{DataTemplate view:Stage_Page}"
+        Route="Stage_Page" />
 
     <ShellContent
-       Title="Entreprise"
-       ContentTemplate="{DataTemplate view:PageEntrepriseWWO}"
-       Route="PageEntrepriseWWO" />
+        Title="Entreprise"
+        ContentTemplate="{DataTemplate view:PageEntrepriseWWO}"
+        Route="PageEntrepriseWWO" />
 
     <ShellContent
-    Title="Demande Candidat"
-    ContentTemplate="{DataTemplate view:DemandeCandidatView}"
-    Route="DemandeCandidatView" />
+        Title="Demande Candidat"
+        ContentTemplate="{DataTemplate view:DemandeCandidatView}"
+        Route="DemandeCandidatView" />
 
+
+
+    <ShellContent
+        Title="Drafts"
+        ContentTemplate="{DataTemplate view:CandidatureDraftView}"
+        Route="CandidatureDraftView" />
 
 </Shell>
-    
-    
+
+

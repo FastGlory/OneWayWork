@@ -25,6 +25,7 @@ namespace MauiApp1.Service
             await _connection.CreateTableAsync<Stagiaire>();
             await _connection.CreateTableAsync<Stage>();
             await _connection.CreateTableAsync<Entreprise>();
+            await _connection.CreateTableAsync<Candidature>();
             await InsertData(); // On insère les donnée importantes
         }
 
@@ -116,6 +117,38 @@ namespace MauiApp1.Service
         {
             await _connection.DeleteAsync(entreprise);
         }
+
+        // Methode CRUD pour les cnadidature 
+
+        public async Task<List<Candidature>> GetCandidature()
+        {
+            return await _connection.Table<Candidature>().ToListAsync();
+
+        }
+
+
+        public async Task<Candidature> GetCandidatureAsync(int Id)
+        {
+            return await _connection.Table<Candidature>().Where(c => c.Id_Stagiaire == Id && c.Is_Draft).FirstOrDefaultAsync();
+
+        }
+
+
+        public async Task SaveDraftCandidature(Stagiaire stagiaire, Candidature candidature)
+        {
+            candidature.Id_Candidature = stagiaire.Id_Stagiaire;
+            candidature.Stagiaire = null;
+            await _connection.InsertAsync(candidature);
+                
+        }
+
+   
+
+     
+
+
+
+
         // Insertion de données de test
         public async Task InsertData()
         {
@@ -211,6 +244,9 @@ namespace MauiApp1.Service
             await _connection.DeleteAllAsync<Entreprise>();
         }
 
-
+        internal async Task GetStagiaireById(string sessionId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

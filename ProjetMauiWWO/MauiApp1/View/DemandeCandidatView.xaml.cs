@@ -9,67 +9,62 @@ using MauiApp1.Model;
 using MauiApp1.Service;
 using System.Diagnostics;
 using MauiApp1.ViewModel;
+using System.Runtime.CompilerServices;
 
 namespace MauiApp1.View;
 
 
 public partial class DemandeCandidatView : ContentPage
 {
-    public DemandeCandidatView()
+
+    private readonly LocalDbService _localDbService;
+
+
+    public DemandeCandidatView(LocalDbService dbService)
     {
+
         InitializeComponent();
+        _localDbService = dbService;
+
     }
 
-    public object ReadOnlyFilePicker { get; private set; }
 
-    private async void UploadDocBtn(object sender, EventArgs e)
+    private async void AddToDraft(object sender, EventArgs e, Stagiaire stagiaire)
     {
-        var typeOfdoc = new FilePickerFileType(    // On veut que le seul type de fichier que l'utilisateur prennent c'est pdf et word pour leur docs, donc on utilise un dictionnaire pour specifier quel types de fichers le user doit prendre
+        string description = AddCandidatureDescription.Text;
+        string linkSubmited = AddLinkCandidature.Text;
 
-            new Dictionary<DevicePlatform, IEnumerable<string>>
+
+
+        try
+        {
+            if (string.IsNullOrWhiteSpace(description) || string.IsNullOrWhiteSpace(linkSubmited))
             {
-                {DevicePlatform.WinUI, new[] {".doc", ".docx", ".pdf"} },
-            });
+                MessageLabelCandidature.Text = "Veuillez saisir tous les champs.";
+                return;
+            }
 
 
-        var options = new PickOptions // Ici on va definir les types de fichiers du dictionnaire qu'on a cree precedemment 
-        {
-            FileTypes = typeOfdoc
-        };
+
+            Candidature candidature = new Candidature
+            {
+
+                Description_Candidature = description,
+                Lien_Candidature = linkSubmited,
+                Is_Draft = true,
+                Id_Stagiaire = stagiaire.Id_Stagiaire
+            };
 
 
-        var pickedDoc = await FilePicker.Default.PickAsync(options); // dans ce cas, on va pouvoir pick le fichier et avec argument le type de fichiers qu'on veut 
-        if (pickedDoc is null)
-        {
-            return;
+            await _localDbService.SaveDraftCandidature(stagiaire, candidature);
+            MessageLabelCandidature.Text = "Brouillon enregistré avec succès !";
+            
+
         }
-
-        //if (!(pickedDoc.FileName.EndsWith(".doc", StringComparison.OrdinalIgnoreCase)
-        //    || pickedDoc.FileName.EndsWith(".docx", StringComparison.OrdinalIgnoreCase)
-        //    || pickedDoc.FileName.EndsWith(".pdf", StringComparison.OrdinalIgnoreCase)))// si le user choisi un mauvais format , il y'a un message d'avertissment
-        //{
-        //    await DisplayAlert("Erreur", "Veuiler choisir un document de format pdf our word", "Ok");
-        //    return;
-        //}
-
-
-        using var stream = await pickedDoc.OpenReadAsync(); // lire le doc choisis 
-
-
-        byte[] docData;
-
-        using (MemoryStream ms = new MemoryStream())
+        catch (Exception ex)
         {
-            await stream.CopyToAsync(ms);
-            docData = ms.ToArray();
+            MessageLabelCandidature.Text = "Erreur lors de l'enregistrement du brouillon";
         }
-
-
-
-
-
-
-
 
 
 
@@ -77,3 +72,7 @@ public partial class DemandeCandidatView : ContentPage
 
 
 }
+
+
+
+
