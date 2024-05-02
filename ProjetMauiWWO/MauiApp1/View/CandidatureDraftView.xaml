@@ -1,12 +1,27 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiApp1.View.CandidatureDraftView"
-             Title="CandidatureDraftView">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+<ContentPage
+    x:Class="MauiApp1.View.CandidatureDraftView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="CandidatureDraftView">
+
+
+
+    <CollectionView
+        x:Name="draftsCollectionView"
+        ItemsSource="{Binding Candidature}"
+        SelectionMode="Single">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <StackLayout Padding="10">
+                    <Label Text="{Binding Description_Candidature}" />
+
+                    <Label Text="{Binding Lien_Candidature}" />
+
+
+                </StackLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+
 </ContentPage>
