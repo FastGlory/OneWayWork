@@ -111,6 +111,12 @@ namespace MauiApp1.View
                 filteredStagiaires.Add(stagiaire);
             }
         }
+
+        private void SelectionStagiaire(object sender, SelectedItemChangedEventArgs e)
+        {
+           
+        }
+
     }
 }
 

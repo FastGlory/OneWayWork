@@ -25,6 +25,8 @@ namespace MauiApp1.Model
         [Column("MotDePasse_Stagiaire")]
         public string? MotDePasse_Stagiaire { get; set; }
         [Column("IsAdmin")]
+        public int? IdEntrepriseChoice { get; set; }
+        [Column("IdEntrepriseChoice")]
         public bool IsAdmin { get; set; } = false;
         [Column("IdSession")]
         public string IdSession { get; set; }
