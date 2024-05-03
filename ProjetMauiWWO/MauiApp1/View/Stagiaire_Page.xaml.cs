@@ -78,8 +78,6 @@ namespace MauiApp1.View
 
         // Code pour le filtre
 
-
-
         private void OnSearchButtonPressed(object sender, EventArgs e)
         {
             FilterContacts(filterText.Text);
