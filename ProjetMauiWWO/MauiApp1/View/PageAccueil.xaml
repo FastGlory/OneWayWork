@@ -30,15 +30,14 @@
             <HorizontalStackLayout Spacing="20" Margin="0,40,0,0">
                 <VerticalStackLayout Spacing="10">
                     <Image Source="image2.png" SemanticProperties.Description="Feature 1" />
-                    <Label Text="Connecter les professionnels du monde entier" FontSize="16" SemanticProperties.HeadingLevel="Level3" HorizontalOptions="Center" />
-                    <Label Text="Bien que de plus en plus d'entreprises utilisent des plateformes en ligne pour recevoir les candidatures..." FontSize="14" HorizontalTextAlignment="Start" />
-                    <Label Text="OneWayWork vous offre la possibilité d'envoyer le formulaire de candidature pour le stage que vous désirez !" FontSize="14" HorizontalTextAlignment="Center" />
+                    <Label Text="Contacter les professionnels du monde entier" FontSize="16" SemanticProperties.HeadingLevel="Level3" HorizontalOptions="Center" />
+                
+
                 </VerticalStackLayout>
 
                 <VerticalStackLayout Spacing="10">
                     <Image Source="image5.png" SemanticProperties.Description="Feature 3" />
-                    <Label Text="Nos valeurs" FontSize="16" SemanticProperties.HeadingLevel="Level3" />
-                    <Label Text="Pour les rendre plus productifs et plus performants" FontSize="14" />
+                    <Label Text=" unique en son genre" FontSize="16" SemanticProperties.HeadingLevel="Level4" />
                 </VerticalStackLayout>
             </HorizontalStackLayout>
 
