@@ -112,6 +112,34 @@ namespace MauiApp1.View
                 filteredStages.Add(stage);
             }
         }
+        private void SelectionStage(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem == null)
+            {
+                return;
+            }
+
+            var selectStage = e.SelectedItem as Stage;
+            if (selectStage != null)
+            {
+                NomStage.Text = selectStage.Nom_Stage;
+                DescriptionStage.Text = selectStage.Description_Stage;
+                ImageStage.Source = selectStage.Image_Stage;
+                EntrepriseRelier.Text = selectStage.Id_Entreprise.ToString();
+
+               
+                SalaireStage.Text = selectStage.Salaire_Stage.HasValue ? selectStage.Salaire_Stage.ToString() : "Non spécifié";
+
+               
+                DispoStage.Text = selectStage.IsDispo_Stage.HasValue && selectStage.IsDispo_Stage.Value ? "Disponible" : "Non disponible";
+
+               
+                ShowInformations.IsVisible = true;
+            }
+        }
+
+
+
     }
 }
 

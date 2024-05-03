@@ -11,7 +11,7 @@
            SearchButtonPressed="OnSearchButtonPressed"
            Margin="15"/>
 
-        <ListView x:Name="listView" ItemsSource="{Binding Stages}">
+        <ListView x:Name="listView"  ItemSelected="SelectionStage" ItemsSource="{Binding Stages}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -49,6 +49,17 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Frame Grid.Column="1" x:Name="ShowInformations" IsVisible="False" BackgroundColor="LightGray" CornerRadius="10" Padding="10" Margin="15">
+            <StackLayout>
+                <Label Text="Information Stage" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,10,0,0"/>
+                <Image x:Name="ImageStage" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" Margin="0,20,0,0" />
+                <Label x:Name="NomStage" FontAttributes="Bold" TextColor="DarkBlue"/>
+                <Label x:Name="DescriptionStage" FontAttributes="Italic"/>
+                <Label x:Name="DispoStage" FontAttributes="Italic"/>
+                <Label x:Name="EntrepriseRelier" FontAttributes="Italic"/>
+                <Label x:Name="SalaireStage" FontAttributes="Italic"/>
+            </StackLayout>
+        </Frame> 
         <Frame BackgroundColor="LightGray" Padding="10" CornerRadius="5" HorizontalOptions="Start" VerticalOptions="End" Margin="0, 0, 0, 0">
             <Label x:Name="IdSessionLabel"
                 Text="{Binding IdSession}"
