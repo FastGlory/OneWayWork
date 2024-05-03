@@ -114,8 +114,27 @@ namespace MauiApp1.View
 
         private void SelectionStagiaire(object sender, SelectedItemChangedEventArgs e)
         {
-           
+            if (e.SelectedItem == null)
+            {
+                return;
+            }
+
+            var selectedStagiaire = e.SelectedItem as Stagiaire;
+            if (selectedStagiaire != null)
+            {
+                NomStagiaire.Text = selectedStagiaire.nom_Stagiaire;
+                PrenomStagiaire.Text = selectedStagiaire.prenom_Stagiaire;
+                EmailStagiaire.Text = selectedStagiaire.email_Stagiaire;
+                EntrepriseAcceptation.Text = selectedStagiaire.IdEntrepriseChoice != null ? selectedStagiaire.IdEntrepriseChoice.ToString() : "Ce stagiaire est actuellement à la recherche d'un stage";
+                ImageStagiaire.Source = selectedStagiaire.image_Stagiaire;
+
+
+                // On active la fonctionnalité pour rendre visible
+                // si on veut on pourra rajouter une fonctionnalité s'il reclick sa va annulé IsVisible
+                ShowInformations.IsVisible = true;
+            }
         }
+
 
     }
 }
