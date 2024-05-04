@@ -22,6 +22,8 @@
         Title="Stagiaire"
         ContentTemplate="{DataTemplate view:Stagiaire_Page}"
         Route="Stagiaire_Page" />
+    
+    
     <ShellContent
         Title="Stage"
         ContentTemplate="{DataTemplate view:Stage_Page}"
@@ -31,6 +33,8 @@
         Title="Entreprise"
         ContentTemplate="{DataTemplate view:PageEntrepriseWWO}"
         Route="PageEntrepriseWWO" />
+    
+    
 
     <ShellContent
         Title="Demande Candidat"
