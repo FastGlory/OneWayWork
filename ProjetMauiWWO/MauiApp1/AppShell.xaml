@@ -32,15 +32,20 @@
         ContentTemplate="{DataTemplate view:PageEntrepriseWWO}"
         Route="PageEntrepriseWWO" />
 
+
     <ShellContent
-        Title="DemandeCandidatView"
+        Title="Stage"
+        ContentTemplate="{DataTemplate view:CandidatureDraftView}"
+        Route="CandidatureDraftView" />
+
+
+    <ShellContent
+        Title="Stage"
         ContentTemplate="{DataTemplate view:DemandeCandidatView}"
         Route="DemandeCandidatView" />
 
-    <ShellContent
-        Title="CandidatureDraftView"
-        ContentTemplate="{DataTemplate view:CandidatureDraftView}"
-        Route="CandidatureDraftView" />
+
+
 
 
 

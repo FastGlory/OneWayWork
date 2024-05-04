@@ -115,10 +115,10 @@
 
                 <StackLayout Opacity="0.6">
                     <ImageButton
+                        x:Name="DocBtn"
                         Margin="90,0,0,0"
                         Padding="15"
                         BackgroundColor="#1a2d59"
-                        Clicked="UploadDocBtn"
                         CornerRadius="10"
                         HeightRequest="90"
                         HorizontalOptions="Start"
@@ -130,7 +130,7 @@
                     </ImageButton>
                     <Label
                         Margin="20,0,0,0"
-                        Text="Ajouter votre document"
+                        Text="&gt;"
                         VerticalOptions="Center" />
                 </StackLayout>
 

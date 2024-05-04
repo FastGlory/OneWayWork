@@ -15,12 +15,12 @@ namespace MauiApp1.View
         public ConnexionView(LocalDbService localDbService)
         {
             InitializeComponent();
-            _localDbService = localDbService; 
+            _localDbService = localDbService;
         }
 
         private async void OnInscriptionTapped(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new InscriptionView(_localDbService)); 
+            await Navigation.PushAsync(new InscriptionView(_localDbService));
         }
 
         private async void AuthentificationClick(object sender, EventArgs e)
@@ -50,7 +50,7 @@ namespace MauiApp1.View
 
                     // manière qu'on peut récupèrer l'idSession
                     string IdSession = IdSessionServiceApp.Instance.GetSessionId();
-                    
+
 
                     // Message réussite
                     MessageLabel.Text = $"Connexion réussie. ID de session : {IdSession}";
