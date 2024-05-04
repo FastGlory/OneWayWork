@@ -83,6 +83,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="View\CandidatureDraftView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\ConnexionView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

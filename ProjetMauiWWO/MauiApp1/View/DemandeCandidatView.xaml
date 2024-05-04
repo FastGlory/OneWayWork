@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiApp1.View.DemandeCandidatView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Demande Candidat">
+
+
+
+
+
+
+
+    <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+        <Image
+            Aspect="AspectFill"
+            HorizontalOptions="FillAndExpand"
+            Source="demandecandidat.jpg"
+            VerticalOptions="FillAndExpand" />
+
+
+        <StackLayout
+            Padding="20"
+            BackgroundColor="White"
+            HeightRequest="600"
+            Opacity="0.8"
+            VerticalOptions="Center"
+            WidthRequest="1500">
+
+
+
+            <StackLayout
+                Margin="0,10,0,0"
+                HorizontalOptions="CenterAndExpand"
+                Orientation="Horizontal">
+                <Label
+                    FontSize="Header"
+                    HorizontalOptions="Center"
+                    Text="Veuillez soumettre vos informations :"
+                    TextColor="Black" />
+
+
+                <Button
+                    Margin="300,0,0,0"
+                    Padding="15"
+                    BackgroundColor="#1a2d59"
+                    CornerRadius="30"
+                    FontSize="Small"
+                    HeightRequest="70"
+                    HorizontalOptions="Start"
+                    Text="Mes brouillons"
+                    TextColor="White"
+                    TextTransform="Uppercase"
+                    WidthRequest="200" />
+
+            </StackLayout>
+
+
+            <Label
+                Margin="90,0,0,0"
+                FontSize="Medium"
+                Text="Ajouter une brief description de vous pour le stage:"
+                TextColor="Black" />
+
+
+            <Editor
+                Margin="90,10,90,0"
+                AutoSize="TextChanges"
+                BackgroundColor="White"
+                HeightRequest="150"
+                HorizontalTextAlignment="Start"
+                IsTextPredictionEnabled="False"
+                Placeholder="Veuillez entrer des infromations sur vous..."
+                TextColor="Black"
+                VerticalOptions="StartAndExpand"
+                VerticalTextAlignment="Start" />
+
+
+            <Label
+                Margin="90,80,0,10"
+                FontSize="Medium"
+                Text="Ajouter votre lien de page professionnel:"
+                TextColor="Black" />
+
+
+
+            <Editor
+                Margin="90,0,90,0"
+                AutoSize="TextChanges"
+                BackgroundColor="White"
+                HeightRequest="60"
+                HorizontalTextAlignment="Start"
+                IsTextPredictionEnabled="False"
+                Placeholder="Votre lien"
+                TextColor="Black"
+                VerticalOptions="StartAndExpand"
+                VerticalTextAlignment="Start" />
+
+
+
+            <Label
+                Margin="90,0,100,10"
+                FontSize="Medium"
+                HorizontalTextAlignment="Start"
+                Text="Vous pouvez relier vos documents:"
+                TextColor="Black"
+                VerticalTextAlignment="Start" />
+
+            <StackLayout
+                HorizontalOptions="Start"
+                Orientation="Horizontal"
+                VerticalOptions="Start">
+
+
+                <StackLayout Opacity="0.6">
+                    <ImageButton
+                        Margin="90,0,0,0"
+                        Padding="15"
+                        BackgroundColor="#1a2d59"
+                        Clicked="UploadDocBtn"
+                        CornerRadius="10"
+                        HeightRequest="90"
+                        HorizontalOptions="Start"
+                        WidthRequest="800">
+
+                        <ImageButton.Source>
+                            <FileImageSource File="uploadcloud.png" />
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <Label
+                        Margin="20,0,0,0"
+                        Text="Ajouter votre document"
+                        VerticalOptions="Center" />
+                </StackLayout>
+
+
+
+
+                <Button
+                    Margin="80,0,0,0"
+                    Padding="15"
+                    BackgroundColor="#1a2d59"
+                    CornerRadius="30"
+                    FontSize="Small"
+                    HeightRequest="70"
+                    HorizontalOptions="Start"
+                    Text="Enregistrer dans brouillon"
+                    TextColor="White"
+                    TextTransform="Uppercase"
+                    WidthRequest="200" />
+
+
+
+
+                <Button
+                    Margin="40,0,0,0"
+                    Padding="15"
+                    BackgroundColor="#088F8F"
+                    CornerRadius="30"
+                    FontSize="Small"
+                    HeightRequest="70"
+                    HorizontalOptions="Start"
+                    Text="Confirmer"
+                    TextColor="White"
+                    TextTransform="Uppercase"
+                    WidthRequest="200" />
+
+
+            </StackLayout>
+
+
+
+
+
+
+        </StackLayout>
+
+    </Grid>
+
+
+
+</ContentPage>
