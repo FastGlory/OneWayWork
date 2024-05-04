@@ -61,7 +61,7 @@ public partial class DemandeCandidatView : ContentPage
             
 
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             MessageLabelCandidature.Text = "Erreur lors de l'enregistrement du brouillon";
         }
@@ -71,6 +71,25 @@ public partial class DemandeCandidatView : ContentPage
     }
 
 
+    private void DocBtn_Clicked(object sender, EventArgs e)
+    {
+
+    }
+
+    private void SubmitCandidat(object sender, EventArgs e)
+    {
+
+    }
+
+    private void SeeMyDraft(object sender, EventArgs e)
+    {
+
+    }
+
+    private void Button_Clicked(object sender, EventArgs e)
+    {
+
+    }
 }
 
 

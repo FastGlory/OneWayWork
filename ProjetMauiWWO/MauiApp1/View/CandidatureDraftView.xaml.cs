@@ -1,6 +1,5 @@
 using MauiApp1.Model;
 using System.Collections.ObjectModel;
-using MauiApp1.Model;
 using MauiApp1.Service;
 using System.Collections.ObjectModel;
 using System.Runtime.CompilerServices;

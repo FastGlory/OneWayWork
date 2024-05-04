@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MauiApp1.Model
 {
-    
+
     [Table("Entreprise")]
     public class Entreprise
     {
@@ -25,9 +25,14 @@ namespace MauiApp1.Model
 
         [Column("MotDePasse_Entreprise")]
         public string? MotDePasse_Entreprise { get; set; }
-
+        [Column("Description_Entreprise")]
+        public string? Description_Entreprise { get; set; }
         [Column("IsAdmin")]
-        public bool IsAdmin { get; set; }
+        public bool IsAdmin { get; set; } = false;
+        [Ignore]
+        public List<Stage> Stages { get; set; } = new List<Stage>();
+
+
     }
 
 }
