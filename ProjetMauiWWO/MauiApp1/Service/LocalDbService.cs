@@ -65,7 +65,9 @@ namespace MauiApp1.Service
             return await _connection.Table<Entreprise>().Where(x => x.Id_Entreprise == id).FirstOrDefaultAsync();
         }
 
-        // Méthode pour récupréer l'id stage a partir de l'enterprise (présentement inutile)
+
+        // FAUT CORRIGER ET TROUVER UN MOYEN DE RÉCUPÈRER LES ID DES ENTREPRSIE QUI CORRESPOND A DES ID STAGES
+        // ################################################################################################################
         public async Task<Stage> GetStageById(int id)
         {
             var stage = await _connection.Table<Stage>().Where(x => x.Id_Stage == id).FirstOrDefaultAsync();
@@ -75,6 +77,14 @@ namespace MauiApp1.Service
             }
             return stage;
         }
+
+        public async Task<List<int>> GetStageIdsByEntrepriseId(int entrepriseId)
+        {
+            var stages = await _connection.Table<Stage>().Where(x => x.Id_Entreprise == entrepriseId).ToListAsync();
+            var stageIds = stages.Select(stage => stage.Id_Stage).ToList();
+            return stageIds;
+        }
+        // ################################################################################################################
 
         public async Task CreateStage(Stage stage)
         {
@@ -96,6 +106,11 @@ namespace MauiApp1.Service
         {
             return await _connection.Table<Entreprise>().ToListAsync();
         }
+        public async Task<List<Stage>> GetStagesByEntrepriseId(int entrepriseId)
+        {
+            return await _connection.Table<Stage>().Where(x => x.Id_Entreprise == entrepriseId).ToListAsync();
+        }
+
 
         public async Task<Entreprise> GetEntrepriseByNom(string nom)
         {
@@ -155,11 +170,11 @@ namespace MauiApp1.Service
                 var entreprisesToAdd = new List<Entreprise>
                     {
                        // On rajoute ici les Entreprise pour voir s'il s'affiche bien  !
-                        new Entreprise { Nom_Entreprise = "Bell", Email_Entreprise = "Bel@gmail.com", Image_Entreprise = "bell_logo.png", MotDePasse_Entreprise = "motdepasse123", IsAdmin = false },
-                        new Entreprise { Nom_Entreprise = "Amazon", Email_Entreprise = "Amazone@gmail.com", Image_Entreprise = "amazon_logo.png", MotDePasse_Entreprise = "motdepasse456", IsAdmin = false },
-                        new Entreprise { Nom_Entreprise = "Ubisoft", Email_Entreprise = "Ubisoft@gmail.com", Image_Entreprise = "ubisoft_logo.png", MotDePasse_Entreprise = "motdepasse789", IsAdmin = false },
-                        new Entreprise { Nom_Entreprise = "Google", Email_Entreprise = "Google@gmail.com", Image_Entreprise = "google_logo.png", MotDePasse_Entreprise = "motdepasse101112", IsAdmin = false },
-                        new Entreprise { Nom_Entreprise = "Alkegen", Email_Entreprise = "Alkegen@gmail.com", Image_Entreprise = "alkegen_logo.png", MotDePasse_Entreprise = "motdepasse131415", IsAdmin = false }
+                        new Entreprise { Id_Entreprise=1 ,Nom_Entreprise = "Bell", Email_Entreprise = "Bel@gmail.com", Image_Entreprise = "bell_logo.png", MotDePasse_Entreprise = "motdepasse123", IsAdmin = false ,Description_Entreprise="L'entreprise télécommunication" },
+                        new Entreprise { Id_Entreprise=2 ,Nom_Entreprise = "Amazon", Email_Entreprise = "Amazone@gmail.com", Image_Entreprise = "amazon_logo.png", MotDePasse_Entreprise = "motdepasse456", IsAdmin = false ,Description_Entreprise="Entreprise LUGUBRE" },
+                        new Entreprise { Id_Entreprise=3,Nom_Entreprise = "Ubisoft", Email_Entreprise = "Ubisoft@gmail.com", Image_Entreprise = "ubisoft_logo.png", MotDePasse_Entreprise = "motdepasse789", IsAdmin = false,Description_Entreprise="je sais pas quoi dire"  },
+                        new Entreprise { Id_Entreprise=4 ,Nom_Entreprise = "Google", Email_Entreprise = "Google@gmail.com", Image_Entreprise = "google_logo.png", MotDePasse_Entreprise = "motdepasse101112", IsAdmin = false,Description_Entreprise="Tuto youtube comment faire du pyton"  },
+                        new Entreprise { Id_Entreprise=5,Nom_Entreprise = "Alkegen", Email_Entreprise = "Alkegen@gmail.com", Image_Entreprise = "alkegen_logo.png", MotDePasse_Entreprise = "motdepasse131415", IsAdmin = false,Description_Entreprise="Je me suis fait hack mon compte sauvez moi !"  }
                     };
 
                 foreach (var entreprise in entreprisesToAdd)
@@ -176,11 +191,11 @@ namespace MauiApp1.Service
                     // On rajoute ici les Entreprise pour voir s'il s'affiche bien  !
 
                     // Raison bug 1  : J'ai oublié de mettre Id_Entreprise TRÈS IMPORTANT sinon DB morte
-                    new Stage { Nom_Stage = "Adminstrateur Réseau", Id_Entreprise = 1, IsDispo_Stage = true, Salaire_Stage = 30.50, Image_Stage = "bell.png",Description_Stage ="Ceci est le stage de Bell" },
-                    new Stage { Nom_Stage = "Programmeur Junior", Id_Entreprise = 2, IsDispo_Stage = false, Salaire_Stage = 45.50, Image_Stage = "amazon.png",Description_Stage ="123 viva l'algérie" },
-                    new Stage { Nom_Stage = "Testeur", Id_Entreprise = 3, IsDispo_Stage = true, Salaire_Stage = 55, Image_Stage = "ubisoft.png",Description_Stage ="Ceci est le stage de ubisoft" },
-                    new Stage { Nom_Stage = "Analyste Data", Id_Entreprise = 4, IsDispo_Stage = true, Salaire_Stage = 21, Image_Stage = "google.png",Description_Stage ="Ceci est le stage de Google" },
-                    new Stage { Nom_Stage = "Administrateur Système", Id_Entreprise = 5, IsDispo_Stage = false, Salaire_Stage = 19.50, Image_Stage = "alkegen.png",Description_Stage ="Ceci est le stage de alkegane" }
+                    new Stage {Id_Stage=1,Nom_Stage = "Adminstrateur Réseau", Id_Entreprise = 1, IsDispo_Stage = true, Salaire_Stage = 30.50, Image_Stage = "bell.png",Description_Stage ="Ceci est le stage de Bell" },
+                    new Stage {Id_Stage=2, Nom_Stage = "Programmeur Junior", Id_Entreprise = 2, IsDispo_Stage = false, Salaire_Stage = 45.50, Image_Stage = "amazon.png",Description_Stage ="123 viva l'algérie" },
+                    new Stage {Id_Stage=3, Nom_Stage = "Testeur", Id_Entreprise = 3, IsDispo_Stage = true, Salaire_Stage = 55, Image_Stage = "ubisoft.png",Description_Stage ="Ceci est le stage de ubisoft" },
+                    new Stage {Id_Stage=4, Nom_Stage = "Analyste Data", Id_Entreprise = 4, IsDispo_Stage = true, Salaire_Stage = 21, Image_Stage = "google.png",Description_Stage ="Ceci est le stage de Google" },
+                    new Stage {Id_Stage=5, Nom_Stage = "Administrateur Système", Id_Entreprise = 5, IsDispo_Stage = false, Salaire_Stage = 19.50, Image_Stage = "alkegen.png",Description_Stage ="Ceci est le stage de alkegane" }
                 };
 
                 foreach (var stage in stagesToAdd)

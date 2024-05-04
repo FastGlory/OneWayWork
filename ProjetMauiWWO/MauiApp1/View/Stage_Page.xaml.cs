@@ -126,8 +126,7 @@ namespace MauiApp1.View
                 DescriptionStage.Text = selectStage.Description_Stage;
                 ImageStage.Source = selectStage.Image_Stage;
                 EntrepriseRelier.Text = selectStage.Id_Entreprise.ToString();
-
-               
+              
                 SalaireStage.Text = selectStage.Salaire_Stage.HasValue ? selectStage.Salaire_Stage.ToString() : "Non spécifié";
 
                

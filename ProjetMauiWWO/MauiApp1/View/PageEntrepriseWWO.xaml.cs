@@ -10,6 +10,8 @@ public partial class PageEntrepriseWWO : ContentPage
 {
     private readonly LocalDbService _localDbService;
     private ObservableCollection<Entreprise> filteredEntreprises;
+    public List<Stage> StagesList { get; set; }
+
 
     public ObservableCollection<Entreprise> Entreprises { get; set; }
 
@@ -41,6 +43,7 @@ public partial class PageEntrepriseWWO : ContentPage
 
             foreach (var entreprise in entreprises)
             {
+                entreprise.Stages = await _localDbService.GetStagesByEntrepriseId(entreprise.Id_Entreprise);
                 Entreprises.Add(entreprise);
             }
 
@@ -98,4 +101,38 @@ public partial class PageEntrepriseWWO : ContentPage
             filteredEntreprises.Add(entreprise);
         }
     }
+
+
+    private async void SelectionEntreprise(object sender, SelectedItemChangedEventArgs e)
+    {
+        if (e.SelectedItem == null)
+            return;
+
+        var selectedEntreprise = e.SelectedItem as Entreprise;
+        if (selectedEntreprise != null)
+        {
+            NomEntreprise.Text = selectedEntreprise.Nom_Entreprise;
+            EmailEntreprise.Text = selectedEntreprise.Email_Entreprise;
+            DescriptionEntreprise.Text = selectedEntreprise.Description_Entreprise;
+            ImageEntreprise.Source = selectedEntreprise.Image_Entreprise;
+            ShowInformations.IsVisible = true;
+
+            // Ya un problème ici
+            var stages = await _localDbService.GetStagesByEntrepriseId(selectedEntreprise.Id_Entreprise);
+
+            if (stages == null || stages.Count == 0)
+            {
+                Stages.Text = "Aucun stage associé";
+            }
+            else
+            {
+                
+                var stageNames = stages.Select(stage => stage.Nom_Stage).ToList();
+                var stageNamesString = string.Join(", ", stageNames);
+                Stages.Text = $"Stages associés : {stageNamesString}";
+            }
+        }
+    }
+
 }
+

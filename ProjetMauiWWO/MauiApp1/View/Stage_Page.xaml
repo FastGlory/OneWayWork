@@ -56,8 +56,9 @@
                 <Label x:Name="NomStage" FontAttributes="Bold" TextColor="DarkBlue"/>
                 <Label x:Name="DescriptionStage" FontAttributes="Italic"/>
                 <Label x:Name="DispoStage" FontAttributes="Italic"/>
-                <Label x:Name="EntrepriseRelier" FontAttributes="Italic"/>
                 <Label x:Name="SalaireStage" FontAttributes="Italic"/>
+                <Label x:Name="EntrepriseRelier" FontAttributes="Italic"/>
+                
             </StackLayout>
         </Frame> 
         <Frame BackgroundColor="LightGray" Padding="10" CornerRadius="5" HorizontalOptions="Start" VerticalOptions="End" Margin="0, 0, 0, 0">
