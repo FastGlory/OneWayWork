@@ -25,6 +25,8 @@ namespace MauiApp1.Service
             await _connection.CreateTableAsync<Stagiaire>();
             await _connection.CreateTableAsync<Stage>();
             await _connection.CreateTableAsync<Entreprise>();
+            await _connection.CreateTableAsync<Candidature>();
+
             await InsertData(); // On insère les donnée importantes
         }
 
@@ -131,6 +133,27 @@ namespace MauiApp1.Service
         {
             await _connection.DeleteAsync(entreprise);
         }
+
+        // Méthode CRDU pour les candidatures ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        public async Task<List<Candidature>> GetCandidature()
+        {
+            return await _connection.Table<Candidature>().ToListAsync();
+        }
+
+        public async Task SaveCandidature(Candidature candidature)
+        {
+            await _connection.InsertAsync(candidature);
+
+        }
+
+        public async Task<List<Candidature>> GetdraftFromUser(string idSession)
+        {
+            return await _connection.Table<Candidature>()
+                .Where(c => c.IdSession == idSession) 
+                .ToListAsync();
+        }
+
         // Insertion de données de test
         public async Task InsertData()
         {

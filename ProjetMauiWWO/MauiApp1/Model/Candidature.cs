@@ -18,13 +18,15 @@ namespace MauiApp1.Model
         public string? Description_Candidature { get; set; }
         [Column("Lien_Candidature")]
         public string? Lien_Candidature { get; set; }
-        [Column("Lien_Candidature ")]
-        public string? email_Stagiaire { get; set; }
+       
         [Column("Document_Candidature")]
         public byte[] Document_Candidature { get; set; }
 
         [Column("Is_Draft‎")] 
         public bool Is_Draft { get; set; } = false;
+
+        [Column("Id_Draft‎")]
+        public Guid Id_Draft { get; set; } = Guid.NewGuid();
 
         [Column("Is_Accepted ‎")] 
         public bool Is_Accepted { get; set; } = false;
