@@ -23,32 +23,59 @@
                    Margin="0,30,0,0"
                    SemanticProperties.HeadingLevel="Level1" />
 
-            <Label Text="La mission de OneWayWork est simple :"
-                   FontSize="18"
+            <Label Text="La mission de OneWayWork est simple :" 
+                   FontSize="18" 
                    SemanticProperties.HeadingLevel="Level2" />
 
             <HorizontalStackLayout Spacing="20" Margin="0,40,0,0">
                 <VerticalStackLayout Spacing="10">
                     <Image Source="image2.png" SemanticProperties.Description="Feature 1" />
-                    <Label Text="Contacter les professionnels du monde entier" FontSize="16" SemanticProperties.HeadingLevel="Level3" HorizontalOptions="Center" />
-                
+                    <Label Text="Contacter les professionnels du monde entier" 
+                           FontSize="16" 
+                           SemanticProperties.HeadingLevel="Level3" 
+                           HorizontalOptions="Center" />
+                    <Label Text="Notre BUT " 
+                           FontSize="Large" 
+                           Margin="0,40,0,0" 
+                           SemanticProperties.HeadingLevel="Level2" />
 
+                    <StackLayout Margin="0,0,0,0">
+                        <Label Text="- Offir une application unique en son genre" 
+                         FontSize="16" 
+                         TextColor="White" 
+                         Margin="0,5,0,0"/>
+                        
+                        <Label Text="- La simpliciter" 
+                               FontSize="16" 
+                               TextColor="White" 
+                               Margin="0,5,0,0"/>
+
+                        <Label Text="- Une favorisation pour la collaboration" 
+                               FontSize="16" 
+                               TextColor="White" 
+                               Margin="0,5,0,0"/>
+                        <Label Text="- La securiter et la confidentialiter" 
+                               FontSize="16" 
+                               TextColor="White" 
+                               Margin="0,5,0,0"/>
+                    </StackLayout>
+                    <Button Text="Connecte toi!"
+                     Margin="0,30,0,0"
+                     Padding="20,10"
+                     CornerRadius="10"
+                     FontSize="18"
+                     BackgroundColor="Blue"
+                     TextColor="White"
+                     SemanticProperties.Hint="Tap to start using MyApp" />
                 </VerticalStackLayout>
 
                 <VerticalStackLayout Spacing="10">
-                    <Image Source="image5.png" SemanticProperties.Description="Feature 3" />
-                    <Label Text=" unique en son genre" FontSize="16" SemanticProperties.HeadingLevel="Level4" />
+                    <Image Source="image1.png" SemanticProperties.Description="Feature 3" Margin="110,0,0,0" />
                 </VerticalStackLayout>
+                    
             </HorizontalStackLayout>
 
-            <Button Text="Connecte toi!"
-                    Margin="0,30,0,0"
-                    Padding="20,10"
-                    CornerRadius="10"
-                    FontSize="18"
-                    BackgroundColor="Blue"
-                    TextColor="White"
-                    SemanticProperties.Hint="Tap to start using MyApp" />
+           
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
