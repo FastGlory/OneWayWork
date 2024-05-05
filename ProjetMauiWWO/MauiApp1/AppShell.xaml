@@ -33,6 +33,22 @@
         Route="PageEntrepriseWWO" />
 
 
+    <ShellContent
+        Title="Entreprise"
+        ContentTemplate="{DataTemplate view:PageEntrepriseWWO}"
+        Route="PageEntrepriseWWO" />
+
+
+
+    <ShellContent
+        Title="Entreprise"
+        ContentTemplate="{DataTemplate view:}"
+        Route="PageEntrepriseWWO" />
+
+
+
+
+
 
 
 

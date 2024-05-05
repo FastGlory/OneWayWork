@@ -2,6 +2,12 @@ using System.Collections.ObjectModel;
 using MauiApp1.Model;
 using MauiApp1.Service;
 using MauiApp1.ViewModel;
+using Microsoft.Maui.Controls;
+using System;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
 
 namespace MauiApp1.View;
 

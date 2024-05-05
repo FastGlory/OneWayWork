@@ -1,6 +1,9 @@
 using MauiApp1.Model;
 using MauiApp1.Service;
 using MauiApp1.ViewModel;
+using System.Net.Mime;
+using System.Security.Cryptography.X509Certificates;
+using System.Runtime.CompilerServices;
 
 namespace MauiApp1.View;
 
@@ -8,15 +11,14 @@ public partial class DemandeCandidatView : ContentPage
 {
 
     private readonly LocalDbService _localDbService;
+    
     public DemandeCandidatView(LocalDbService localDbService)
     {
 
 
 
-        InitializeComponent();
         _localDbService = localDbService;
-        string idSession = IdSessionServiceApp.Instance.GetSessionId(); // on prend le session idd pour enregistrer le brouillon dépendant du compte de la personne
-        
+        InitializeComponent();
     }
 
     private async void SaveDraft_Clicked(object sender, EventArgs e) 
@@ -35,25 +37,25 @@ public partial class DemandeCandidatView : ContentPage
 
             }
 
+          
+                var candidature = new Candidature  // on crée une instance de la camdidaturre et on la stock dans la database
+                {
+                    Description_Candidature = description,
+                    Lien_Candidature = linkCandidat,
+                    IdSession = idSession,
+                    Is_Draft = true,
 
-            var candidature = new Candidature  // on crée une instance de la camdidaturre et on la stock dans la database
-            {
-                Description_Candidature = description,
-                Lien_Candidature = linkCandidat,
-                IdSession = idSession,
-                Is_Draft = true,
-               
-            };
+                };
+
+            
 
             await _localDbService.SaveCandidature(candidature);
             MessageLabel.Text = "Brouillon Enregistré avec succès.";
 
-        }
-        catch (InvalidOperationException ex)  // au cas ou
-        {
+            
 
-            MessageLabel.Text = $"Erreur lors de la création du brouillon: {ex.Message}";
         }
+
 
         catch (Exception ex)
         {
