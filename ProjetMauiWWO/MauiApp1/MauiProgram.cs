@@ -24,6 +24,10 @@ namespace MauiApp1
             builder.Services.AddTransient<ConnexionView>();
             builder.Services.AddTransient<InscriptionView>();
             builder.Services.AddTransient<PageEntrepriseWWO>();
+            builder.Services.AddTransient<CandidatureDraftView>();
+            builder.Services.AddTransient<DemandeCandidatView>();
+
+
 #if DEBUG
             builder.Logging.AddDebug();
 #endif

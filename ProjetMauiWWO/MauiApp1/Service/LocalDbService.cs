@@ -172,7 +172,7 @@ namespace MauiApp1.Service
             }
 
             return await _connection.Table<Candidature>()
-                .Where(c => c.IdSession == idSession) 
+                .Where(c => c.IdSession == idSession)
                 .ToListAsync();
         }
 
@@ -197,6 +197,9 @@ namespace MauiApp1.Service
                         new Stagiaire { nom_Stagiaire = "Julie", prenom_Stagiaire = "Roux", email_Stagiaire = "julie.roux@example.com", MotDePasse_Stagiaire = "julie_password", image_Stagiaire = "imagei.png" , IdSession = "65322", IdEntrepriseChoice=null },
                         new Stagiaire { nom_Stagiaire = "Gorge", prenom_Stagiaire = "Stevensen", email_Stagiaire = "Gorge.Stevensen@example.com", MotDePasse_Stagiaire = "Gorge_password", image_Stagiaire = "imageaj.png" , IdSession = "235665", IdEntrepriseChoice=null  }
                     };
+
+
+             
 
                 foreach (var stagiaire in stagiairesToAdd)
                 {

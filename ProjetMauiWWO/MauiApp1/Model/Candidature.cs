@@ -25,9 +25,6 @@ namespace MauiApp1.Model
         [Column("Is_Draft‎")] 
         public bool Is_Draft { get; set; } = false;
 
-        [Column("Id_Draft‎")]
-        public Guid Id_Draft { get; set; } = Guid.NewGuid();
-
         [Column("Is_Accepted ‎")] 
         public bool Is_Accepted { get; set; } = false;
 

@@ -26,31 +26,33 @@ public partial class CandidatureDraftView : ContentPage
         //LoadDraftsAsync();
 
     }
-        
-
-    //private async void LoadDraftsAsync()
-    //{
-    //    try
-    //    {
-    //        string idSession = IdSessionServiceApp.Instance.GetSessionId();
-    //        var drafts = await _localDbService.GetdraftFromUser(idSession);
-    //        drafts.Clear();
-
-    //        foreach (var draft in drafts)
-    //        {
-    //            Drafts.Add(draft);
 
 
-    //        }
+    private async void LoadDraftsAsync()
+    {
+        try
+        {
+            string idSession = IdSessionServiceApp.Instance.GetSessionId();
+            var drafts = await _localDbService.GetdraftFromUser(idSession);
+            drafts.Clear();
 
-    //    }catch (Exception ex)
-    //    {
-    //        MessageLabel.Text = $"Erreur inconnu: {ex.Message}";
-    //    }
-    
-   
+            foreach (var draft in drafts)
+            {
+                Drafts.Add(draft);
+
+
+            }
+
+        }
+        catch (Exception ex)
+        {
+            MessageLabel.Text = $"Erreur inconnu: {ex.Message}";
+        }
+
+
 
     }
+}
 
 
 

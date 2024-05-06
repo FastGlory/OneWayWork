@@ -181,6 +181,11 @@
             </StackLayout>
 
 
+
+
+        </StackLayout>
+        
+        
             <Frame
                 Margin="0,0,0,0"
                 Padding="10"
@@ -195,9 +200,6 @@
                     VerticalOptions="Center" />
             </Frame>
 
-
-
-        </StackLayout>
 
     </Grid>
 

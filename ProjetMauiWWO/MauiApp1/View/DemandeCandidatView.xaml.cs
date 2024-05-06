@@ -1,9 +1,7 @@
 using MauiApp1.Model;
 using MauiApp1.Service;
 using MauiApp1.ViewModel;
-using System.Net.Mime;
-using System.Security.Cryptography.X509Certificates;
-using System.Runtime.CompilerServices;
+
 
 namespace MauiApp1.View;
 
@@ -18,7 +16,7 @@ public partial class DemandeCandidatView : ContentPage
 
 
         InitializeComponent();
-        BindingContext = new DemandeCandidatView(localDbService);
+        _localDbService = localDbService;
     }
 
     private async void SaveDraft_Clicked(object sender, EventArgs e)
