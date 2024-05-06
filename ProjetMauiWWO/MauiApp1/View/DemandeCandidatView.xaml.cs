@@ -17,6 +17,9 @@ public partial class DemandeCandidatView : ContentPage
 
         InitializeComponent();
         _localDbService = localDbService;
+        string idSession = IdSessionServiceApp.Instance.GetSessionId();
+        IdSessionLabel.Text = $"IdSession: {idSession}";
+
     }
 
     private async void SaveDraft_Clicked(object sender, EventArgs e)
@@ -31,6 +34,13 @@ public partial class DemandeCandidatView : ContentPage
             if (string.IsNullOrWhiteSpace(description) || string.IsNullOrWhiteSpace(linkCandidat))
             {
                 MessageLabel.Text = "Veuillez saisir tous les champs.";  // si il ne met pas tout les champs dans le forms 
+                return;
+
+            }
+
+            if (string.IsNullOrWhiteSpace(idSession))
+            {
+                MessageLabel.Text = "Besoin de se connecter."; 
                 return;
 
             }

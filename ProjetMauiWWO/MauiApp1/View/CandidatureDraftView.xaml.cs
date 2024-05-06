@@ -22,19 +22,18 @@ public partial class CandidatureDraftView : ContentPage
         _localDbService = localDbService;
         string idSession = IdSessionServiceApp.Instance.GetSessionId(); // on prend le session idd pour enregistrer le brouillon dépendant du compte de la personne
         Drafts = new ObservableCollection<Candidature>();
+        IdSessionLabel.Text = $"IdSession: {idSession}";
         BindingContext = this;
-        //LoadDraftsAsync();
+        LoadDraftsAsync(idSession);
 
     }
 
 
-    private async void LoadDraftsAsync()
+    private async void LoadDraftsAsync(string idSession)
     {
         try
         {
-            string idSession = IdSessionServiceApp.Instance.GetSessionId();
             var drafts = await _localDbService.GetdraftFromUser(idSession);
-            drafts.Clear();
 
             foreach (var draft in drafts)
             {
@@ -53,7 +52,6 @@ public partial class CandidatureDraftView : ContentPage
 
     }
 }
-
 
 
 

@@ -170,10 +170,14 @@ namespace MauiApp1.Service
             {
                 throw new ArgumentNullException(nameof(idSession), "Le sessionId ne peut être nuls");
             }
+            
+           
+            
+                return await _connection.Table<Candidature>()
+                    .Where(c => c.IdSession == idSession)
+                    .ToListAsync();
+            
 
-            return await _connection.Table<Candidature>()
-                .Where(c => c.IdSession == idSession)
-                .ToListAsync();
         }
 
         // Insertion de données de test
@@ -198,10 +202,19 @@ namespace MauiApp1.Service
                         new Stagiaire { nom_Stagiaire = "Gorge", prenom_Stagiaire = "Stevensen", email_Stagiaire = "Gorge.Stevensen@example.com", MotDePasse_Stagiaire = "Gorge_password", image_Stagiaire = "imageaj.png" , IdSession = "235665", IdEntrepriseChoice=null  }
                     };
 
+                var candidats = await _connection.Table<Candidature>().ToListAsync();
+                if (candidats.Count == 0)
+                {
+                    var CandidataireToAdd = new List<Stagiaire>
+                    {
 
-             
+                    };
 
-                foreach (var stagiaire in stagiairesToAdd)
+                }
+
+
+
+                    foreach (var stagiaire in stagiairesToAdd)
                 {
                     // Vérification des doublons ! 
                     var existingStagiaire = await _connection.Table<Stagiaire>().FirstOrDefaultAsync(s => s.nom_Stagiaire == stagiaire.nom_Stagiaire && s.prenom_Stagiaire == stagiaire.prenom_Stagiaire);
