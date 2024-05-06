@@ -31,6 +31,9 @@ namespace MauiApp1.Model
         [Column("Is_Accepted ‎")] 
         public bool Is_Accepted { get; set; } = false;
 
+        [Column("Id_Stage ‎")] // clé étrangère
+        public string? Id_Stage { get; set; }
+
         [Column("IdSession")]  //Clé étrangère
         public string? IdSession { get; set; }
 

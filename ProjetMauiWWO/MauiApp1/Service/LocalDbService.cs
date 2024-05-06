@@ -136,17 +136,28 @@ namespace MauiApp1.Service
 
         // Méthode CRDU pour les candidatures ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-        public async Task<List<Candidature>> GetCandidature()
+        public async Task<List<Candidature>> GetCandidatureAsync()
         {
             return await _connection.Table<Candidature>().ToListAsync();
         }
+
+        public async Task UpdateCandidature(Candidature candidature)
+        {
+            if (candidature == null)
+            {
+                throw new ArgumentNullException(nameof(candidature), "La candidatire ne peut être nuls");
+            }
+            await _connection.UpdateAsync(candidature);
+        }
+
+
 
         public async Task SaveCandidature(Candidature candidature)
         {
 
             if (candidature == null)
             {
-                throw new ArgumentNullException(nameof(candidature));
+                throw new ArgumentNullException(nameof(candidature), "La candidatire ne peut être nuls");
             }
 
             await _connection.InsertAsync(candidature);
@@ -157,7 +168,7 @@ namespace MauiApp1.Service
         {
             if (string.IsNullOrWhiteSpace(idSession))
             {
-                throw new ArgumentNullException(nameof(idSession));
+                throw new ArgumentNullException(nameof(idSession), "Le sessionId ne peut être nuls");
             }
 
             return await _connection.Table<Candidature>()

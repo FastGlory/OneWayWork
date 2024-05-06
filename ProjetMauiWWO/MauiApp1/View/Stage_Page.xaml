@@ -58,7 +58,24 @@
                 <Label x:Name="DispoStage" FontAttributes="Italic"/>
                 <Label x:Name="SalaireStage" FontAttributes="Italic"/>
                 <Label x:Name="EntrepriseRelier" FontAttributes="Italic"/>
-                
+
+
+
+                <Button
+                    Margin="80,0,0,0"
+                    Padding="15"
+                    BackgroundColor="#1a2d59"
+                    Clicked="OnPageCandidat"
+                    CornerRadius="30"
+                    FontSize="Small"
+                    HeightRequest="70"
+                    HorizontalOptions="Start"
+                    Text="Postuler"
+                    TextColor="White"
+                    TextTransform="Uppercase"
+                    WidthRequest="200" />
+
+
             </StackLayout>
         </Frame> 
         <Frame BackgroundColor="LightGray" Padding="10" CornerRadius="5" HorizontalOptions="Start" VerticalOptions="End" Margin="0, 0, 0, 0">

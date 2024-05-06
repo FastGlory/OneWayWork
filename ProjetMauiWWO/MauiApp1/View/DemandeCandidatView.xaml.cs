@@ -17,8 +17,8 @@ public partial class DemandeCandidatView : ContentPage
 
 
 
-        _localDbService = localDbService;
         InitializeComponent();
+        BindingContext = new DemandeCandidatView(localDbService);
     }
 
     private async void SaveDraft_Clicked(object sender, EventArgs e)

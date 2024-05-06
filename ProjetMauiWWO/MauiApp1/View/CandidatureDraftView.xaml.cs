@@ -23,31 +23,31 @@ public partial class CandidatureDraftView : ContentPage
         string idSession = IdSessionServiceApp.Instance.GetSessionId(); // on prend le session idd pour enregistrer le brouillon dépendant du compte de la personne
         Drafts = new ObservableCollection<Candidature>();
         BindingContext = this;
-        LoadDraftsAsync();
+        //LoadDraftsAsync();
 
     }
         
 
-    private async void LoadDraftsAsync()
-    {
-        try
-        {
-            string idSession = IdSessionServiceApp.Instance.GetSessionId();
-            var drafts = await _localDbService.GetdraftFromUser(idSession);
-            drafts.Clear();
+    //private async void LoadDraftsAsync()
+    //{
+    //    try
+    //    {
+    //        string idSession = IdSessionServiceApp.Instance.GetSessionId();
+    //        var drafts = await _localDbService.GetdraftFromUser(idSession);
+    //        drafts.Clear();
 
-            foreach (var draft in drafts)
-            {
-                Drafts.Add(draft);
+    //        foreach (var draft in drafts)
+    //        {
+    //            Drafts.Add(draft);
 
 
-            }
+    //        }
 
-        }catch (Exception ex)
-        {
-            MessageLabel.Text = $"Erreur inconnu: {ex.Message}";
-        }
-    }
+    //    }catch (Exception ex)
+    //    {
+    //        MessageLabel.Text = $"Erreur inconnu: {ex.Message}";
+    //    }
+    
    
 
     }
