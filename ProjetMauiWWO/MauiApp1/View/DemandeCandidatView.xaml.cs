@@ -21,7 +21,7 @@ public partial class DemandeCandidatView : ContentPage
         InitializeComponent();
     }
 
-    private async void SaveDraft_Clicked(object sender, EventArgs e) 
+    private async void SaveDraft_Clicked(object sender, EventArgs e)
     {
         string description = AddDescription.Text;
         string linkCandidat = AddLink.Text;
@@ -37,22 +37,22 @@ public partial class DemandeCandidatView : ContentPage
 
             }
 
-          
-                var candidature = new Candidature  // on crée une instance de la camdidaturre et on la stock dans la database
-                {
-                    Description_Candidature = description,
-                    Lien_Candidature = linkCandidat,
-                    IdSession = idSession,
-                    Is_Draft = true,
 
-                };
+            var candidature = new Candidature  // on crée une instance de la camdidaturre et on la stock dans la database
+            {
+                Description_Candidature = description,
+                Lien_Candidature = linkCandidat,
+                IdSession = idSession,
+                Is_Draft = true,
 
-            
+            };
+
+
 
             await _localDbService.SaveCandidature(candidature);
             MessageLabel.Text = "Brouillon Enregistré avec succès.";
 
-            
+
 
         }
 

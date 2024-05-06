@@ -143,12 +143,23 @@ namespace MauiApp1.Service
 
         public async Task SaveCandidature(Candidature candidature)
         {
+
+            if (candidature == null)
+            {
+                throw new ArgumentNullException(nameof(candidature));
+            }
+
             await _connection.InsertAsync(candidature);
 
         }
 
         public async Task<List<Candidature>> GetdraftFromUser(string idSession)
         {
+            if (string.IsNullOrWhiteSpace(idSession))
+            {
+                throw new ArgumentNullException(nameof(idSession));
+            }
+
             return await _connection.Table<Candidature>()
                 .Where(c => c.IdSession == idSession) 
                 .ToListAsync();
