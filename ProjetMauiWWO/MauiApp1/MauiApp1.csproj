@@ -61,6 +61,11 @@
 	  <None Remove="Resources\Images\Amazon.png" />
 	  <None Remove="Resources\Images\Bell.png" />
 	  <None Remove="Resources\Images\Google.png" />
+	  <None Remove="Resources\Images\image1.png" />
+	  <None Remove="Resources\Images\image2.png" />
+	  <None Remove="Resources\Images\image3.png" />
+	  <None Remove="Resources\Images\image4.png" />
+	  <None Remove="Resources\Images\image5.png" />
 	  <None Remove="Resources\Images\imagea.png" />
 	  <None Remove="Resources\Images\imageaj.png" />
 	  <None Remove="Resources\Images\imageb.png" />
@@ -96,6 +101,15 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\InscriptionViewEntreprise.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\PageAccueilAdmin.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\PageAccueilEntreprise.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\PageAccueilStagiaire.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\PageEntrepriseWWO.xaml">

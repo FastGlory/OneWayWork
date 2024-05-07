@@ -126,11 +126,11 @@
 
                 <StackLayout Opacity="0.6">
                     <ImageButton
-                        Clicked="UploadDocBtn"
                         x:Name="AddDocBtn"
                         Margin="90,0,0,0"
                         Padding="15"
                         BackgroundColor="#1a2d59"
+                        Clicked="UploadDocBtn"
                         CornerRadius="10"
                         HeightRequest="90"
                         HorizontalOptions="Start"

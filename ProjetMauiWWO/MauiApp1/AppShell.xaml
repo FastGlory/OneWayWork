@@ -44,16 +44,37 @@
 
 
     <ShellContent
-        Title="Faire une demande"
-        ContentTemplate="{DataTemplate view:DemandeCandidatView}"
-        Route="DemandeCandidatView" />
+        Title="Voir les candidatures"
+        ContentTemplate="{DataTemplate view:ViewCandidatureSubmitted}"
+        Route="ViewCandidatureSubmitted" />
 
 
 
     <ShellContent
-        Title="Voir les candidatures"
-        ContentTemplate="{DataTemplate view:ViewCandidatureSubmitted}"
-        Route="ViewCandidatureSubmitted" />
+        Title="Page Accueil Admin"
+        ContentTemplate="{DataTemplate view:PageAccueilAdmin}"
+        Route="PageAccueilAdmin" />
+
+
+    <ShellContent
+        Title="Page Accueil Entreprise"
+        ContentTemplate="{DataTemplate view:PageAccueilEntreprise}"
+        Route="PageAccueilEntreprise" />
+
+
+
+    <ShellContent
+        Title="Page Accueil Stagiaire"
+        ContentTemplate="{DataTemplate view:PageAccueilStagiaire}"
+        Route="PageAccueilStagiaire" />
+
+
+
+
+
+
+
+
 
 
 
