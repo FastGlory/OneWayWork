@@ -14,33 +14,48 @@
         Title="Menu"
         ContentTemplate="{DataTemplate view:Menu}"
         Route="Menu" />
+
+
+
     <ShellContent
         Title="Connexion"
         ContentTemplate="{DataTemplate view:ConnexionView}"
         Route="ConnexionView" />
+
+
     <ShellContent
         Title="Stagiaire"
         ContentTemplate="{DataTemplate view:Stagiaire_Page}"
         Route="Stagiaire_Page" />
+
+
     <ShellContent
         Title="Stage"
         ContentTemplate="{DataTemplate view:Stage_Page}"
         Route="Stage_Page" />
+
+
 
     <ShellContent
         Title="Entreprise"
         ContentTemplate="{DataTemplate view:PageEntrepriseWWO}"
         Route="PageEntrepriseWWO" />
 
-    <ShellContent
-    Title="DemandeCandidatView"
-    ContentTemplate="{DataTemplate view:DemandeCandidatView}"
-    Route="DemandeCandidatView" />
 
-            <ShellContent
-        Title="Entreprise"
-        ContentTemplate="{DataTemplate view:CandidatureDraftView}"
-        Route="CandidatureDraftView" />
+
+    <ShellContent
+        Title="Faire une demande"
+        ContentTemplate="{DataTemplate view:DemandeCandidatView}"
+        Route="DemandeCandidatView" />
+
+
+
+    <ShellContent
+        Title="Voir les candidatures"
+        ContentTemplate="{DataTemplate view:ViewCandidatureSubmitted}"
+        Route="ViewCandidatureSubmitted" />
+
+
 
 
 

@@ -53,6 +53,7 @@
                     Margin="300,0,0,0"
                     Padding="15"
                     BackgroundColor="#1a2d59"
+                    Clicked="OnPageDraft"
                     CornerRadius="30"
                     FontSize="Small"
                     HeightRequest="70"
@@ -168,6 +169,7 @@
                     Margin="40,0,0,0"
                     Padding="15"
                     BackgroundColor="#088F8F"
+                    Clicked="SubmitCandidature_Clicked"
                     CornerRadius="30"
                     FontSize="Small"
                     HeightRequest="70"
@@ -184,21 +186,21 @@
 
 
         </StackLayout>
-        
-        
-            <Frame
-                Margin="0,0,0,0"
-                Padding="10"
-                BackgroundColor="LightGray"
-                CornerRadius="5"
-                HorizontalOptions="Start"
-                VerticalOptions="End">
-                <Label
-                    x:Name="IdSessionLabel"
-                    HorizontalOptions="Center"
-                    Text="{Binding IdSession}"
-                    VerticalOptions="Center" />
-            </Frame>
+
+
+        <Frame
+            Margin="0,0,0,0"
+            Padding="10"
+            BackgroundColor="LightGray"
+            CornerRadius="5"
+            HorizontalOptions="Start"
+            VerticalOptions="End">
+            <Label
+                x:Name="IdSessionLabel"
+                HorizontalOptions="Center"
+                Text="{Binding IdSession}"
+                VerticalOptions="Center" />
+        </Frame>
 
 
     </Grid>

@@ -11,42 +11,39 @@ using System.Runtime.CompilerServices;
 
 namespace MauiApp1.View;
 
-public partial class CandidatureDraftView : ContentPage
+public partial class ViewCandidatureSubmitted : ContentPage
 {
 
     private readonly LocalDbService _localDbService;
-    public ObservableCollection<Candidature> Drafts { get; set; }
-    public CandidatureDraftView(LocalDbService localDbService)
+    public ObservableCollection<Candidature> CandidatureSubmit { get; set; }
+    public ViewCandidatureSubmitted(LocalDbService localDbService)
     {
         InitializeComponent();
         _localDbService = localDbService;
         string idSession = IdSessionServiceApp.Instance.GetSessionId(); // on prend le session idd pour enregistrer le brouillon dépendant du compte de la personne
-        Drafts = new ObservableCollection<Candidature>();
+        CandidatureSubmit = new ObservableCollection<Candidature>();
         IdSessionLabel.Text = $"IdSession: {idSession}";
         BindingContext = this;
-        LoadDraftsAsync(idSession);
+        LoadCandidatureAsync();
 
 
     }
 
 
-    private async void LoadDraftsAsync(string idSession)
+    private async void LoadCandidatureAsync()
     {
         try
         {
-            var drafts = await _localDbService.GetdraftFromUser(idSession);
+            var CandidatureSubmit = await _localDbService.GetCandidatureFromUser();
 
-            foreach (var draft in drafts)
+            foreach (var candidature in CandidatureSubmit)
             {
-                Drafts.Add(draft);
-
-
-
+                CandidatureSubmit.Add(candidature);
 
             }
 
         }
-        catch (Exception ex)
+        catch (InvalidOperationException ex)
         {
             MessageLabel.Text = $"Erreur inconnu: {ex.Message}";
         }
@@ -59,7 +56,6 @@ public partial class CandidatureDraftView : ContentPage
     }
 
    
-    
 }
 
 

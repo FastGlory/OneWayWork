@@ -164,21 +164,78 @@ namespace MauiApp1.Service
 
         }
 
+        public async Task SubmitCandidature(Candidature candidature)
+        {
+
+            if (candidature == null)
+            {
+                throw new ArgumentNullException(nameof(candidature), "La candidatire ne peut être nuls");
+            }
+
+            await _connection.InsertAsync(candidature);
+
+        }
+
+        public async Task DeleteCandidature(Candidature candidature)
+
+        {
+            if (candidature == null)
+            {
+                throw new ArgumentNullException(nameof(candidature), "La candidatire ne peut être nuls");
+            }
+            await _connection.DeleteAsync(candidature);
+        }
+
         public async Task<List<Candidature>> GetdraftFromUser(string idSession)
         {
             if (string.IsNullOrWhiteSpace(idSession))
             {
                 throw new ArgumentNullException(nameof(idSession), "Le sessionId ne peut être nuls");
             }
-            
-           
-            
-                return await _connection.Table<Candidature>()
-                    .Where(c => c.IdSession == idSession)
-                    .ToListAsync();
-            
+
+
+
+            return await _connection.Table<Candidature>()
+                .Where(c => c.IdSession == idSession)
+                .ToListAsync();
 
         }
+
+        public async Task<List<Candidature>> GetCandidatureFromUser()
+        {
+
+            return await _connection.Table<Candidature>().ToListAsync();
+
+
+        }
+
+        public async Task<String> GetStagiaireNameAsync(string idSession)
+        {
+            if (string.IsNullOrWhiteSpace(idSession))
+            {
+                throw new ArgumentNullException(nameof(idSession), "Le sessionId ne peut être nuls");
+            }
+
+
+            var stagiaire = await _connection.Table<Stagiaire>()
+                .Where(c => c.IdSession == idSession)
+                .FirstOrDefaultAsync();
+
+            if (stagiaire != null)
+            {
+                return stagiaire.nom_Stagiaire;
+
+            }
+
+            else
+            {
+                return null;
+            }
+        }
+
+
+
+
 
         // Insertion de données de test
         public async Task InsertData()
@@ -214,7 +271,7 @@ namespace MauiApp1.Service
 
 
 
-                    foreach (var stagiaire in stagiairesToAdd)
+                foreach (var stagiaire in stagiairesToAdd)
                 {
                     // Vérification des doublons ! 
                     var existingStagiaire = await _connection.Table<Stagiaire>().FirstOrDefaultAsync(s => s.nom_Stagiaire == stagiaire.nom_Stagiaire && s.prenom_Stagiaire == stagiaire.prenom_Stagiaire);
@@ -277,7 +334,7 @@ namespace MauiApp1.Service
             await _connection.DeleteAllAsync<Stagiaire>();
         }
 
-       
+
         public async Task DeleteAllStages()
         {
             await _connection.DeleteAllAsync<Stage>();

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="MauiApp1.View.CandidatureDraftView"
+    x:Class="MauiApp1.View.ViewCandidatureSubmitted"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Mes brouillons">
+    Title="Les candidatures">
+
     <StackLayout>
 
         <Label
@@ -13,7 +14,7 @@
             Text=""
             TextColor="Red" />
 
-        <ListView x:Name="listView" ItemsSource="{Binding Drafts}">
+        <ListView x:Name="listView" ItemsSource="{Binding CandidatureSubmit}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -57,15 +58,33 @@
 
                                 <Label FontAttributes="Bold" Text="{Binding Date_Candidature}" />
 
-                                <Button
-                                    Padding="10"
-                                    BackgroundColor="#1a2d59"
-                                    CornerRadius="10"
-                                    HorizontalOptions="End"
-                                    Text="Delete"
-                                    TextColor="White" />
-                            </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Button
+                                        Padding="10"
+                                        BackgroundColor="#1a2d59"
+                                        CornerRadius="10"
+                                        HorizontalOptions="End"
+                                        Text="Delete"
+                                        TextColor="White" />
 
+                                    <Button
+                                        Padding="10"
+                                        BackgroundColor="Green"
+                                        CornerRadius="10"
+                                        HorizontalOptions="End"
+                                        Text="Accepter"
+                                        TextColor="White" />
+
+
+                                    <Button
+                                        Padding="10"
+                                        BackgroundColor="red"
+                                        CornerRadius="10"
+                                        HorizontalOptions="End"
+                                        Text="Refuser"
+                                        TextColor="White" />
+                                </StackLayout>
+                            </StackLayout>
 
 
 
@@ -89,4 +108,7 @@
                 VerticalOptions="Center" />
         </Frame>
     </StackLayout>
+
+
+
 </ContentPage>

@@ -33,8 +33,9 @@ namespace MauiApp1.View
 
 
         private async void OnPageCandidat(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new InscriptionView(_localDbService));
+        {   
+           
+            await Navigation.PushAsync(new DemandeCandidatView(_localDbService));
         }
 
         protected override async void OnAppearing()
