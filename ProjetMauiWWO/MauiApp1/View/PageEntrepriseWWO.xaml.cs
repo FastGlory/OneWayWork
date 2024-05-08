@@ -29,10 +29,14 @@ public partial class PageEntrepriseWWO : ContentPage
        
     }
 
+   
     // Code d'affichage des entreprises
     protected override void OnAppearing()
     {
         base.OnAppearing();
+        string idSession = IdSessionServiceApp.Instance.GetSessionId();
+        IdSessionLabel.Text = $"IdSession: {idSession}";
+        LoadEntreprisesAsync();
     }
 
     private async Task LoadEntreprisesAsync()

@@ -28,7 +28,12 @@ public partial class CandidatureDraftView : ContentPage
 
 
     }
-
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        string idSession = IdSessionServiceApp.Instance.GetSessionId();
+        IdSessionLabel.Text = $"IdSession: {idSession}";
+    }
 
     private async void LoadDraftsAsync(string idSession)
     {

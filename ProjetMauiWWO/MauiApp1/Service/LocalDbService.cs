@@ -260,10 +260,6 @@ namespace MauiApp1.Service
             }
         }
 
-
-
-
-
         // Insertion de données de test
         public async Task InsertData()
         {

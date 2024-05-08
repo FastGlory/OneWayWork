@@ -20,15 +20,15 @@ namespace MauiApp1.View
         public Stagiaire_Page(LocalDbService dbService)
         {
             InitializeComponent();
-            string IdSession = IdSessionServiceApp.Instance.GetSessionId();
-            IdSessionLabel.Text = $"IdSession: {IdSession}";
             _localDbService = dbService;
             Stagiaires = new ObservableCollection<Stagiaire>();
             filteredStagiaires = new ObservableCollection<Stagiaire>();
             BindingContext = this;
             listView.ItemsSource = filteredStagiaires;
             LoadStagiairesAsync();
-           
+            string idSession = IdSessionServiceApp.Instance.GetSessionId();
+            IdSessionLabel.Text = $"IdSession: {idSession}";
+
         }
 
 
@@ -37,6 +37,9 @@ namespace MauiApp1.View
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            string idSession = IdSessionServiceApp.Instance.GetSessionId();
+            IdSessionLabel.Text = $"IdSession: {idSession}";
+            LoadStagiairesAsync();
         }
 
         private async Task LoadStagiairesAsync()

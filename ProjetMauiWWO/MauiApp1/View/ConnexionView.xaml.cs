@@ -36,53 +36,43 @@ namespace MauiApp1.View
                     return;
                 }
 
-                // Ici on va récupérer la DB avec la méthode CRUD
                 var stagiaires = await _localDbService.GetStagiaires();
                 var admin = await _localDbService.GetAdministrateurs();
 
-                // Ici opn va vérifier si jamais sa correspond our pas 
                 var authenticatedStagiaire = stagiaires.FirstOrDefault(s => s.nom_Stagiaire == username && s.MotDePasse_Stagiaire == password);
                 var authentifcatedAdmin = admin.FirstOrDefault(s => s.Nom_Administrateur == username && s.MotDePasse_Administrateur == password);
 
                 if (authenticatedStagiaire != null)
                 {
-
-                    // manière de récupérer et d'utilisé le set. qui va mettre le id dans l'instance 
-                    IdSessionServiceApp.Instance.SetSessionId(authenticatedStagiaire.IdSession);
-
-        
-
-                    // Message réussite
-                    MessageLabel.Text = $"Connexion réussie. ID de session : {IdSessionServiceApp.Instance.GetSessionId()}";
-                    IdSessionLabel.Text = $"IdSession: {IdSessionServiceApp.Instance.GetSessionId()}";
-
-                    // On va mettre un déplacement de navigation ici 
+                    ReussiteAuthentification(authenticatedStagiaire.IdSession);
+                }
+                else if (authentifcatedAdmin != null)
+                {
+                    ReussiteAuthentification(authentifcatedAdmin.IdSession);
                 }
                 else
-                {
-                    // Message erreur coté 
-                    MessageLabel.Text = "Nom d'utilisateur ou mot de passe incorrect.";
-                }
-
-                if(authentifcatedAdmin != null) {
-                    IdSessionServiceApp.Instance.SetSessionId(authentifcatedAdmin.IdSession);
-
-                    // manière qu'on peut récupèrer l'idSession
-                    string IdSession = IdSessionServiceApp.Instance.GetSessionId();
-
-                    // Message réussite
-                    MessageLabel.Text = $"Connexion réussie. ID de session : {IdSessionServiceApp.Instance.GetSessionId()}";
-                    IdSessionLabel.Text = $"IdSession: {IdSessionServiceApp.Instance.GetSessionId()}";
-                } else
                 {
                     MessageLabel.Text = "Nom d'utilisateur ou mot de passe incorrect.";
                 }
             }
             catch (Exception ex)
             {
-                // log erreur (trouver sur le net)
-                MessageLabel.Text = $"Erreur d'authentification : {ex.Message}";
+                Debug.WriteLine($"Erreur d'authentification : {ex}");
+                MessageLabel.Text = "Erreur d'authentification. Veuillez réessayer.";
             }
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            string idSession = IdSessionServiceApp.Instance.GetSessionId();
+            IdSessionLabel.Text = $"IdSession: {idSession}";
+        }
+        private void ReussiteAuthentification(string sessionId)
+        {
+            IdSessionServiceApp.Instance.SetSessionId(sessionId);
+            string IdSession = IdSessionServiceApp.Instance.GetSessionId();
+            MessageLabel.Text = $"Connexion réussie. ID de session : {IdSession}";
+            IdSessionLabel.Text = $"IdSession: {IdSession}";
         }
     }
 }

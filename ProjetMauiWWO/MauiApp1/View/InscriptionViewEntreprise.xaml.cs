@@ -24,6 +24,7 @@ namespace MauiApp1.View
             string email = AddEmailEntreprise.Text;
             string password = AddPasswordEntreprise.Text;
             string codeSecret = CodeSecret.Text;
+            
 
             try
             {
@@ -57,7 +58,8 @@ namespace MauiApp1.View
                         Email_Entreprise = email,
                         MotDePasse_Entreprise = password,
                         IsAdmin = false, // double vérification pour s'assurer que c'est bien false
-                        Image_Entreprise = "entreprisedefaut.png"
+                        Image_Entreprise = "entreprisedefaut.png",
+                        IdSession = GenerateurDeSession(),
                     };
 
                     // Ici avec la méthode crud en rajoute  l'entreprise dans la database
@@ -70,6 +72,14 @@ namespace MauiApp1.View
             {
                 MessageLabel.Text = $"Erreur lors de la création du compte : {ex.Message}";
             }
+
+        }
+
+
+        private string GenerateurDeSession()
+        {
+            var random = new Random();
+            return random.Next(100000, 999999).ToString(); 
         }
     }
 }

@@ -38,11 +38,14 @@ namespace MauiApp1.View
             await Navigation.PushAsync(new DemandeCandidatView(_localDbService));
         }
 
+   
         protected override async void OnAppearing()
         {
             
             // Appel de la méthode OnAppearing() de la classe parente (ContentPage)
             base.OnAppearing();
+            string idSession = IdSessionServiceApp.Instance.GetSessionId();
+            IdSessionLabel.Text = $"IdSession: {idSession}";
             await LoadStagesAsync(); // La on va simplement charger
         } // Permet de montrer les informations des stages à l'utilisateur et le base. c'est une manière de faire référence directement
 

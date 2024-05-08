@@ -60,7 +60,8 @@ public partial class InscriptionView : ContentPage
                     prenom_Stagiaire = prenom,
                     email_Stagiaire = email,
                     MotDePasse_Stagiaire = password,
-                    image_Stagiaire = "neutral.png"
+                    image_Stagiaire = "neutral.png",
+                    IdSession = GenerateurDeSession()
                 };
 
                 // Ajout dans la database avec la méthode crud
@@ -78,6 +79,10 @@ public partial class InscriptionView : ContentPage
         }
     }
 
-
+    private string GenerateurDeSession()
+    {
+        var random = new Random();
+        return random.Next(100000, 999999).ToString();
+    }
 }
 
