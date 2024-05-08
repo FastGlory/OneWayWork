@@ -66,10 +66,10 @@
                     <Button
                         Margin="0,30,0,0"
                         Padding="20,10"
-                        BackgroundColor="Blue"
+                        BackgroundColor="red"
                         CornerRadius="10"
                         FontSize="18"
-                        Text="Connecte toi!"
+                        Text="Log out !"
                         TextColor="White" />
                 </VerticalStackLayout>
             </HorizontalStackLayout>

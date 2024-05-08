@@ -9,14 +9,6 @@
     Shell.FlyoutBehavior="Flyout">
 
 
-
-    <ShellContent
-        Title="Menu"
-        ContentTemplate="{DataTemplate view:Menu}"
-        Route="Menu" />
-
-
-
     <ShellContent
         Title="Connexion"
         ContentTemplate="{DataTemplate view:ConnexionView}"
