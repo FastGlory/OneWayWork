@@ -27,6 +27,7 @@ namespace MauiApp1
             builder.Services.AddTransient<CandidatureDraftView>();
             builder.Services.AddTransient<DemandeCandidatView>();
             builder.Services.AddTransient<ViewCandidatureSubmitted>();
+            builder.Services.AddTransient<ConnexionEntreprise>();
 
 
 

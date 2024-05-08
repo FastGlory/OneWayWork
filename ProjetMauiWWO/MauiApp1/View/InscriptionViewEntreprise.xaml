@@ -102,6 +102,19 @@
                 </Label>
 
 
+                <Label 
+                Text="Vous avez déjà un compte  ?  Connectez-vous!"
+                TextColor="White"
+               HorizontalOptions="Center"
+              Margin="0, 5, 0, 0">
+
+
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnConnexionTapped"/>
+                    </Label.GestureRecognizers>
+                    <Label.TextDecorations>Underline</Label.TextDecorations>
+                </Label>
+
             </StackLayout>
 
 

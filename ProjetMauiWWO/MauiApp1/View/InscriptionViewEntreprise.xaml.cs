@@ -17,7 +17,10 @@ namespace MauiApp1.View
         {
             await Navigation.PushAsync(new InscriptionView(_localDbService));
         }
-
+        private async void OnConnexionTapped(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ConnexionEntreprise(_localDbService));
+        }
         private async void CreactionClick(object sender, EventArgs e)
         {
             string nomEntreprise = AddNomEntreprise.Text;
