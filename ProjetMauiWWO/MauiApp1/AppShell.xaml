@@ -15,6 +15,10 @@
         Title="Accueil"
         ContentTemplate="{DataTemplate view:PageAccueil}"
         Route="PageAccueil" />
+    <ShellContent
+        Title="Accueil Stagiaire"
+        ContentTemplate="{DataTemplate view:PageAccueilStagiaire}"
+        Route="PageAccueilStagiaire" />
 
     <ShellContent
         Title="Home"
