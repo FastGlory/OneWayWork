@@ -4,8 +4,6 @@ public partial class PageAccueil : ContentPage
 {
 	public PageAccueil()
 	{
-		InitializeComponent();
+        InitializeComponent();
 	}
-
-
 }

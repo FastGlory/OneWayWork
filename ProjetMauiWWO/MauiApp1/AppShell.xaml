@@ -17,6 +17,11 @@
         Route="PageAccueil" />
 
     <ShellContent
+     Title="Accueil Administrateur"
+     ContentTemplate="{DataTemplate view:PageAccueilAdmin}"
+     Route="PageAccueilAdmin" />
+    
+    <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />

@@ -20,24 +20,20 @@
 
             <Label Text="En savoir plus sur les articles collaboratifs"
                    FontSize="Large"
-                   Margin="0,30,0,0"
-                   SemanticProperties.HeadingLevel="Level1" />
+                   Margin="0,30,0,0"/>
 
             <Label Text="La mission de OneWayWork est simple :" 
-                   FontSize="18" 
-                   SemanticProperties.HeadingLevel="Level2" />
+                   FontSize="18" />
 
             <HorizontalStackLayout Spacing="20" Margin="0,40,0,0">
                 <VerticalStackLayout Spacing="10">
                     <Image Source="image2.png" SemanticProperties.Description="Feature 1" />
                     <Label Text="Contacter les professionnels du monde entier" 
                            FontSize="16" 
-                           SemanticProperties.HeadingLevel="Level3" 
                            HorizontalOptions="Center" />
                     <Label Text="Notre BUT " 
                            FontSize="Large" 
-                           Margin="0,40,0,0" 
-                           SemanticProperties.HeadingLevel="Level2" />
+                           Margin="0,40,0,0" />
 
                     <StackLayout Margin="0,0,0,0">
                         <Label Text="➤ Offir une application unique en son genre" 
@@ -65,17 +61,16 @@
                      CornerRadius="10"
                      FontSize="18"
                      BackgroundColor="Blue"
-                     TextColor="White"
-                     SemanticProperties.Hint="Tap to start using MyApp" />
+                     TextColor="White"/>
                 </VerticalStackLayout>
 
                 <VerticalStackLayout Spacing="10">
-                    <Image Source="image1.png" SemanticProperties.Description="Feature 3" Margin="110,0,0,0" />
+                    <Image Source="image1.png" Margin="110,0,0,0" />
                 </VerticalStackLayout>
-                    
+
             </HorizontalStackLayout>
 
-           
+
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
