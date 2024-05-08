@@ -81,7 +81,7 @@
                 HeightRequest="150"
                 HorizontalTextAlignment="Start"
                 IsTextPredictionEnabled="False"
-                Placeholder="Veuillez entrer des infromations sur vous..."
+                Placeholder="Veuillez entrer des informations sur vous..."
                 TextColor="Black"
                 VerticalOptions="StartAndExpand"
                 VerticalTextAlignment="Start" />
@@ -126,6 +126,7 @@
 
                 <StackLayout Opacity="0.6">
                     <ImageButton
+                        Clicked="UploadDocBtn"
                         x:Name="AddDocBtn"
                         Margin="90,0,0,0"
                         Padding="15"
