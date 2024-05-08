@@ -14,5 +14,6 @@ public partial class PageAccueilEntreprise : ContentPage
     private void LogoutButton(object sender, EventArgs e)
     {
         IdSessionServiceApp.Instance.SetSessionId(null);
+        IdSessionLabel.Text = $"IdSession: {IdSessionServiceApp.Instance.GetSessionId()}";
     }
 }

@@ -13,5 +13,6 @@ public partial class PageAccueilStagiaire : ContentPage
     private void LogoutButton(object sender, EventArgs e)
     {
         IdSessionServiceApp.Instance.SetSessionId(null);
+        IdSessionLabel.Text = $"IdSession: {IdSessionServiceApp.Instance.GetSessionId()}";
     }
 }

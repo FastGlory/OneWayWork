@@ -50,13 +50,11 @@ namespace MauiApp1.View
                     // manière de récupérer et d'utilisé le set. qui va mettre le id dans l'instance 
                     IdSessionServiceApp.Instance.SetSessionId(authenticatedStagiaire.IdSession);
 
-                    // manière qu'on peut récupèrer l'idSession
-                    string IdSession = IdSessionServiceApp.Instance.GetSessionId();
-
+        
 
                     // Message réussite
-                    MessageLabel.Text = $"Connexion réussie. ID de session : {IdSession}";
-                    IdSessionLabel.Text = $"IdSession: {IdSession}";
+                    MessageLabel.Text = $"Connexion réussie. ID de session : {IdSessionServiceApp.Instance.GetSessionId()}";
+                    IdSessionLabel.Text = $"IdSession: {IdSessionServiceApp.Instance.GetSessionId()}";
 
                     // On va mettre un déplacement de navigation ici 
                 }
@@ -73,8 +71,8 @@ namespace MauiApp1.View
                     string IdSession = IdSessionServiceApp.Instance.GetSessionId();
 
                     // Message réussite
-                    MessageLabel.Text = $"Connexion réussie. ID de session : {IdSession}";
-                    IdSessionLabel.Text = $"IdSession: {IdSession}";
+                    MessageLabel.Text = $"Connexion réussie. ID de session : {IdSessionServiceApp.Instance.GetSessionId()}";
+                    IdSessionLabel.Text = $"IdSession: {IdSessionServiceApp.Instance.GetSessionId()}";
                 } else
                 {
                     MessageLabel.Text = "Nom d'utilisateur ou mot de passe incorrect.";
