@@ -17,6 +17,11 @@
         Route="PageAccueil" />
 
     <ShellContent
+        Title="Accueil Entreprise"
+        ContentTemplate="{DataTemplate view:PageAccueilEntreprise}"
+        Route="PageAccueilEntreprise" />
+
+    <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
