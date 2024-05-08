@@ -115,7 +115,7 @@ namespace MauiApp1.Service
         }
         // ################################################################################################################
 
-        public async Task CreateStage(Stage stage)
+        public async Task AddStage(Stage stage)
         {
             await _connection.InsertAsync(stage);
         }
@@ -130,6 +130,12 @@ namespace MauiApp1.Service
             await _connection.DeleteAsync(stage);
         }
 
+        public async Task<List<Stage>> GetStage()
+        {
+            return await _connection.Table<Stage>().ToListAsync();
+        }
+
+   
         // Méthodes CRUD pour la table Entreprise
         public async Task<List<Entreprise>> GetEntreprises()
         {
@@ -392,6 +398,12 @@ namespace MauiApp1.Service
         {
             await _connection.DeleteAllAsync<Entreprise>();
         }
+
+        public async Task<Entreprise> GetEntrepriseBySessionId(string sessionId)
+        {
+            return await _connection.Table<Entreprise>().FirstOrDefaultAsync(e => e.IdSession == sessionId);
+        }
+
 
 
     }

@@ -39,6 +39,10 @@
         Title="Voir les candidatures"
         ContentTemplate="{DataTemplate view:ViewCandidatureSubmitted}"
         Route="ViewCandidatureSubmitted" />
+    <ShellContent
+      Title="Création Stage"
+      ContentTemplate="{DataTemplate view:CreationStage}"
+      Route="CreationStage" />
 
 
 
