@@ -29,6 +29,8 @@ namespace MauiApp1.Model
 
         [Column("IsAdmin")]
         public bool IsAdmin { get; set; } = true; // Par défaut, tous les administrateurs seront considérés comme des administrateurs
+        [Column("IdSession")]
+        public string IdSession { get; set; }
     }
 }
 

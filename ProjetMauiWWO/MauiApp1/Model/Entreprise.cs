@@ -29,6 +29,8 @@ namespace MauiApp1.Model
         public string? Description_Entreprise { get; set; }
         [Column("IsAdmin")]
         public bool IsAdmin { get; set; } = false;
+        [Column("IdSession")]
+        public string IdSession { get; set; }
         [Ignore]
         public List<Stage> Stages { get; set; } = new List<Stage>();
 

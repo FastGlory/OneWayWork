@@ -26,6 +26,7 @@ namespace MauiApp1.Service
             await _connection.CreateTableAsync<Stage>();
             await _connection.CreateTableAsync<Entreprise>();
             await _connection.CreateTableAsync<Candidature>();
+            await _connection.CreateTableAsync<Administrateur>();
 
             await InsertData(); // On insère les donnée importantes
         }
@@ -65,6 +66,32 @@ namespace MauiApp1.Service
         public async Task<Entreprise> GetEntrepriseById(int id)
         {
             return await _connection.Table<Entreprise>().Where(x => x.Id_Entreprise == id).FirstOrDefaultAsync();
+        }
+
+        // Méthodes CRUD pour la table Administrateur
+        public async Task<List<Administrateur>> GetAdministrateurs()
+        {
+            return await _connection.Table<Administrateur>().ToListAsync();
+        }
+
+        public async Task<Administrateur> GetAdministrateurById(int id)
+        {
+            return await _connection.Table<Administrateur>().Where(x => x.Id_Administrateur == id).FirstOrDefaultAsync();
+        }
+
+        public async Task AddAdministrateur(Administrateur administrateur)
+        {
+            await _connection.InsertAsync(administrateur);
+        }
+
+        public async Task UpdateAdministrateur(Administrateur administrateur)
+        {
+            await _connection.UpdateAsync(administrateur);
+        }
+
+        public async Task DeleteAdministrateur(Administrateur administrateur)
+        {
+            await _connection.DeleteAsync(administrateur);
         }
 
 
@@ -288,11 +315,11 @@ namespace MauiApp1.Service
                 var entreprisesToAdd = new List<Entreprise>
                     {
                        // On rajoute ici les Entreprise pour voir s'il s'affiche bien  !
-                        new Entreprise { Id_Entreprise=1 ,Nom_Entreprise = "Bell", Email_Entreprise = "Bel@gmail.com", Image_Entreprise = "bell_logo.png", MotDePasse_Entreprise = "motdepasse123", IsAdmin = false ,Description_Entreprise="L'entreprise télécommunication" },
-                        new Entreprise { Id_Entreprise=2 ,Nom_Entreprise = "Amazon", Email_Entreprise = "Amazone@gmail.com", Image_Entreprise = "amazon_logo.png", MotDePasse_Entreprise = "motdepasse456", IsAdmin = false ,Description_Entreprise="Entreprise LUGUBRE" },
-                        new Entreprise { Id_Entreprise=3,Nom_Entreprise = "Ubisoft", Email_Entreprise = "Ubisoft@gmail.com", Image_Entreprise = "ubisoft_logo.png", MotDePasse_Entreprise = "motdepasse789", IsAdmin = false,Description_Entreprise="je sais pas quoi dire"  },
-                        new Entreprise { Id_Entreprise=4 ,Nom_Entreprise = "Google", Email_Entreprise = "Google@gmail.com", Image_Entreprise = "google_logo.png", MotDePasse_Entreprise = "motdepasse101112", IsAdmin = false,Description_Entreprise="Tuto youtube comment faire du pyton"  },
-                        new Entreprise { Id_Entreprise=5,Nom_Entreprise = "Alkegen", Email_Entreprise = "Alkegen@gmail.com", Image_Entreprise = "alkegen_logo.png", MotDePasse_Entreprise = "motdepasse131415", IsAdmin = false,Description_Entreprise="Je me suis fait hack mon compte sauvez moi !"  }
+                        new Entreprise { Id_Entreprise=1 ,Nom_Entreprise = "Bell", Email_Entreprise = "Bel@gmail.com", Image_Entreprise = "bell_logo.png", MotDePasse_Entreprise = "motdepasse123", IsAdmin = false ,Description_Entreprise="L'entreprise télécommunication",IdSession="E12432" },
+                        new Entreprise { Id_Entreprise=2 ,Nom_Entreprise = "Amazon", Email_Entreprise = "Amazone@gmail.com", Image_Entreprise = "amazon_logo.png", MotDePasse_Entreprise = "motdepasse456", IsAdmin = false ,Description_Entreprise="Entreprise LUGUBRE",IdSession = "E23532" },
+                        new Entreprise { Id_Entreprise=3,Nom_Entreprise = "Ubisoft", Email_Entreprise = "Ubisoft@gmail.com", Image_Entreprise = "ubisoft_logo.png", MotDePasse_Entreprise = "motdepasse789", IsAdmin = false,Description_Entreprise="je sais pas quoi dire",IdSession = "E32239"  },
+                        new Entreprise { Id_Entreprise=4 ,Nom_Entreprise = "Google", Email_Entreprise = "Google@gmail.com", Image_Entreprise = "google_logo.png", MotDePasse_Entreprise = "motdepasse101112", IsAdmin = false,Description_Entreprise="Tuto youtube comment faire du pyton",IdSession ="E43342"  },
+                        new Entreprise { Id_Entreprise=5,Nom_Entreprise = "Alkegen", Email_Entreprise = "Alkegen@gmail.com", Image_Entreprise = "alkegen_logo.png", MotDePasse_Entreprise = "motdepasse131415", IsAdmin = false,Description_Entreprise="Je me suis fait hack mon compte sauvez moi !" ,IdSession = "E323234" }
                     };
 
                 foreach (var entreprise in entreprisesToAdd)
@@ -323,6 +350,32 @@ namespace MauiApp1.Service
                     if (existingStage == null)
                     {
                         await _connection.InsertAsync(stage);
+                    }
+                }
+            }
+            var administrateurs = await _connection.Table<Administrateur>().ToListAsync();
+            if (administrateurs.Count == 0)
+            {
+                var adminToAdd = new List<Administrateur>
+                {
+                    new Administrateur
+                    {
+                        Id_Administrateur = 1,
+                        Nom_Administrateur = "Redjradj",
+                        Prenom_Administrateur = "Juba",
+                        Email_Administrateur = "jubaLeBoss@gmail.com",
+                        MotDePasse_Administrateur = "123",
+                        IdSession = "A12312"
+                    }
+                };
+
+                foreach (var admin in adminToAdd)
+                {
+                    // Vérification des doublons
+                    var existingAdmin = await _connection.Table<Administrateur>().FirstOrDefaultAsync(s => s.Nom_Administrateur == admin.Nom_Administrateur);
+                    if (existingAdmin == null)
+                    {
+                        await _connection.InsertAsync(admin);
                     }
                 }
             }

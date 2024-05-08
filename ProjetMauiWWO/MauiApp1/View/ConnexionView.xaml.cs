@@ -38,9 +38,11 @@ namespace MauiApp1.View
 
                 // Ici on va récupérer la DB avec la méthode CRUD
                 var stagiaires = await _localDbService.GetStagiaires();
+                var admin = await _localDbService.GetAdministrateurs();
 
                 // Ici opn va vérifier si jamais sa correspond our pas 
                 var authenticatedStagiaire = stagiaires.FirstOrDefault(s => s.nom_Stagiaire == username && s.MotDePasse_Stagiaire == password);
+                var authentifcatedAdmin = admin.FirstOrDefault(s => s.Nom_Administrateur == username && s.MotDePasse_Administrateur == password);
 
                 if (authenticatedStagiaire != null)
                 {
@@ -61,6 +63,20 @@ namespace MauiApp1.View
                 else
                 {
                     // Message erreur coté 
+                    MessageLabel.Text = "Nom d'utilisateur ou mot de passe incorrect.";
+                }
+
+                if(authentifcatedAdmin != null) {
+                    IdSessionServiceApp.Instance.SetSessionId(authentifcatedAdmin.IdSession);
+
+                    // manière qu'on peut récupèrer l'idSession
+                    string IdSession = IdSessionServiceApp.Instance.GetSessionId();
+
+                    // Message réussite
+                    MessageLabel.Text = $"Connexion réussie. ID de session : {IdSession}";
+                    IdSessionLabel.Text = $"IdSession: {IdSession}";
+                } else
+                {
                     MessageLabel.Text = "Nom d'utilisateur ou mot de passe incorrect.";
                 }
             }

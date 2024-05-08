@@ -67,14 +67,26 @@
                         Margin="0,30,0,0"
                         Padding="20,10"
                         BackgroundColor="red"
+                        Clicked="LogoutButton"
                         CornerRadius="10"
                         FontSize="18"
                         Text="Log out !"
                         TextColor="White" />
                 </VerticalStackLayout>
             </HorizontalStackLayout>
-
-
+            <Frame
+            Margin="0,0,0,0"
+            Padding="10"
+            BackgroundColor="LightGray"
+            CornerRadius="5"
+            HorizontalOptions="Start"
+            VerticalOptions="End">
+                <Label
+                x:Name="IdSessionLabel"
+                HorizontalOptions="Center"
+                Text="{Binding IdSession}"
+                VerticalOptions="Center" />
+            </Frame>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
