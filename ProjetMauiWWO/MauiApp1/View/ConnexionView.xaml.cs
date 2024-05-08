@@ -22,7 +22,7 @@ namespace MauiApp1.View
         {
             await Navigation.PushAsync(new InscriptionView(_localDbService));
         }
-
+     
         private async void AuthentificationClick(object sender, EventArgs e)
         {
             string username = NomUtilisateur.Text;
@@ -45,10 +45,14 @@ namespace MauiApp1.View
                 if (authenticatedStagiaire != null)
                 {
                     ReussiteAuthentification(authenticatedStagiaire.IdSession);
+                    await Navigation.PushAsync(new PageAccueilStagiaire());
+
                 }
                 else if (authentifcatedAdmin != null)
                 {
                     ReussiteAuthentification(authentifcatedAdmin.IdSession);
+                    await Navigation.PushAsync(new PageAccueilAdmin());
+
                 }
                 else
                 {

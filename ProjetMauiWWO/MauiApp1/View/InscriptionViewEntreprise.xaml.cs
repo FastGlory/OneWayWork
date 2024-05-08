@@ -66,6 +66,7 @@ namespace MauiApp1.View
                     await _localDbService.AddEntreprise(nouvelleEntreprise);
 
                     MessageLabel.Text = "Compte créé avec succès.";
+                    await Navigation.PushAsync(new PageAccueilEntreprise());
                 }
             }
             catch (Exception ex)
