@@ -1,17 +1,19 @@
 # OneWayWork
-Application native **.NET MAUI** de gestion de stage
+Projet application **.NET MAUI** pour la classe 420-413-MV DÉVELOPPEMENT D'APPLICATIONS POUR ENTREPRISE
 
+## Notre Application
+One Way Work vous offre une application qui a pour but de faire les gestions de stages. Étudiant, Stagiaire, Admin et Entrepise seront ravis !
 
 ## Aperçu
 ## Les technologies utilisés 
 
+| Contexte  | Technologies |
+| ------------- | ------------- |
+| **Frontend** | .Net maui, XAML |
+| **Backend** | C# avec .NET |
+| **Base de données** | SQLite et Entity Framework |
+| **Architecture de l'application** | MVVM |
 
-## Collaborateurs
-[Juba Redjradj](https://github.com/FastGlory)
-
-[Aya Issa](https://github.com/AyaIssa1)
-
-[Nadine Chargui](https://github.com/Nchargui)
 ## Comment installer et déployer notre application
 
 ### Option Visual Studio Code | Mode développeur
@@ -42,3 +44,11 @@ Application native **.NET MAUI** de gestion de stage
 
 ## Lien externe
 [Notre trello](https://trello.com/invite/b/RDL4M1o0/ATTI6310eb61ccd7765e676c0b5163f53407686A2745/onewaywork)
+
+
+## Collaborateurs
+[Juba Redjradj](https://github.com/FastGlory)
+
+[Aya Issa](https://github.com/AyaIssa1)
+
+[Nadine Chargui](https://github.com/Nchargui)
