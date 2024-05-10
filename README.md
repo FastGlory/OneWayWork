@@ -31,6 +31,9 @@ One Way Work vous offre une application qui a pour but de faire les gestions de 
 
 4. Sur le haut de la barre de navigation, cliquer sur la fléche verte pour lancer notre application
 
+5. Vous pouvez vous connecter, si ce n'est pas déja fait, vous pouvez vous inscrire en tant que stagiaire. Si vous êtes une Entreprise : Code secret =>
+
+
 > [!WARNING]
 > Assurez vous d'avoir ***Windows Machine*** comme moyen de debugger près de la flèche verte.
 
@@ -40,6 +43,9 @@ One Way Work vous offre une application qui a pour but de faire les gestions de 
 
 
 ## Comment est structuré notre code
+
+
+
 
 
 ## Lien externe
