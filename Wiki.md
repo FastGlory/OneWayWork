@@ -74,8 +74,14 @@ await Navigation.PushAsync(new InscriptionView(_localDbService));
 >   ### Architecture
 > * Obligation d'utiliser la structure MVVM
 > * Obligation d'utiliser XAML .Net maui
-> * Limiter les couleurs aux choix de blanc, noir ou transparent.
 
+## Outils utilisé
+*Pour le formatage, ajouter l'extension XAML Styler.
+** Cela permet de formater automatiquement votre code.
+*** Vous pouvez également utiliser la commande CTRL K + CTRL D.
+* Limitez les couleurs aux choix de blanc, noir ou transparent.
+* Ajoutez des images pour embellir l'application.
+  
 
 
 
