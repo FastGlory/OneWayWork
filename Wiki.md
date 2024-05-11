@@ -79,11 +79,11 @@ await Navigation.PushAsync(new InscriptionView(_localDbService));
 >   - Create, Read, Update, Delete
 
 ## Outils utilisé
-- Pour le formatage, ajouter l'extension XAML Styler.
-    - Cela permet de formater automatiquement votre code.
-        - Vous pouvez également utiliser la commande CTRL K + CTRL D.
-* Limitez les couleurs aux choix de blanc, noir ou transparent.
-* Ajoutez des images pour embellir l'application.
+> - Pour le formatage, ajouter l'extension XAML Styler.
+>     - Cela permet de formater automatiquement votre code.
+>         - Vous pouvez également utiliser la commande CTRL K + CTRL D.
+> * Limitez les couleurs aux choix de blanc, noir ou transparent.
+> * Ajoutez des images pour embellir l'application.
  ***
 ## Exemples de Code illustrant les normes de codage
 
