@@ -35,7 +35,7 @@ Il est important de réviser le code pour diverses raisons. En premier lieu, ell
 > Afin de fournir un retour positif et constructif, il est essentiel de maintenir une approche objective et de fournir des exemples précis pour illustrer le retour. Il est important de fournir un retour constructive, sans accuser ou critiquer le collaborateur. Il est tout aussi essentiel de prendre en compte la réponse du collaborateur afin de saisir son point de vue.
 
 # DoD (Definition of Done)
-
+> ![](https://th.bing.com/th/id/OIP.oQpzqqLVbZbz8oi4zjkm9wHaEZ?rs=1&pid=ImgDetMain)`
 ### Définition
 Done est une tâche ou un élément de travail qui est achevé selon un certain niveau de qualité convenu. Elle répond à toutes les spécifications, exigences et tests nécessaires pour être considéré comme complet.
 
