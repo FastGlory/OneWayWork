@@ -33,7 +33,7 @@ Il est important de réviser le code pour diverses raisons. En premier lieu, ell
 
 ### Commentaire constructifs
 > Afin de fournir un retour positif et constructif, il est essentiel de maintenir une approche objective et de fournir des exemples précis pour illustrer le retour. Il est important de fournir un retour constructive, sans accuser ou critiquer le collaborateur. Il est tout aussi essentiel de prendre en compte la réponse du collaborateur afin de saisir son point de vue.
-
+***
 # DoD (Definition of Done)
 > ![](https://th.bing.com/th/id/OIP.oQpzqqLVbZbz8oi4zjkm9wHaEZ?rs=1&pid=ImgDetMain)`
 ### Définition
@@ -50,7 +50,7 @@ Done est une tâche ou un élément de travail qui est achevé selon un certain 
 ### Validation de la DoD
 * Demander à l'équipe de confirmer la DoD une fois qu'elle est terminée. 
 * Veiller à ce que chaque membre de l'équipe ait une compréhension claire du sens de chaque critère de qualité et de son application à leur travail quotidien.
-
+***
 # Style de Code de l'Équipe
 
 ## Normes de Codage
@@ -74,7 +74,7 @@ await Navigation.PushAsync(new InscriptionView(_localDbService));
 >   ### Architecture
 > * Obligation d'utiliser la structure MVVM
 > * Obligation d'utiliser XAML .Net maui
-
+***
 ## Outils utilisé
 - Pour le formatage, ajouter l'extension XAML Styler.
     - Cela permet de formater automatiquement votre code.
