@@ -52,7 +52,7 @@ Comme décrit plus haut, nous avons utilisé une architecture MVVM. On à sépar
 
 Pour ce qui est des images, nous avons tout mis dans le dossier Ressource. Nous n'avont pas importé des outils pour ce qui est d'améliorer le visuels comme des fonts ou des icon, on s'est contenté de ce que .Net maui proposé de base.
 
-Resssource
+*Resssource*
 
 -------Dossier images
 
@@ -68,11 +68,27 @@ Model (table pour la base de donné
 
 ------- Stagiaire.cs
 
+*View*
+------- Page de brouillon 
 
+------- Page de Candidature 
 
-ModelView 
+------- Page de Connexion et inscription 
 
-View
+------- Page de Stage 
+
+------- Page de création de stage
+
+------- Page d'Accueil pour Admin, Stagaire et Entreprise
+
+------- Page de stagiaire (profile) 
+
+------- Page de brouillon 
+
+*ViewModel*
+------- LocalDataBase.cs
+
+------- idSessionSeriveApp.cs
 
 
 
