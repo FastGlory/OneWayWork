@@ -28,4 +28,7 @@ Il est important de réviser le code pour diverses raisons. En premier lieu, ell
 * Conserver la flexibilité et la durabilité du code.
 
 ## Processus de Revue de Code
-À chaque transition de branche, nous avons l'obligation de vérifier le code de chaque membre afin d'évaluer son état et son rendu. Cela nous permettra de suivre son avancement et, par la suite, de procéder à une revue de son code, à des changements ou des ajouts effectués.
+À chaque transition de branche, nous avons l'obligation de vérifier le code de chaque membre afin d'évaluer son état et son rendu. Cela nous permettra de suivre son avancement et, par la suite, de procéder à une revue de son code, à des changements ou des ajouts effectués. 
+
+### Commentaire constructifs
+Afin de fournir un retour positif et constructif, il est essentiel de maintenir une approche objective et de fournir des exemples précis pour illustrer le retour. Il est important de fournir un retour constructive, sans accuser ou critiquer le collaborateur. Il est tout aussi essentiel de prendre en compte la réponse du collaborateur afin de saisir son point de vue.
