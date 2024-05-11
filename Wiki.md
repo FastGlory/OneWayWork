@@ -48,6 +48,6 @@ Done est une tâche ou un élément de travail qui est achevé selon un certain 
 > * Le produit est approuvé par le responsable
 
 ### Validation de la DoD
-
-
+* Demander à l'équipe de confirmer la DoD une fois qu'elle est terminée. 
+* Veiller à ce que chaque membre de l'équipe ait une compréhension claire du sens de chaque critère de qualité et de son application à leur travail quotidien.
 
