@@ -50,6 +50,8 @@ Comme décrit plus haut, nous avons utilisé une architecture MVVM. On à sépar
 
 Pour ce qui est des images, nous avons tout mis dans le dossier Ressource. Nous n'avont pas importé des outils pour ce qui est d'améliorer le visuels comme des fonts ou des icon, on s'est contenté de ce que .Net maui proposé de base.
 
+Resssource
+-------Dossier images
 
 
 ## Lien externe
