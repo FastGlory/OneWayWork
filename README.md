@@ -46,7 +46,9 @@ One Way Work vous offre une application qui a pour but de faire les gestions de 
 
 ## Comment est structuré notre code
 
+Comme décrit plus haut, nous avons utilisé une architecture MVVM. On à séparé nos dossier en "View", "ViewModel" et "Model". Dans le dossier "View" nous avons mis toute nos pages qui vont être visuel, tout ce que l'utilisateur pourra voir. Dans le viewModel, nous avons mis les méthodes pour le CRUD et ce qui sert à relié la base de donné à notre code. De plus, il y a un éléments important qui est le "IDSession", cette éléments est ce qui nous sert pour reconnaitre un compte à un autre. Dans notre dossier Model, nous avoir mis les tables pour leur création dans la base de donné.
 
+Pour ce qui est des images, nous avons tout mis dans le dossier Ressource. Nous n'avont pas importé des outils pour ce qui est d'améliorer le visuels comme des fonts ou des icon, on s'est contenté de ce que .Net maui proposé de base.
 
 
 
