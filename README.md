@@ -60,38 +60,38 @@ Pour ce qui est des images, nous avons tout mis dans le dossier Ressource. Nous 
 
 Model (table pour la base de donné
 
- >*  - Administrateur.cs
+ >*   Administrateur.cs
    
- >*  - Candidature.cs
+ >*  Candidature.cs
    
- >* - Entreprise.cs
+ >* Entreprise.cs
    
- >* - Stage.cs
+ >*  Stage.cs
    
- >* - Stagiaire.cs
+ >*  Stagiaire.cs
 
 *View*
-   -- Page de brouillon 
+   >* Page de brouillon 
    
-   -- Page de Candidature 
+   >* Page de Candidature 
    
-   -- Page de Connexion et inscription 
+   >* Page de Connexion et inscription 
    
-   -- Page de Stage 
+   >* Page de Stage 
    
-   -- Page de création de stage
+   >* Page de création de stage
    
-   -- Page d'Accueil pour Admin, Stagaire et Entreprise
+   >* Page d'Accueil pour Admin, Stagaire et Entreprise
    
-   -- Page de stagiaire (profile) 
+   >* Page de stagiaire (profile) 
    
-   -- Page de brouillon 
+   >* Page de brouillon 
 
 *ViewModel*
 
-   - LocalDataBase.cs
+   >* LocalDataBase.cs
    
-   - idSessionSeriveApp.cs
+   >* idSessionSeriveApp.cs
 
 
 
