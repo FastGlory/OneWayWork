@@ -9,9 +9,11 @@ One Way Work vous offre une application qui a pour but de faire les gestions de 
 
 ## Les technologies utilisés 
 
+<img src="https://github.com/FastGlory/OneWayWork/blob/main/apercuApp/dotnet-bot-maui-cross-platform-development.png" alt="image" width="10%" height="auto">
+
 | Contexte  | Technologies |
 | ------------- | ------------- |
-| **Frontend** | .Net maui, XAML |
+| **Frontend** | .Net maui, XAML |                                       
 | **Backend** | C# avec .NET |
 | **Base de données** | SQLite et Entity Framework |
 | **Architecture de l'application** | MVVM |
@@ -58,37 +60,38 @@ Pour ce qui est des images, nous avons tout mis dans le dossier Ressource. Nous 
 
 Model (table pour la base de donné
 
-------- Administrateur.cs
-
-------- Candidature.cs
-
-------- Entreprise.cs
-
-------- Stage.cs
-
-------- Stagiaire.cs
+   ------- Administrateur.cs
+   
+   ------- Candidature.cs
+   
+   ------- Entreprise.cs
+   
+   ------- Stage.cs
+   
+   ------- Stagiaire.cs
 
 *View*
-------- Page de brouillon 
-
-------- Page de Candidature 
-
-------- Page de Connexion et inscription 
-
-------- Page de Stage 
-
-------- Page de création de stage
-
-------- Page d'Accueil pour Admin, Stagaire et Entreprise
-
-------- Page de stagiaire (profile) 
-
-------- Page de brouillon 
+   ------- Page de brouillon 
+   
+   ------- Page de Candidature 
+   
+   ------- Page de Connexion et inscription 
+   
+   ------- Page de Stage 
+   
+   ------- Page de création de stage
+   
+   ------- Page d'Accueil pour Admin, Stagaire et Entreprise
+   
+   ------- Page de stagiaire (profile) 
+   
+   ------- Page de brouillon 
 
 *ViewModel*
-------- LocalDataBase.cs
 
-------- idSessionSeriveApp.cs
+   ------- LocalDataBase.cs
+   
+   ------- idSessionSeriveApp.cs
 
 
 
