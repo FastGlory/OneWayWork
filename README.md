@@ -5,6 +5,8 @@ Projet application **.NET MAUI** pour la classe 420-413-MV DÉVELOPPEMENT D'APPL
 One Way Work vous offre une application qui a pour but de faire les gestions de stages. Étudiant, Stagiaire, Admin et Entrepise seront ravis !
 
 ## Aperçu
+![Uploading MauiApp12024-05-1107-58-07-ezgif.com-video-to-gif-converter (1).gif…]()
+
 ## Les technologies utilisés 
 
 | Contexte  | Technologies |
