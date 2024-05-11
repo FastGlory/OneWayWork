@@ -51,3 +51,29 @@ Done est une tâche ou un élément de travail qui est achevé selon un certain 
 * Demander à l'équipe de confirmer la DoD une fois qu'elle est terminée. 
 * Veiller à ce que chaque membre de l'équipe ait une compréhension claire du sens de chaque critère de qualité et de son application à leur travail quotidien.
 
+# Style de Code de l'Équipe
+
+## Normes de Codage
+>  ### La Syntaxe des commentaire
+>  * Chaque ligne de code difficile à comprendre doit être commentée pour aider à la compréhension.
+>  * Fournir une brève explication pour les autres membres de l'équipe.
+
+>  ### Nom de variable
+> Les noms des boutons doivent être explicites, permettant à n'importe qui de comprendre leur fonction.
+>   * Pour nos boutons qui servent à naviguer entre les pages, nous utilisons les mots clés 'On' et 'Tapped'. Cela décrit exactement que ce bouton nous amène à une page spécifique.
+***
+private async void OnInscriptionTapped(object sender, EventArgs e)
+{
+     await Navigation.PushAsync(new InscriptionView(_localDbService));
+}
+***
+> * Les méthodes et les noms de variables doivent être en anglais, mais il est également permis d'utiliser le français.
+> * Les noms de méthodes doivent correspondre à l'action qu'elles effectuent.
+>   ### Architecture
+> * Obligation d'utiliser la structure MVVM
+> * Obligation d'utiliser XAML .Net maui
+> * Limiter les couleurs aux choix de blanc, noir ou transparent.
+
+
+
+
