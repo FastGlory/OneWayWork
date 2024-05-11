@@ -92,6 +92,18 @@ await Navigation.PushAsync(new InscriptionView(_localDbService));
 > * Ajoutez des images pour embellir l'application.
  ***
 ## Exemples de Code illustrant les normes de codage
+### Commentaires sur la syntaxe:
+> *Chaque méthode est accompagnée d'un commentaire décrivant ce qu'elle fait.
+> - Par exemple, les méthodes CRUD (Create, Read, Update, Delete) sont commentées pour expliquer leur fonction.
+### Nom de variable explicite
+> * Les noms de variables sont choisis de manière à ce qu'ils soient descriptifs.
+>  - Par exemple, les noms de méthode comme GetStage(), AddStage(), UpdateStage(), etc., sont clairs.
+### Architecture logicielle
+> * Le code respecte l'architecture MVVM (Model-View-ViewModel) comme demandé.
+> * L'utilisation du XAML & .Net Maui est respecté.
+### Architecture logicielle - CRUD:
+> * Les méthodes CRUD pour les entités Stage et Entreprise sont clairement définies.
+> * Chaque méthode est commentée pour expliquer sa fonction, qui permet aux autres membres de l'équipe à comprendre rapidement son utilité.
 
 ```csharp
 public async Task AddStage(Stage stage)
