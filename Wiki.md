@@ -192,3 +192,6 @@ namespace MauiApp1.ViewModel
 ## Pour voir davantage sur le fonctionnement de l'application, veuillez consulter notre README.MD
 [OneWayWork GitHub](https://github.com/FastGlory/OneWayWork)
 
+## Lien externe
+[Notre trello](https://trello.com/invite/b/RDL4M1o0/ATTI6310eb61ccd7765e676c0b5163f53407686A2745/onewaywork)
+
