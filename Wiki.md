@@ -74,6 +74,10 @@ await Navigation.PushAsync(new InscriptionView(_localDbService));
 >   ### Architecture
 > * Obligation d'utiliser la structure MVVM
 > * Obligation d'utiliser XAML .Net maui
+>  ### Architecture logicielle
+> * CRUD
+>   - Create, Read, Update, Delete
+
 ***
 ## Outils utilisé
 - Pour le formatage, ajouter l'extension XAML Styler.
@@ -82,6 +86,57 @@ await Navigation.PushAsync(new InscriptionView(_localDbService));
 * Limitez les couleurs aux choix de blanc, noir ou transparent.
 * Ajoutez des images pour embellir l'application.
   
+## Exemples de Code illustrant les normes de codage
 
-
-
+```csharp
+public async Task AddStage(Stage stage)
+   {
+       await _connection.InsertAsync(stage);
+   }
+ 
+   public async Task UpdateStage(Stage stage)
+   {
+       await _connection.UpdateAsync(stage);
+   }
+ 
+   public async Task DeleteStage(Stage stage)
+   {
+       await _connection.DeleteAsync(stage);
+   }
+ 
+   public async Task<List<Stage>> GetStage()
+   {
+       return await _connection.Table<Stage>().ToListAsync();
+   }
+ 
+   
+   // Méthodes CRUD pour la table Entreprise
+   public async Task<List<Entreprise>> GetEntreprises()
+   {
+       return await _connection.Table<Entreprise>().ToListAsync();
+   }
+   public async Task<List<Stage>> GetStagesByEntrepriseId(int entrepriseId)
+   {
+       return await _connection.Table<Stage>().Where(x => x.Id_Entreprise == entrepriseId).ToListAsync();
+   }
+ 
+ 
+   public async Task<Entreprise> GetEntrepriseByNom(string nom)
+   {
+       return await _connection.Table<Entreprise>().Where(x => x.Nom_Entreprise == nom).FirstOrDefaultAsync();
+   }
+ 
+   public async Task AddEntreprise(Entreprise entreprise)
+   {
+       await _connection.InsertAsync(entreprise);
+   }
+ 
+   public async Task UpdateEntreprise(Entreprise entreprise)
+   {
+       await _connection.UpdateAsync(entreprise);
+   }
+ 
+   public async Task DeleteEntreprise(Entreprise entreprise)
+   {
+       await _connection.DeleteAsync(entreprise);
+```
