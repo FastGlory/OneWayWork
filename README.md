@@ -31,7 +31,9 @@ One Way Work vous offre une application qui a pour but de faire les gestions de 
 
 4. Sur le haut de la barre de navigation, cliquer sur la fléche verte pour lancer notre application
 
-5. Vous pouvez vous connecter, si ce n'est pas déja fait, vous pouvez vous inscrire en tant que stagiaire. Si vous êtes une Entreprise : Code secret =>
+5. Vous pouvez vous connecter, si ce n'est pas déja fait, vous pouvez vous inscrire.
+  
+7. Si vous êtes une Entreprise : Code secret => XVC123
 
 
 > [!WARNING]
