@@ -37,3 +37,17 @@ Il est important de réviser le code pour diverses raisons. En premier lieu, ell
 # DoD (Definition of Done)
 
 ### Définition
+Done est une tâche ou un élément de travail qui est achevé selon un certain niveau de qualité convenu. Elle répond à toutes les spécifications, exigences et tests nécessaires pour être considéré comme complet.
+
+### Critères de la DoD
+
+> * Code rédigé et vérifié
+> * Documentation actualisée
+> * Révision du code réalisée
+> * Réussite de l'intégration continue
+> * Le produit est approuvé par le responsable
+
+### Validation de la DoD
+
+
+
