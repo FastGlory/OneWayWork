@@ -61,11 +61,13 @@ Done est une tâche ou un élément de travail qui est achevé selon un certain 
 >  ### Nom de variable
 > Les noms des boutons doivent être explicites, permettant à n'importe qui de comprendre leur fonction.
 >   * Pour nos boutons qui servent à naviguer entre les pages, nous utilisons les mots clés 'On' et 'Tapped'. Cela décrit exactement que ce bouton nous amène à une page spécifique.
->     
+    
+```csharp
 private async void OnInscriptionTapped(object sender, EventArgs e)
 {
-     await Navigation.PushAsync(new InscriptionView(_localDbService));
+await Navigation.PushAsync(new InscriptionView(_localDbService));
 }
+```
 
 > * Les méthodes et les noms de variables doivent être en anglais, mais il est également permis d'utiliser le français.
 > * Les noms de méthodes doivent correspondre à l'action qu'elles effectuent.
