@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiApp1.View.PageAccueilEntreprise"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="Transparent">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="50">
+            <Label
+                FontAttributes="Bold"
+                FontSize="Large"
+                HorizontalTextAlignment="Center"
+                Text="Bienvenue cher Entreprise"
+                TextColor="White">
+                <Label.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Offset="0" Color="CornflowerBlue" />
+                        <GradientStop Offset="1" Color="GhostWhite" />
+                    </LinearGradientBrush>
+                </Label.Background>
+            </Label>
+
+            <HorizontalStackLayout Margin="0,0,0,0" Spacing="10" />
+
+            <HorizontalStackLayout Margin="-100,40,0,0" Spacing="20">
+                <Image Margin="110,1,50,10" Source="imageentreprisebranding.png" />
+              
+
+                <VerticalStackLayout Spacing="10">
+
+                    <Label
+                        Margin="0,40,0,0"
+                        FontSize="Large"
+                        Text="Vos droits en tant qu'administrateur" />
+
+                    <Button
+                        Margin="0,30,0,0"
+                        Padding="20,10"
+                        BackgroundColor="CornflowerBlue"
+                        CornerRadius="10"
+                        FontSize="18"
+                        Text="Publication offre de stage"
+                        TextColor="White" />
+
+                    <StackLayout Margin="0,0,0,0">
+                        <Button
+                            Margin="0,30,0,0"
+                            Padding="20,10"
+                            BackgroundColor="CornflowerBlue"
+                            CornerRadius="10"
+                            FontSize="18"
+                            Text="Ajout de stage"
+                            TextColor="White" />
+
+                        <Button
+                            Margin="0,30,0,0"
+                            Padding="20,10"
+                            BackgroundColor="CornflowerBlue"
+                            CornerRadius="10"
+                            FontSize="18"
+                            Text="Voir candidature"
+                            TextColor="White" />
+                    </StackLayout>
+
+                    <Button
+                        Margin="0,30,0,0"
+                        Padding="20,10"
+                        BackgroundColor="red"
+                        Clicked="LogoutButton"
+                        CornerRadius="10"
+                        FontSize="18"
+                        Text="Log out !"
+                        TextColor="White" />
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+            <Frame
+            Margin="0,0,0,0"
+            Padding="10"
+            BackgroundColor="LightGray"
+            CornerRadius="5"
+            HorizontalOptions="Start"
+            VerticalOptions="End">
+                <Label
+                x:Name="IdSessionLabel"
+                HorizontalOptions="Center"
+                Text="{Binding IdSession}"
+                VerticalOptions="Center" />
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

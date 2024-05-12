@@ -1,0 +1,91 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.View.Stage_Page"
+             Title="Stage">
+    <StackLayout>
+        <Button Text="Supprimer tous les stages"
+           Clicked="OnDeleteAllStageButtonClicked"/>
+      
+        <SearchBar x:Name="filterText"
+           Placeholder="Search"
+           SearchButtonPressed="OnSearchButtonPressed"
+           Margin="15"/>
+
+        <ListView x:Name="listView"  ItemSelected="SelectionStage" ItemsSource="{Binding Stages}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Frame Margin="25"
+                           HeightRequest="100"
+                           WidthRequest="100"
+                           CornerRadius="50"
+                           HasShadow="False"
+                           Padding="0">
+                                <Image Source="{Binding Image_Stage}"
+                               Aspect="AspectFill"
+                               HeightRequest="100"
+                               WidthRequest="100" />
+                            </Frame>
+
+                            <Label Grid.Column="1"
+                           Text="{Binding Nom_Stage}"
+                           FontAttributes="Bold" />
+                            <Label Grid.Row="1"
+                           Grid.Column="1"
+                           Text="{Binding Entreprise.Nom_Entreprise}"
+                           FontAttributes="Italic"
+                           VerticalOptions="End" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Frame Grid.Column="1" x:Name="ShowInformations" IsVisible="False" BackgroundColor="LightGray" CornerRadius="10" Padding="10" Margin="15">
+            <StackLayout>
+                <Label Text="Information Stage" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,10,0,0"/>
+                <Image x:Name="ImageStage" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" Margin="0,20,0,0" />
+                <Label x:Name="NomStage" FontAttributes="Bold" TextColor="DarkBlue"/>
+                <Label x:Name="DescriptionStage" FontAttributes="Italic"/>
+                <Label x:Name="DispoStage" FontAttributes="Italic"/>
+                <Label x:Name="SalaireStage" FontAttributes="Italic"/>
+                <Label x:Name="EntrepriseRelier" FontAttributes="Italic"/>
+
+
+
+                <Button
+                    Margin="80,0,0,0"
+                    Padding="15"
+                    BackgroundColor="#1a2d59"
+                    Clicked="OnPageCandidat"
+                    CornerRadius="30"
+                    FontSize="Small"
+                    HeightRequest="70"
+                    HorizontalOptions="Start"
+                    Text="Postuler"
+                    TextColor="White"
+                    TextTransform="Uppercase"
+                    WidthRequest="200" />
+
+
+            </StackLayout>
+        </Frame> 
+        <Frame BackgroundColor="LightGray" Padding="10" CornerRadius="5" HorizontalOptions="Start" VerticalOptions="End" Margin="0, 0, 0, 0">
+            <Label x:Name="IdSessionLabel"
+                Text="{Binding IdSession}"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+        </Frame>
+
+    </StackLayout>
+
+
+</ContentPage>

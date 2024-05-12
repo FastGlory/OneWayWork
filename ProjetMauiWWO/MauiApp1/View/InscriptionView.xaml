@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiApp1.View.InscriptionView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="InscriptionView">
+
+    <Grid>
+
+        <Image
+            Aspect="AspectFill"
+            HorizontalOptions="FillAndExpand"
+            Source="inscriptionmenu.jpg"
+            VerticalOptions="FillAndExpand" />
+
+        <StackLayout
+            Margin="0,0,60,0"
+            ClassId="InscriptionBlock"
+            HorizontalOptions="End"
+            VerticalOptions="Center">
+            <Label
+                FontSize="Header"
+                HorizontalTextAlignment="Center"
+                Text="Bienvenue dans One Way Work !"
+                TextColor="White" />
+
+            <Label
+                FontSize="Title"
+                HorizontalOptions="Center"
+                Text="Les meilleurs stages pour vous"
+                TextColor="White" />
+
+            <StackLayout Margin="50,30,50,0">
+
+
+                <StackLayout Orientation="Horizontal">
+
+                    <Entry
+                        x:Name="AddPrenom"
+                        BackgroundColor="White"
+                        HorizontalOptions="FillAndExpand"
+                        Opacity="0.5"
+                        Placeholder="Prénom"
+                        PlaceholderColor="Black" />
+                    <Entry
+                        x:Name="AddNom"
+                        Margin="10,0,0,0"
+                        BackgroundColor="White"
+                        HorizontalOptions="FillAndExpand"
+                        Opacity="0.5"
+                        Placeholder="Nom"
+                        PlaceholderColor="Black" />
+                </StackLayout>
+
+
+                <Entry
+                    x:Name="AddEmail"
+                    Margin="0,10,0,0"
+                    BackgroundColor="White"
+                    Opacity="0.5"
+                    Placeholder="Email"
+                    PlaceholderColor="Black" />
+                <Entry
+                    x:Name="AddPassword"
+                    Margin="0,10,0,0"
+                    BackgroundColor="White"
+                    IsPassword="True"
+                    Opacity="0.5"
+                    Placeholder="Mot de passe"
+                    PlaceholderColor="Black" />
+
+                <Button
+                    Margin="90,20,90,0"
+                    BackgroundColor="#5a8cdb"
+                    Clicked="CreactionClick"
+                    Text="S'inscrire" />
+                <Label
+                    x:Name="MessageLabel"
+                    Margin="0,5,0,0"
+                    HorizontalOptions="Center"
+                    Text=""
+                    TextColor="Red" />
+
+                <Label
+                    Margin="0,5,0,0"
+                    HorizontalOptions="Center"
+                    Text="Vous avez déjà un compte ?  Connectez-vous !"
+                    TextColor="White">
+
+
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnConnexionTapped" />
+                    </Label.GestureRecognizers>
+
+                    <Label.TextDecorations>Underline</Label.TextDecorations>
+
+
+
+                </Label>
+
+                <Label
+                    Margin="0,5,0,0"
+                    HorizontalOptions="Center"
+                    Text="Vous voulez un créer un compte Entreprise ?  Allez-y!"
+                    TextColor="White">
+
+
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnConnexionEntreprise" />
+                    </Label.GestureRecognizers>
+
+                    <Label.TextDecorations>Underline</Label.TextDecorations>
+
+
+
+                </Label>
+
+
+            </StackLayout>
+
+
+        </StackLayout>
+
+
+    </Grid>
+</ContentPage>
