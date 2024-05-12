@@ -47,15 +47,11 @@ One Way Work vous offre une application qui a pour but de faire les gestions de 
 
 ### Option Executable | Mode utilisateur
 
-1. Pour cette option, il vous faudra cloner la branche release
+1. Pour cette option, il vous faudra aussi cloner l'application dans votre appareil
 
 ```
 git clone https://github.com/FastGlory/OneWayWork.git
 ```
-```
-git checkout Release
-```
-
 2. Aller dans le dossier releaseApp
 
 3. Aller dans le dossier MauiApp1_1.0.0.1_Test
