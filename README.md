@@ -38,6 +38,7 @@ One Way Work vous offre une application qui a pour but de faire les gestions de 
 5. Vous pouvez vous connecter, si ce n'est pas déja fait, vous pouvez vous inscrire.
   
 7. Si vous êtes une Entreprise : Code secret => XVC123
+8. Si vous êtes un administrateur : User - Redjradj  MPD - 123
 
 
 > [!WARNING]
