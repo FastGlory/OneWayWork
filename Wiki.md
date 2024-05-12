@@ -98,6 +98,7 @@ await Navigation.PushAsync(new InscriptionView(_localDbService));
 ### Nom de variable explicite
 > * Les noms de variables sont choisis de manière à ce qu'ils soient descriptifs.
 >      - Par exemple, les noms de méthode comme GetStage(), AddStage(), UpdateStage(), etc., sont clairs.
+>      - Utilisation PascalCase pour le nom de varaible
 ### Architecture logicielle
 > * Le code respecte l'architecture MVVM (Model-View-ViewModel) comme demandé.
 > * L'utilisation du XAML & .Net Maui est respecté.
