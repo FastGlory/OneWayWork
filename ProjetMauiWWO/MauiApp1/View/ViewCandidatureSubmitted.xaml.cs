@@ -34,11 +34,12 @@ public partial class ViewCandidatureSubmitted : ContentPage
     {
         try
         {
-            var CandidatureSubmit = await _localDbService.GetCandidatureFromUser();
+            var candidatures = await _localDbService.GetCandidatureFromUser(); 
 
-            foreach (var candidature in CandidatureSubmit)
+            foreach (var candidature in candidatures)
             {
-                CandidatureSubmit.Add(candidature);
+
+             CandidatureSubmit.Add(candidature);
 
             }
 

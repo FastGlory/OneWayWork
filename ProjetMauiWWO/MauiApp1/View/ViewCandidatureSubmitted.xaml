@@ -58,7 +58,7 @@
 
                                 <Label FontAttributes="Bold" Text="{Binding Date_Candidature}" />
 
-                                <StackLayout Orientation="Horizontal">
+                                <StackLayout Orientation="Horizontal" Spacing="5">
                                     <Button
                                         Padding="10"
                                         BackgroundColor="#1a2d59"

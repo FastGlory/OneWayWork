@@ -237,7 +237,13 @@ namespace MauiApp1.Service
         public async Task<List<Candidature>> GetCandidatureFromUser()
         {
 
-            return await _connection.Table<Candidature>().ToListAsync();
+
+            // TO_Do  la méthode pour les admin acces seulement 
+
+
+            return await _connection.Table<Candidature>()
+                .Where(c => !c.Is_Draft)
+                .ToListAsync();
 
 
         }
