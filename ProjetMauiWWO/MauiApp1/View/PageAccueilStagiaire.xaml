@@ -2,15 +2,15 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.View.PageAccueilStagiaire"
-                      BackgroundColor="Transparent">
+             BackgroundColor="Transparent">
 
     <ScrollView>
-        <VerticalStackLayout Padding="50">
+        <VerticalStackLayout Padding="20">
             <Label Text="Bienvenue cher stagiaire" 
-               FontSize="Large"
-               HorizontalTextAlignment="Center"
-               TextColor="White"
-               FontAttributes="Bold">
+                   FontSize="Large"
+                   HorizontalTextAlignment="Center"
+                   TextColor="White"
+                   FontAttributes="Bold">
                 <Label.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                         <GradientStop Color="GhostWhite" Offset="0" />
@@ -19,56 +19,57 @@
                 </Label.Background>
             </Label>
 
-            <HorizontalStackLayout Spacing="10" Margin="0,0,0,0">
-            </HorizontalStackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
 
-            <HorizontalStackLayout Spacing="20" Margin="-110,40,0,0">
-                <Image Source="image5.png" Margin="110,0,0,0" />
+                <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Source="image5.png" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,20" />
 
-                <VerticalStackLayout Spacing="10">
-
+                <VerticalStackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Spacing="20" Padding="20">
                     <Label Text="Voici ce qu'on vous propose"
                            FontAttributes="Bold"
                            FontSize="Large"
-                           Margin="0,40,0,0" />
+                           HorizontalOptions="Center" />
 
                     <Button Text="Soumission de candidature"
-                            Margin="0,30,0,0"
                             Padding="20,10"
                             CornerRadius="10"
                             FontSize="18"
                             BackgroundColor="CornflowerBlue"
-                            TextColor="White"/>
+                            TextColor="White"
+                            HorizontalOptions="Fill" />
 
-                    <StackLayout Margin="0,0,0,0">
-                        <Button Text="Offre de stage"
-                                Margin="0,30,0,0"
-                                Padding="20,10"
-                                CornerRadius="10"
-                                FontSize="18"
-                                BackgroundColor="CornflowerBlue"
-                                TextColor="White"/>
+                    <Button Text="Offre de stage"
+                            Padding="20,10"
+                            CornerRadius="10"
+                            FontSize="18"
+                            BackgroundColor="CornflowerBlue"
+                            TextColor="White"
+                            HorizontalOptions="Fill" />
 
-                        <Button Text="Suivi du stage"
-                                Margin="0,30,0,0"
-                                Padding="20,10"
-                                CornerRadius="10"
-                                FontSize="18"
-                                BackgroundColor="CornflowerBlue"
-                                TextColor="White"/>
-                    </StackLayout>
+                    <Button Text="Suivi du stage"
+                            Padding="20,10"
+                            CornerRadius="10"
+                            FontSize="18"
+                            BackgroundColor="CornflowerBlue"
+                            TextColor="White"
+                            HorizontalOptions="Fill" />
 
                     <Button Text="Connecte toi!"
-                            Margin="0,30,0,0"
                             Padding="20,10"
                             CornerRadius="10"
                             FontSize="18"
                             BackgroundColor="Blue"
-                            TextColor="White"/>
+                            TextColor="White"
+                            HorizontalOptions="Fill" />
                 </VerticalStackLayout>
-            </HorizontalStackLayout>
-
-
+            </Grid>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
