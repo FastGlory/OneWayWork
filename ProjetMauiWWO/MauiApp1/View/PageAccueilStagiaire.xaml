@@ -5,73 +5,88 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     BackgroundColor="Transparent">
 
-
     <ScrollView>
-        <VerticalStackLayout Padding="20">
-            <Label Text="Bienvenue cher stagiaire" 
-                   FontSize="Large"
-                   HorizontalTextAlignment="Center"
-                   TextColor="White"
-                   FontAttributes="Bold">
+        <VerticalStackLayout Padding="50">
+            <Label
+                FontAttributes="Bold"
+                FontSize="Large"
+                HorizontalTextAlignment="Center"
+                Text="Bienvenue cher stagiaire"
+                TextColor="White">
                 <Label.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                        <GradientStop Color="GhostWhite" Offset="0" />
-                        <GradientStop Color="CornflowerBlue" Offset="1" />
+                        <GradientStop Offset="0" Color="GhostWhite" />
+                        <GradientStop Offset="1" Color="CornflowerBlue" />
                     </LinearGradientBrush>
                 </Label.Background>
             </Label>
 
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
+            <HorizontalStackLayout Margin="0,0,0,0" Spacing="10" />
 
-                <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Source="image5.png" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,20" />
+            <HorizontalStackLayout Margin="-110,40,0,0" Spacing="20">
+                <Image Margin="110,0,0,0" Source="image5.png" />
 
-                <VerticalStackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Spacing="20" Padding="20">
-                    <Label Text="Voici ce qu'on vous propose"
-                           FontAttributes="Bold"
-                           FontSize="Large"
-                           HorizontalOptions="Center" />
+                <VerticalStackLayout Spacing="10">
 
-                    <Button Text="Soumission de candidature"
+                    <Label
+                        Margin="0,40,0,0"
+                        FontAttributes="Bold"
+                        FontSize="Large"
+                        Text="Voici ce qu'on vous propose" />
+
+                    <Button
+                        Margin="0,30,0,0"
+                        Padding="20,10"
+                        BackgroundColor="CornflowerBlue"
+                        CornerRadius="10"
+                        FontSize="18"
+                        Text="Soumission de candidature"
+                        TextColor="White" />
+
+                    <StackLayout Margin="0,0,0,0">
+                        <Button
+                            Margin="0,30,0,0"
                             Padding="20,10"
-                            CornerRadius="10"
-                            FontSize="18"
                             BackgroundColor="CornflowerBlue"
-                            TextColor="White"
-                            HorizontalOptions="Fill" />
-
-                    <Button Text="Offre de stage"
-                            Padding="20,10"
                             CornerRadius="10"
                             FontSize="18"
+                            Text="Offre de stage"
+                            TextColor="White" />
+
+                        <Button
+                            Margin="0,30,0,0"
+                            Padding="20,10"
                             BackgroundColor="CornflowerBlue"
-                            TextColor="White"
-                            HorizontalOptions="Fill" />
-
-                    <Button Text="Suivi du stage"
-                            Padding="20,10"
                             CornerRadius="10"
                             FontSize="18"
-                            BackgroundColor="CornflowerBlue"
-                            TextColor="White"
-                            HorizontalOptions="Fill" />
+                            Text="Suivi du stage"
+                            TextColor="White" />
+                    </StackLayout>
 
-                    <Button Text="Connecte toi!"
-                            Padding="20,10"
-                            CornerRadius="10"
-                            FontSize="18"
-                            BackgroundColor="Blue"
-                            TextColor="White"
-                            HorizontalOptions="Fill" />
+                    <Button
+                        Margin="0,30,0,0"
+                        Padding="20,10"
+                        BackgroundColor="red"
+                        Clicked="LogoutButton"
+                        CornerRadius="10"
+                        FontSize="18"
+                        Text="Log out !"
+                        TextColor="White" />
                 </VerticalStackLayout>
-            </Grid>
+            </HorizontalStackLayout>
+            <Frame
+            Margin="0,0,0,0"
+            Padding="10"
+            BackgroundColor="LightGray"
+            CornerRadius="5"
+            HorizontalOptions="Start"
+            VerticalOptions="End">
+                <Label
+                x:Name="IdSessionLabel"
+                HorizontalOptions="Center"
+                Text="{Binding IdSession}"
+                VerticalOptions="Center" />
+            </Frame>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
