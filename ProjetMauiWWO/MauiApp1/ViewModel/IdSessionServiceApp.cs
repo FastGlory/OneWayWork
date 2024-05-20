@@ -31,6 +31,10 @@ namespace MauiApp1.ViewModel
         public void SetSessionId(string id)
         {
             IdSession = id;
+            // Ici ca va permettre de pouvoir offrir la possibilité selon l'instance de Appshell de mettre à jours sa visibilité en fonction de sont IdSession
+            // si vous l'enlever ce que ca va faire c'est que sa va belle bien caché les pages selon l'id Session mais seulement 1 fois (impossible de recharger)
+            ((AppShell)Shell.Current).OptionVisible();
+            
         }
 
         // méthode get
@@ -42,3 +46,5 @@ namespace MauiApp1.ViewModel
 
 
 }
+
+// La ligne 34 est inspiré de ce code : https://stackoverflow.com/questions/75551165/switch-app-shell-tab-programmatically-to-current-page-on-tab-not-with-gotoasync + une vidéo : 

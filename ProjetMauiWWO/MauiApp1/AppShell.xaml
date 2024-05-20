@@ -10,81 +10,55 @@
 
 
     <ShellContent
+        x:Name="ConnexionPage"
         Title="Connexion"
         ContentTemplate="{DataTemplate view:ConnexionView}"
         Route="ConnexionView" />
-
-
     <ShellContent
+        x:Name="StagiairePage"
         Title="Stagiaire"
         ContentTemplate="{DataTemplate view:Stagiaire_Page}"
         Route="Stagiaire_Page" />
-
-
     <ShellContent
+        x:Name="StagePage"
         Title="Stage"
         ContentTemplate="{DataTemplate view:Stage_Page}"
         Route="Stage_Page" />
-
-
-
     <ShellContent
+        x:Name="EntreprisePage"
         Title="Entreprise"
         ContentTemplate="{DataTemplate view:PageEntrepriseWWO}"
         Route="PageEntrepriseWWO" />
-
-
-
     <ShellContent
+        x:Name="ViewCandidatureSubmittedPage"
         Title="Voir les candidatures"
         ContentTemplate="{DataTemplate view:ViewCandidatureSubmitted}"
         Route="ViewCandidatureSubmitted" />
     <ShellContent
+        x:Name="CreationStagePage"
         Title="Création Stage"
         ContentTemplate="{DataTemplate view:CreationStage}"
         Route="CreationStage" />
-
-
-
     <ShellContent
+        x:Name="CandidatureDraftViewPage"
         Title="Mes candidatures"
         ContentTemplate="{DataTemplate view:CandidatureDraftView}"
         Route="CandidatureDraftView" />
-
-
-
-
     <ShellContent
+        x:Name="PageAccueilAdminPage"
         Title="Page Accueil Admin"
         ContentTemplate="{DataTemplate view:PageAccueilAdmin}"
         Route="PageAccueilAdmin" />
-
-
     <ShellContent
+        x:Name="PageAccueilEntreprisePage"
         Title="Page Accueil Entreprise"
         ContentTemplate="{DataTemplate view:PageAccueilEntreprise}"
         Route="PageAccueilEntreprise" />
-
-
-
     <ShellContent
+        x:Name="PageAccueilStagiairePage"
         Title="Page Accueil Stagiaire"
         ContentTemplate="{DataTemplate view:PageAccueilStagiaire}"
         Route="PageAccueilStagiaire" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </Shell>
