@@ -101,6 +101,11 @@ public partial class CandidatureDraftView : ContentPage
         Drafts.Remove(candidature); // sup de l'interface
 
     }
+
+    private void Button_Clicked_Edit(object sender, EventArgs e)
+    {
+
+    }
 }
 
 

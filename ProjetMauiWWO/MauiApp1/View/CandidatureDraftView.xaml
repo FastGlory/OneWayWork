@@ -76,6 +76,8 @@
                                     <Button
                                         Padding="10"
                                         BackgroundColor="#A0A4FF"
+                                        Clicked="Button_Clicked_Edit"
+                                        
                                         CornerRadius="10"
                                         HorizontalOptions="End"
                                         MaximumHeightRequest="80"
