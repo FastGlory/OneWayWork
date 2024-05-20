@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Runtime.CompilerServices;
+using System.Globalization;
 
 namespace MauiApp1.View;
 
@@ -55,19 +56,24 @@ public partial class CandidatureDraftView : ContentPage
                  if (draft.Is_Accepted)
                 {
                     draft.Status = "Vous êtes accepter";
+                    draft.StatusColor = "Green";
 
                 }
                 else if (!draft.Is_Accepted)
                 {
 
                     draft.Status = "Vous êtes en attente";
+                    draft.StatusColor = "White";
+
                 }
 
 
-                 if(draft.Is_Declined)
+                if (draft.Is_Declined)
                 {
 
                     draft.Status = "Vous êtes refuser";
+                    draft.StatusColor = "Red";
+
 
                 }
 
@@ -101,6 +107,10 @@ public partial class CandidatureDraftView : ContentPage
         Drafts.Remove(candidature); // sup de l'interface
 
     }
+
+
+    
+    
 }
 
 

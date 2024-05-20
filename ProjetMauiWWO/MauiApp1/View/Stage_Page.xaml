@@ -3,6 +3,8 @@
              x:Class="MauiApp1.View.Stage_Page"
              Title="Stage">
     <StackLayout>
+        
+
         <Button Text="Supprimer tous les stages"
            Clicked="OnDeleteAllStageButtonClicked"/>
       

@@ -4,6 +4,8 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="Mes brouillons">
+
+
     <StackLayout>
 
         <Label
@@ -94,14 +96,10 @@
                                         x:Name="StatutCandidatLabel"
                                         HorizontalOptions="Center"
                                         Text="{Binding Status}"
-                                        TextColor="White"
+                                        TextColor="{Binding StatusColor}"
                                         VerticalOptions="Center" />
 
-                                    <Label
-                                        x:Name="StatutEnvoyer"
-                                        HorizontalOptions="Center"
-                                        Text="{Binding StatutEnvoyer}"
-                                        VerticalOptions="Center" />
+
 
                                 </StackLayout>
 

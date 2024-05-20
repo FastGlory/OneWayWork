@@ -81,16 +81,22 @@ namespace MauiApp1.View
 
         private async void OnDeleteAllStageButtonClicked(object sender, EventArgs e)
         {
-            try
-            {
-                await _localDbService.DeleteAllStages();
-                await LoadStagesAsync();
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Error deleting stages: {ex.Message}");
-                await DisplayAlert("Error", $"Error deleting stages: {ex.Message}", "OK");
-            }
+
+          
+
+                try
+                {
+                    await _localDbService.DeleteAllStages();
+                    await LoadStagesAsync();
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"Error deleting stages: {ex.Message}");
+                    await DisplayAlert("Error", $"Error deleting stages: {ex.Message}", "OK");
+                }
+            
+         
+
         }
 
         private void OnSearchButtonPressed(object sender, EventArgs e)
@@ -110,7 +116,7 @@ namespace MauiApp1.View
                 s.Nom_Stage.ToLower().Contains(searchText.ToLower()) ||
                 (s.Entreprise != null && s.Entreprise.Nom_Entreprise.ToLower().Contains(searchText.ToLower())))
                 .ToList(); // Il fuat passer par entreprise pour aller voir ces informations
-
+                
             UpdateFilteredStages(new ObservableCollection<Stage>(filtered));
         }
 
