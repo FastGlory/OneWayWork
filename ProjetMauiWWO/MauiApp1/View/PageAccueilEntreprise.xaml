@@ -6,87 +6,70 @@
     BackgroundColor="Transparent">
 
     <ScrollView>
-        <VerticalStackLayout Padding="50">
-            <Label
-                FontAttributes="Bold"
-                FontSize="Large"
-                HorizontalTextAlignment="Center"
-                Text="Bienvenue cher Entreprise"
-                TextColor="White">
+        <VerticalStackLayout Padding="20">
+            <Label Text="Bienvenue cher administrateur"
+                   FontSize="Large"
+                   HorizontalTextAlignment="Center"
+                   TextColor="White"
+                   FontAttributes="Bold">
                 <Label.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                        <GradientStop Offset="0" Color="CornflowerBlue" />
-                        <GradientStop Offset="1" Color="GhostWhite" />
+                        <GradientStop Color="CornflowerBlue" Offset="0" />
+                        <GradientStop Color="GhostWhite" Offset="1" />
                     </LinearGradientBrush>
                 </Label.Background>
             </Label>
 
-            <HorizontalStackLayout Margin="0,0,0,0" Spacing="10" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
 
-            <HorizontalStackLayout Margin="-100,40,0,0" Spacing="20">
-                <Image Margin="110,1,50,10" Source="imageentreprisebranding.png" />
-              
+                <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Source="image4.png" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,20" />
 
-                <VerticalStackLayout Spacing="10">
+                <VerticalStackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Spacing="20" Padding="20">
+                    <Label Text="Vos droits en tant qu'entreprise"
+                           FontSize="Large"
+                           HorizontalOptions="Center" />
 
-                    <Label
-                        Margin="0,40,0,0"
-                        FontSize="Large"
-                        Text="Vos droits en tant qu'administrateur" />
-
-                    <Button
-                        Margin="0,30,0,0"
-                        Padding="20,10"
-                        BackgroundColor="CornflowerBlue"
-                        CornerRadius="10"
-                        FontSize="18"
-                        Text="Publication offre de stage"
-                        TextColor="White" />
-
-                    <StackLayout Margin="0,0,0,0">
-                        <Button
-                            Margin="0,30,0,0"
+                    <Button Text="Publication offre de stage"
                             Padding="20,10"
-                            BackgroundColor="CornflowerBlue"
                             CornerRadius="10"
                             FontSize="18"
-                            Text="Ajout de stage"
-                            TextColor="White" />
-
-                        <Button
-                            Margin="0,30,0,0"
-                            Padding="20,10"
                             BackgroundColor="CornflowerBlue"
+                            TextColor="White"
+                            HorizontalOptions="Fill" />
+
+                    <Button Text="Ajout de stage"
+                            Padding="20,10"
                             CornerRadius="10"
                             FontSize="18"
-                            Text="Voir candidature"
-                            TextColor="White" />
-                    </StackLayout>
+                            BackgroundColor="CornflowerBlue"
+                            TextColor="White"
+                            HorizontalOptions="Fill" />
 
-                    <Button
-                        Margin="0,30,0,0"
-                        Padding="20,10"
-                        BackgroundColor="red"
-                        Clicked="LogoutButton"
-                        CornerRadius="10"
-                        FontSize="18"
-                        Text="Log out !"
-                        TextColor="White" />
+                    <Button Text="Voir candidature"
+                            Padding="20,10"
+                            CornerRadius="10"
+                            FontSize="18"
+                            BackgroundColor="CornflowerBlue"
+                            TextColor="White"
+                            HorizontalOptions="Fill" />
+
+                    <Button Text="Connectez-vous"
+                            Padding="20,10"
+                            CornerRadius="10"
+                            FontSize="18"
+                            BackgroundColor="Blue"
+                            TextColor="White"
+                            HorizontalOptions="Fill" />
                 </VerticalStackLayout>
-            </HorizontalStackLayout>
-            <Frame
-            Margin="0,0,0,0"
-            Padding="10"
-            BackgroundColor="LightGray"
-            CornerRadius="5"
-            HorizontalOptions="Start"
-            VerticalOptions="End">
-                <Label
-                x:Name="IdSessionLabel"
-                HorizontalOptions="Center"
-                Text="{Binding IdSession}"
-                VerticalOptions="Center" />
-            </Frame>
+            </Grid>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
