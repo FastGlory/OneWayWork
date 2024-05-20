@@ -74,7 +74,6 @@ public partial class ViewCandidatureSubmitted : ContentPage
         candidature.Is_Accepted = true;
 
         await _localDbService.UpdateCandidature(candidature);
-        await _localDbService.DeleteCandidature(candidature);
         CandidatureSubmit.Remove(candidature); //  removed de l'interface
         MessageLabel.Text = "Candidature accepté";
     }
@@ -91,7 +90,6 @@ public partial class ViewCandidatureSubmitted : ContentPage
         candidature.Is_Declined = true;
 
         await _localDbService.UpdateCandidature(candidature);
-        await _localDbService.DeleteCandidature(candidature);
         CandidatureSubmit.Remove(candidature); //  removed de l'interface
         MessageLabel.Text = "Candidature refusé";
     }

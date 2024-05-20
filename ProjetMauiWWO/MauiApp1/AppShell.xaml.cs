@@ -35,12 +35,13 @@ namespace MauiApp1
                 Autorisation(StagiairePage);
                 Autorisation(StagePage);
                 Autorisation(EntreprisePage);
-                Autorisation(ViewCandidatureSubmittedPage);
                 Autorisation(CreationStagePage);
-                Autorisation(CandidatureDraftViewPage);
+                Refus(CandidatureDraftViewPage);
                 Autorisation(PageAccueilAdminPage);
                 Refus(PageAccueilEntreprisePage);
                 Refus(PageAccueilStagiairePage);
+                Autorisation(ViewCandidatureSubmittedPage);
+
             }
             else if (sessionId.StartsWith("E"))
             {
@@ -48,12 +49,12 @@ namespace MauiApp1
                 Autorisation(StagiairePage);
                 Autorisation(StagePage);
                 Refus(EntreprisePage);
-                Autorisation(ViewCandidatureSubmittedPage);
                 Autorisation(CreationStagePage);
                 Refus(CandidatureDraftViewPage);
                 Refus(PageAccueilAdminPage);
                 Autorisation(PageAccueilEntreprisePage);
                 Refus(PageAccueilStagiairePage);
+                Autorisation(ViewCandidatureSubmittedPage);
             }
             else
             {
@@ -61,12 +62,15 @@ namespace MauiApp1
                 Refus(StagiairePage);
                 Autorisation(StagePage);
                 Refus(EntreprisePage);
-                Autorisation(ViewCandidatureSubmittedPage);
                 Refus(CreationStagePage);
-                Autorisation(CandidatureDraftViewPage);
                 Refus(PageAccueilAdminPage);
                 Refus(PageAccueilEntreprisePage);
                 Autorisation(PageAccueilStagiairePage);
+                Refus(ViewCandidatureSubmittedPage);
+                Autorisation(CandidatureDraftViewPage);
+
+
+
             }
         }
 
