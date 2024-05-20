@@ -40,9 +40,17 @@
         ContentTemplate="{DataTemplate view:ViewCandidatureSubmitted}"
         Route="ViewCandidatureSubmitted" />
     <ShellContent
-      Title="Création Stage"
-      ContentTemplate="{DataTemplate view:CreationStage}"
-      Route="CreationStage" />
+        Title="Création Stage"
+        ContentTemplate="{DataTemplate view:CreationStage}"
+        Route="CreationStage" />
+
+
+
+    <ShellContent
+        Title="Mes candidatures"
+        ContentTemplate="{DataTemplate view:CandidatureDraftView}"
+        Route="CandidatureDraftView" />
+
 
 
 

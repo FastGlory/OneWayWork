@@ -57,13 +57,54 @@
 
                                 <Label FontAttributes="Bold" Text="{Binding Date_Candidature}" />
 
-                                <Button
-                                    Padding="10"
-                                    BackgroundColor="#1a2d59"
-                                    CornerRadius="10"
+
+                                <StackLayout
                                     HorizontalOptions="End"
-                                    Text="Delete"
-                                    TextColor="White" />
+                                    Orientation="Horizontal"
+                                    Spacing="10">
+                                    <Button
+                                        Padding="10"
+                                        BackgroundColor="#1a2d59"
+                                        Clicked="Button_Clicked_Delete"
+                                        CornerRadius="10"
+                                        HorizontalOptions="End"
+                                        MaximumHeightRequest="80"
+                                        MaximumWidthRequest="60"
+                                        Text="Delete"
+                                        TextColor="White" />
+
+                                    <Button
+                                        Padding="10"
+                                        BackgroundColor="#A0A4FF"
+                                        CornerRadius="10"
+                                        HorizontalOptions="End"
+                                        MaximumHeightRequest="80"
+                                        MaximumWidthRequest="60"
+                                        Text="Edit"
+                                        TextColor="White" />
+                                </StackLayout>
+
+
+                                <StackLayout
+                                    HorizontalOptions="End"
+                                    Orientation="Vertical"
+                                    Spacing="10">
+
+                                    <Label
+                                        x:Name="StatutCandidatLabel"
+                                        HorizontalOptions="Center"
+                                        Text="{Binding Status}"
+                                        TextColor="White"
+                                        VerticalOptions="Center" />
+
+                                    <Label
+                                        x:Name="StatutEnvoyer"
+                                        HorizontalOptions="Center"
+                                        Text="{Binding StatutEnvoyer}"
+                                        VerticalOptions="Center" />
+
+                                </StackLayout>
+
                             </StackLayout>
 
 

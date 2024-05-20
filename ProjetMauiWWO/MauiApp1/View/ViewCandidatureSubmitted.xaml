@@ -62,6 +62,7 @@
                                     <Button
                                         Padding="10"
                                         BackgroundColor="#1a2d59"
+                                        Clicked="Button_Clicked_Delete"
                                         CornerRadius="10"
                                         HorizontalOptions="End"
                                         Text="Delete"
@@ -70,6 +71,7 @@
                                     <Button
                                         Padding="10"
                                         BackgroundColor="Green"
+                                        Clicked="Button_Clicked_Accept"
                                         CornerRadius="10"
                                         HorizontalOptions="End"
                                         Text="Accepter"
@@ -79,6 +81,7 @@
                                     <Button
                                         Padding="10"
                                         BackgroundColor="red"
+                                        Clicked="Button_Clicked_Refused"
                                         CornerRadius="10"
                                         HorizontalOptions="End"
                                         Text="Refuser"

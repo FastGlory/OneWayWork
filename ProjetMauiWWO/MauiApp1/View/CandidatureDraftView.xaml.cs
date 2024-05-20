@@ -16,6 +16,9 @@ public partial class CandidatureDraftView : ContentPage
 
     private readonly LocalDbService _localDbService;
     public ObservableCollection<Candidature> Drafts { get; set; }
+
+
+
     public CandidatureDraftView(LocalDbService localDbService)
     {
         InitializeComponent();
@@ -45,20 +48,61 @@ public partial class CandidatureDraftView : ContentPage
             {
                 Drafts.Add(draft);
 
+
+
+              
+
+                 if (draft.Is_Accepted)
+                {
+                    draft.Status = "Vous êtes accepter";
+
+                }
+                else if (!draft.Is_Accepted)
+                {
+
+                    draft.Status = "Vous êtes en attente";
+                }
+
+
+                 if(draft.Is_Declined)
+                {
+
+                    draft.Status = "Vous êtes refuser";
+
+                }
+
             }
+
+
+        
+
+
+
 
         }
         catch (Exception ex)
         {
-            MessageLabel.Text = $"Erreur inconnu: {ex.Message}";
+            {
+                MessageLabel.Text = $"Erreur inconnu: {ex.Message}";
+            }
+
+
         }
+
 
 
     }
 
-   
-    
+    private async void Button_Clicked_Delete(object sender, EventArgs e)
+    {
+        var button = (Button)sender;
+        var candidature = (Candidature)button.BindingContext;
+        await _localDbService.DeleteCandidature(candidature);  // supp de la base de donnee
+        Drafts.Remove(candidature); // sup de l'interface
+
+    }
 }
+
 
 
 
