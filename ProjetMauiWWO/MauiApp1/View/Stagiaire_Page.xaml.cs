@@ -39,7 +39,13 @@ namespace MauiApp1.View
             base.OnAppearing();
             string idSession = IdSessionServiceApp.Instance.GetSessionId();
             IdSessionLabel.Text = $"IdSession: {idSession}";
+            if (string.IsNullOrEmpty(idSession) || !idSession.StartsWith("A"))
+            {
+                SuppressionComplete.IsVisible = false;
+            }
             LoadStagiairesAsync();
+ 
+
         }
 
         private async Task LoadStagiairesAsync()

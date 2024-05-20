@@ -4,9 +4,11 @@
              Title="Stagiaire">
     <StackLayout>
         <Button Text="Supprimer tous les stagiaires"
+                x:Name="SuppressionComplete"
                 Clicked="OnDeleteAllStagiairesButtonClicked"/>
 
         <SearchBar x:Name="filterText"
+                   
                    Placeholder="Search"
                    SearchButtonPressed="OnSearchButtonPressed"
                    Margin="15"/>
@@ -60,7 +62,7 @@
         </Frame>
 
 
-        <Frame BackgroundColor="LightGray" Padding="10" CornerRadius="5" HorizontalOptions="Start" VerticalOptions="End" Margin="0, 0, 0, 0">
+        <Frame BackgroundColor="black" Padding="10" CornerRadius="5" HorizontalOptions="Start" VerticalOptions="End" Margin="0, 0, 0, 0">
        <Label x:Name="IdSessionLabel"
            Text="{Binding IdSession}"
            HorizontalOptions="Center"

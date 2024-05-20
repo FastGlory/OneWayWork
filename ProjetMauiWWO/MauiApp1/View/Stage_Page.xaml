@@ -6,6 +6,7 @@
         
 
         <Button Text="Supprimer tous les stages"
+           x:Name="SuppressionComplete"
            Clicked="OnDeleteAllStageButtonClicked"/>
       
         <SearchBar x:Name="filterText"
@@ -51,7 +52,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Frame Grid.Column="1" x:Name="ShowInformations" IsVisible="False" BackgroundColor="LightGray" CornerRadius="10" Padding="10" Margin="15">
+        <Frame Grid.Column="1" x:Name="ShowInformations" IsVisible="False" BackgroundColor="Gray" CornerRadius="10" Padding="10" Margin="15">
             <StackLayout>
                 <Label Text="Information Stage" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,10,0,0"/>
                 <Image x:Name="ImageStage" Aspect="AspectFill" HeightRequest="100" WidthRequest="100" Margin="0,20,0,0" />
@@ -80,7 +81,7 @@
 
             </StackLayout>
         </Frame> 
-        <Frame BackgroundColor="LightGray" Padding="10" CornerRadius="5" HorizontalOptions="Start" VerticalOptions="End" Margin="0, 0, 0, 0">
+        <Frame BackgroundColor="black" Padding="10" CornerRadius="5" HorizontalOptions="Start" VerticalOptions="End" Margin="0, 0, 0, 0">
             <Label x:Name="IdSessionLabel"
                 Text="{Binding IdSession}"
                 HorizontalOptions="Center"

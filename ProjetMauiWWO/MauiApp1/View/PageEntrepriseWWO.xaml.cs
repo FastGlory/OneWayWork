@@ -36,6 +36,10 @@ public partial class PageEntrepriseWWO : ContentPage
         base.OnAppearing();
         string idSession = IdSessionServiceApp.Instance.GetSessionId();
         IdSessionLabel.Text = $"IdSession: {idSession}";
+        if (!idSession.StartsWith("A"))
+        {
+            SuppressionComplete.IsVisible = false;
+        }
         LoadEntreprisesAsync();
     }
 

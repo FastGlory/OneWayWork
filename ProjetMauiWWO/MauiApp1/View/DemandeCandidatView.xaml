@@ -192,7 +192,7 @@
         <Frame
             Margin="0,0,0,0"
             Padding="10"
-            BackgroundColor="LightGray"
+            BackgroundColor="black"
             CornerRadius="5"
             HorizontalOptions="Start"
             VerticalOptions="End">

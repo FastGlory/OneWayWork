@@ -8,6 +8,7 @@ using MauiApp1.Service;
 using System.Diagnostics;
 using MauiApp1.ViewModel;
 
+
 namespace MauiApp1.View
 {
     public partial class Stage_Page : ContentPage
@@ -28,7 +29,9 @@ namespace MauiApp1.View
             filteredStages = new ObservableCollection<Stage>();
             BindingContext = this;
             listView.ItemsSource = filteredStages;
-           
+
+
+
         }
 
 
@@ -46,8 +49,15 @@ namespace MauiApp1.View
             base.OnAppearing();
             string idSession = IdSessionServiceApp.Instance.GetSessionId();
             IdSessionLabel.Text = $"IdSession: {idSession}";
+            if (string.IsNullOrEmpty(idSession) || !idSession.StartsWith("A"))
+            {
+                SuppressionComplete.IsVisible = false;
+            }
             await LoadStagesAsync(); // La on va simplement charger
+
         } // Permet de montrer les informations des stages à l'utilisateur et le base. c'est une manière de faire référence directement
+
+
 
         private async Task LoadStagesAsync()
         {
