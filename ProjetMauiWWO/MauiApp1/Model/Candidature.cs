@@ -32,6 +32,16 @@ namespace MauiApp1.Model
         [Column("Is_Accepted ‎")]
         public bool Is_Accepted { get; set; } = false;
 
+        [Column("Is_Declined ‎")]
+        public bool Is_Declined { get; set; } = false;
+
+        [Column("StatusColor ‎")]
+        public string? StatusColor { get; set; }
+
+
+        [Column("Status ‎")]
+        public string? Status { get; set; }
+
 
         [Column("IdSession")]  //Clé étrangère
         public string? IdSession { get; set; }

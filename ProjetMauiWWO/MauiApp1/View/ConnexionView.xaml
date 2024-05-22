@@ -34,6 +34,7 @@
                     x:Name="NomUtilisateur"
                     BackgroundColor="White"
                     Opacity="0.5"
+                    TextColor="Black"
                     Placeholder="Nom d'utilisateur"
                     PlaceholderColor="Black" />
                 <Entry
@@ -41,6 +42,7 @@
                     Margin="0,10,0,0"
                     BackgroundColor="White"
                     IsPassword="True"
+                    TextColor="Black"
                     Opacity="0.5"
                     Placeholder="Mot de passe"
                     PlaceholderColor="Black" />
@@ -82,7 +84,7 @@
         <Frame
             Margin="0,0,0,0"
             Padding="10"
-            BackgroundColor="LightGray"
+            BackgroundColor="black"
             CornerRadius="5"
             HorizontalOptions="Start"
             VerticalOptions="End">

@@ -5,86 +5,86 @@
     Title="Admin Home Page"
     BackgroundColor="Transparent">
 
+
     <ScrollView>
         <VerticalStackLayout Padding="50">
-            <Label
-                FontAttributes="Bold"
-                FontSize="Large"
-                HorizontalTextAlignment="Center"
-                Text="Bienvenue cher administrateur"
-                TextColor="White">
+            <Label Text="Bienvenue sur One Way Work !" 
+                   FontSize="Large"
+                   HorizontalTextAlignment="Center"
+                   TextColor="White"
+                   FontAttributes="Bold">
                 <Label.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                        <GradientStop Offset="0" Color="CornflowerBlue" />
-                        <GradientStop Offset="1" Color="GhostWhite" />
+                        <GradientStop Color="GhostWhite" Offset="0" />
+                        <GradientStop Color="CornflowerBlue" Offset="1" />
                     </LinearGradientBrush>
                 </Label.Background>
             </Label>
 
-            <HorizontalStackLayout Margin="0,0,0,0" Spacing="10" />
+            <Label Text="En savoir plus sur les articles collaboratifs"
+                   FontSize="Large"
+                   Margin="0,30,0,0"/>
 
-            <HorizontalStackLayout Margin="-110,40,0,0" Spacing="20">
-                <Image Margin="110,0,0,0" Source="image4.png" />
+            <Label Text="La mission de OneWayWork est simple :" 
+                   FontSize="18" />
 
+            <HorizontalStackLayout Spacing="20" Margin="0,40,0,0">
                 <VerticalStackLayout Spacing="10">
-
-                    <Label
-                        Margin="0,40,0,0"
-                        FontSize="Large"
-                        Text="Vos droits en tant qu'administrateur" />
-
-                    <Button
-                        Margin="0,30,0,0"
-                        Padding="20,10"
-                        BackgroundColor="CornflowerBlue"
-                        CornerRadius="10"
-                        FontSize="18"
-                        Text="Publication offre de stage"
-                        TextColor="White" />
+                    <Image Source="image2.png" SemanticProperties.Description="Feature 1" />
+                    <Label Text="Contacter les professionnels du monde entier" 
+                           FontSize="16" 
+                           HorizontalOptions="Center" />
+                    <Label Text="Notre BUT " 
+                           FontSize="Large" 
+                           Margin="0,40,0,0" />
 
                     <StackLayout Margin="0,0,0,0">
-                        <Button
-                            Margin="0,30,0,0"
-                            Padding="20,10"
-                            BackgroundColor="CornflowerBlue"
-                            CornerRadius="10"
-                            FontSize="18"
-                            Text="Ajout de stage"
-                            TextColor="White" />
+                        <Label Text="? Offir une application unique en son genre" 
+                         FontSize="16" 
+                         TextColor="White" 
+                         Margin="0,5,0,0"/>
 
-                        <Button
-                            Margin="0,30,0,0"
-                            Padding="20,10"
-                            BackgroundColor="CornflowerBlue"
-                            CornerRadius="10"
-                            FontSize="18"
-                            Text="Voir candidature"
-                            TextColor="White" />
+                        <Label Text="? La simpliciter" 
+                               FontSize="16" 
+                               TextColor="White" 
+                               Margin="0,5,0,0"/>
+
+                        <Label Text="? Une favorisation pour la collaboration" 
+                               FontSize="16" 
+                               TextColor="White" 
+                               Margin="0,5,0,0"/>
+                        <Label Text="? La securiter et la confidentialiter" 
+                               FontSize="16" 
+                               TextColor="White" 
+                               Margin="0,5,0,0"/>
                     </StackLayout>
-
-                    <Button
-                        Margin="0,30,0,0"
-                        Padding="20,10"
-                        BackgroundColor="red"
-                        CornerRadius="10"
-                        Clicked="LogoutButton"
-                        FontSize="18"
-                        Text="Log out !"
-                        TextColor="White" />
+                    <Button Text="Au travail !"
+                     Margin="0,30,0,0"
+                     Padding="20,10"
+                     CornerRadius="10"
+                     FontSize="18"
+                     BackgroundColor="Blue"
+                     TextColor="White"/>
                 </VerticalStackLayout>
+
+                <VerticalStackLayout Spacing="10">
+                    <Image Source="image1.png" Margin="110,0,0,0" />
+                </VerticalStackLayout>
+
             </HorizontalStackLayout>
+
             <Frame
-           Margin="0,0,0,0"
-           Padding="10"
-           BackgroundColor="LightGray"
-           CornerRadius="5"
-           HorizontalOptions="Start"
-           VerticalOptions="End">
+            Margin="0,0,0,0"
+            Padding="10"
+            BackgroundColor="black"
+            CornerRadius="5"
+            HorizontalOptions="Start"
+            VerticalOptions="End">
                 <Label
-               x:Name="IdSessionLabel"
-               HorizontalOptions="Center"
-               Text="{Binding IdSession}"
-               VerticalOptions="Center" />
+                x:Name="IdSessionLabel"
+                HorizontalOptions="Center"
+                Text="{Binding IdSession}"
+                VerticalOptions="Center" />
             </Frame>
         </VerticalStackLayout>
     </ScrollView>

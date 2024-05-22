@@ -58,10 +58,11 @@
 
                                 <Label FontAttributes="Bold" Text="{Binding Date_Candidature}" />
 
-                                <StackLayout Orientation="Horizontal">
+                                <StackLayout Orientation="Horizontal" Spacing="5">
                                     <Button
                                         Padding="10"
                                         BackgroundColor="#1a2d59"
+                                        Clicked="Button_Clicked_Delete"
                                         CornerRadius="10"
                                         HorizontalOptions="End"
                                         Text="Delete"
@@ -70,6 +71,7 @@
                                     <Button
                                         Padding="10"
                                         BackgroundColor="Green"
+                                        Clicked="Button_Clicked_Accept"
                                         CornerRadius="10"
                                         HorizontalOptions="End"
                                         Text="Accepter"
@@ -79,6 +81,7 @@
                                     <Button
                                         Padding="10"
                                         BackgroundColor="red"
+                                        Clicked="Button_Clicked_Refused"
                                         CornerRadius="10"
                                         HorizontalOptions="End"
                                         Text="Refuser"
@@ -97,7 +100,7 @@
         <Frame
             Margin="0,0,0,0"
             Padding="10"
-            BackgroundColor="LightGray"
+            BackgroundColor="black"
             CornerRadius="5"
             HorizontalOptions="Start"
             VerticalOptions="End">

@@ -34,11 +34,12 @@ public partial class ViewCandidatureSubmitted : ContentPage
     {
         try
         {
-            var CandidatureSubmit = await _localDbService.GetCandidatureFromUser();
+            var candidatures = await _localDbService.GetCandidatureFromUser(); 
 
-            foreach (var candidature in CandidatureSubmit)
+            foreach (var candidature in candidatures)
             {
-                CandidatureSubmit.Add(candidature);
+
+             CandidatureSubmit.Add(candidature);
 
             }
 
@@ -55,7 +56,44 @@ public partial class ViewCandidatureSubmitted : ContentPage
 
     }
 
-   
+
+    private async void Button_Clicked_Delete(object sender, EventArgs e)
+    {
+        var button = (Button)sender;
+        var candidature  = (Candidature)button.BindingContext;
+        await _localDbService.DeleteCandidature(candidature);  // supp de la base de donnee
+        CandidatureSubmit.Remove(candidature); // sup de l'interface
+    }
+
+
+    private async void Button_Clicked_Accept(object sender, EventArgs e)
+    {
+
+        var button = (Button)sender;
+        var candidature = (Candidature)button.BindingContext;
+        candidature.Is_Accepted = true;
+
+        await _localDbService.UpdateCandidature(candidature);
+        CandidatureSubmit.Remove(candidature); //  removed de l'interface
+        MessageLabel.Text = "Candidature accepté";
+    }
+
+
+
+
+
+    private async void Button_Clicked_Refused(object sender, EventArgs e)
+    {
+
+        var button = (Button)sender;
+        var candidature = (Candidature)button.BindingContext;
+        candidature.Is_Declined = true;
+
+        await _localDbService.UpdateCandidature(candidature);
+        CandidatureSubmit.Remove(candidature); //  removed de l'interface
+        MessageLabel.Text = "Candidature refusé";
+    }
+
 }
 
 

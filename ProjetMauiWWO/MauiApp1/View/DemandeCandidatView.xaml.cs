@@ -63,12 +63,20 @@ public partial class DemandeCandidatView : ContentPage
                 nom_Stagiaire = nomStagiaire,
                 
 
+
+                
+
             };
+
+           
 
 
 
             await _localDbService.SaveCandidature(candidature);
             MessageLabel.Text = "Brouillon Enregistré avec succès.";
+
+
+          
 
 
 
@@ -111,6 +119,19 @@ public partial class DemandeCandidatView : ContentPage
             nomStagiaire = await _localDbService.GetStagiaireNameAsync(idSession);
 
 
+            var Draftcandidature = new Candidature  // on le met aussi dans sa page de candidature, pour quu'il voit le status
+            {
+                Description_Candidature = description,
+                Lien_Candidature = linkCandidat,
+                IdSession = idSession,
+                Is_Draft = true,
+                Date_Candidature = DateTime.Now,
+                nom_Stagiaire = nomStagiaire,
+
+            };
+
+            await _localDbService.SubmitCandidature(Draftcandidature);
+
             var candidature = new Candidature  // on crée une instance de la camdidaturre et on la stock dans la database
             {
                 Description_Candidature = description,
@@ -126,6 +147,10 @@ public partial class DemandeCandidatView : ContentPage
 
 
             await _localDbService.SubmitCandidature(candidature);
+
+
+          
+
             MessageLabel.Text = "Candidature envoyé avec succès.";
 
 

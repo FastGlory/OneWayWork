@@ -4,6 +4,8 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="Mes brouillons">
+
+
     <StackLayout>
 
         <Label
@@ -57,13 +59,50 @@
 
                                 <Label FontAttributes="Bold" Text="{Binding Date_Candidature}" />
 
-                                <Button
-                                    Padding="10"
-                                    BackgroundColor="#1a2d59"
-                                    CornerRadius="10"
+
+                                <StackLayout
                                     HorizontalOptions="End"
-                                    Text="Delete"
-                                    TextColor="White" />
+                                    Orientation="Horizontal"
+                                    Spacing="10">
+                                    <Button
+                                        Padding="10"
+                                        BackgroundColor="#1a2d59"
+                                        Clicked="Button_Clicked_Delete"
+                                        CornerRadius="10"
+                                        HorizontalOptions="End"
+                                        MaximumHeightRequest="80"
+                                        MaximumWidthRequest="60"
+                                        Text="Delete"
+                                        TextColor="White" />
+
+                                    <Button
+                                        Padding="10"
+                                        BackgroundColor="#A0A4FF"
+                                        CornerRadius="10"
+                                        HorizontalOptions="End"
+                                        MaximumHeightRequest="80"
+                                        MaximumWidthRequest="60"
+                                        Text="Edit"
+                                        TextColor="White" />
+                                </StackLayout>
+
+
+                                <StackLayout
+                                    HorizontalOptions="End"
+                                    Orientation="Vertical"
+                                    Spacing="10">
+
+                                    <Label
+                                        x:Name="StatutCandidatLabel"
+                                        HorizontalOptions="Center"
+                                        Text="{Binding Status}"
+                                        TextColor="{Binding StatusColor}"
+                                        VerticalOptions="Center" />
+
+
+
+                                </StackLayout>
+
                             </StackLayout>
 
 
@@ -78,7 +117,7 @@
         <Frame
             Margin="0,0,0,0"
             Padding="10"
-            BackgroundColor="LightGray"
+            BackgroundColor="black"
             CornerRadius="5"
             HorizontalOptions="Start"
             VerticalOptions="End">

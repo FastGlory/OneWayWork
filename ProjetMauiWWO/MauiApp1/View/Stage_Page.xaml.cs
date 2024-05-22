@@ -8,6 +8,7 @@ using MauiApp1.Service;
 using System.Diagnostics;
 using MauiApp1.ViewModel;
 
+
 namespace MauiApp1.View
 {
     public partial class Stage_Page : ContentPage
@@ -28,7 +29,9 @@ namespace MauiApp1.View
             filteredStages = new ObservableCollection<Stage>();
             BindingContext = this;
             listView.ItemsSource = filteredStages;
-           
+
+
+
         }
 
 
@@ -46,8 +49,15 @@ namespace MauiApp1.View
             base.OnAppearing();
             string idSession = IdSessionServiceApp.Instance.GetSessionId();
             IdSessionLabel.Text = $"IdSession: {idSession}";
+            if (string.IsNullOrEmpty(idSession) || !idSession.StartsWith("A"))
+            {
+                SuppressionComplete.IsVisible = false;
+            }
             await LoadStagesAsync(); // La on va simplement charger
+
         } // Permet de montrer les informations des stages à l'utilisateur et le base. c'est une manière de faire référence directement
+
+
 
         private async Task LoadStagesAsync()
         {
@@ -81,16 +91,22 @@ namespace MauiApp1.View
 
         private async void OnDeleteAllStageButtonClicked(object sender, EventArgs e)
         {
-            try
-            {
-                await _localDbService.DeleteAllStages();
-                await LoadStagesAsync();
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Error deleting stages: {ex.Message}");
-                await DisplayAlert("Error", $"Error deleting stages: {ex.Message}", "OK");
-            }
+
+          
+
+                try
+                {
+                    await _localDbService.DeleteAllStages();
+                    await LoadStagesAsync();
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"Error deleting stages: {ex.Message}");
+                    await DisplayAlert("Error", $"Error deleting stages: {ex.Message}", "OK");
+                }
+            
+         
+
         }
 
         private void OnSearchButtonPressed(object sender, EventArgs e)
@@ -110,7 +126,7 @@ namespace MauiApp1.View
                 s.Nom_Stage.ToLower().Contains(searchText.ToLower()) ||
                 (s.Entreprise != null && s.Entreprise.Nom_Entreprise.ToLower().Contains(searchText.ToLower())))
                 .ToList(); // Il fuat passer par entreprise pour aller voir ces informations
-
+                
             UpdateFilteredStages(new ObservableCollection<Stage>(filtered));
         }
 

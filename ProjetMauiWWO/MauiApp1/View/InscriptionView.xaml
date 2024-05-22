@@ -41,6 +41,7 @@
                         HorizontalOptions="FillAndExpand"
                         Opacity="0.5"
                         Placeholder="Prénom"
+                        TextColor="Black"
                         PlaceholderColor="Black" />
                     <Entry
                         x:Name="AddNom"
@@ -49,6 +50,7 @@
                         HorizontalOptions="FillAndExpand"
                         Opacity="0.5"
                         Placeholder="Nom"
+                        TextColor="Black"
                         PlaceholderColor="Black" />
                 </StackLayout>
 
@@ -59,6 +61,7 @@
                     BackgroundColor="White"
                     Opacity="0.5"
                     Placeholder="Email"
+                    TextColor="Black"
                     PlaceholderColor="Black" />
                 <Entry
                     x:Name="AddPassword"
@@ -66,6 +69,7 @@
                     BackgroundColor="White"
                     IsPassword="True"
                     Opacity="0.5"
+                    TextColor="Black"
                     Placeholder="Mot de passe"
                     PlaceholderColor="Black" />
 

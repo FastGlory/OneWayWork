@@ -34,6 +34,7 @@
                         x:Name="AddPrenom"
                         BackgroundColor="White"
                         HorizontalOptions="FillAndExpand"
+                        TextColor="Black"
                         Opacity="0.5"
                         Placeholder="Nom de la compagnie"
                         PlaceholderColor="Black" />
@@ -45,6 +46,7 @@
                     x:Name="MotDePasse"
                     Margin="0,10,0,0"
                     BackgroundColor="White"
+                    TextColor="Black"
                     Opacity="0.5"
                     IsPassword="True"
                     Placeholder="Mot de passe"
@@ -82,7 +84,7 @@
         <Frame
             Margin="0,0,0,0"
             Padding="10"
-            BackgroundColor="LightGray"
+            BackgroundColor="black"
             CornerRadius="5"
             HorizontalOptions="Start"
             VerticalOptions="End">
